@@ -1,6 +1,7 @@
 ---
 title: "Automated File Organization Using Organize"
 layout: "../../layouts/PostLayout.astro"
+category: Personal Tech
 author: guissmo
 date: 2023-05-28T22:30:44+02:00
 draft: false

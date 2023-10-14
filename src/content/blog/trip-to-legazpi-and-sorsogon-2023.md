@@ -1,6 +1,7 @@
 ---
 title: "Trip to Legazpi and Sorsogon 2023"
 layout: "../../layouts/PostLayout.astro"
+category: Philippines
 author: guissmo
 date: 2023-08-01T05:50:07+02:00
 draft: false

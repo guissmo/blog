@@ -1,6 +1,7 @@
 ---
 title: "Bypassing Overflow Hidden Rule in CSS"
 layout: "../../layouts/PostLayout.astro"
+category: Front End
 author: guissmo
 date: 2023-05-30T01:00:54+02:00
 draft: false

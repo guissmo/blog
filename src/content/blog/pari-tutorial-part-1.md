@@ -1,6 +1,7 @@
 ---
 title: "Pari Tutorial: The Basics"
 layout: "../../layouts/PostLayout.astro"
+category: Math
 author: guissmo
 date: 2023-01-09T08:04:51Z
 draft: false

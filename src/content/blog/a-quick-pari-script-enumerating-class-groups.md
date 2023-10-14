@@ -1,6 +1,7 @@
 ---
 title: "A Quick Pari Script Enumerating Class Groups"
 layout: "../../layouts/PostLayout.astro"
+category: Math
 author: guissmo
 date: 2023-03-16T23:44:55+01:00
 categories:
