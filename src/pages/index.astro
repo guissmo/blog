@@ -1,4 +1,5 @@
 ---
+import { allBlogPostsByCategory } from "./blog.ts";
 ---
 
 <html lang="en">
@@ -6,9 +7,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Blog | Guissmo</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <h1>Blog</h1>
+    {
+      Object.keys(allBlogPostsByCategory).map((category) => {
+        return (
+          <>
+            <h2>{category}</h2>
+            {allBlogPostsByCategory[category].map(({ slug, data }) => {
+              const { date } = data;
+
+              function dateToString(date: Date) {
+                let year = date.getFullYear();
+                let month = pad(date.getMonth() + 1);
+                let day = pad(date.getDate());
+
+                return [year, month, day].join(".");
+              }
+
+              function pad(num: number) {
+                return num.toString().padStart(2, "0");
+              }
+
+              return (
+                <p>
+                  {dateToString(date)} - <a href={`../${slug}`}>{data.title}</a>
+                </p>
+              );
+            })}
+          </>
+        );
+      })
+    }
   </body>
 </html>
