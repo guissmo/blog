@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Baybayin Robotika";
+  src: url("/fonts/baybayin-robotika.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+  font-family: "Baybayin Robotika";
+}
