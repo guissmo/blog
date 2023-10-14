@@ -1,6 +1,5 @@
 ---
 import { allBlogPostsByCategory } from "./blog.ts";
-import Header from "../components/Header";
 ---
 
 <html lang="en">
@@ -12,7 +11,6 @@ import Header from "../components/Header";
     <title>Blog | Guissmo</title>
   </head>
   <body>
-    <Header />
     <h1>Blog</h1>
     {
       Object.keys(allBlogPostsByCategory).map((category) => {
