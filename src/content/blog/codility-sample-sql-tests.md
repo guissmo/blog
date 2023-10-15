@@ -8,13 +8,13 @@ description: Tried out the codility sample SQL tests.
 slug: codility-sample-sql-tests
 ---
 
-I tried out some of Codility's sample SQL test despite knowing only the theoretical concepts behind SQL databases (what `JOIN` means, a `GROUP BY` operation exists, etc). With some Google-Fu and some help from Chat GPT, I managed to find make a 100% solution to two of their sample tests.
+I tried out some of Codility's [publicly-available sample SQL tests](https://app.codility.com/programmers/trainings/6/) despite knowing only the theoretical concepts behind SQL databases (what `JOIN` means, a `GROUP BY` operation exists, etc). With some Google-Fu and some help from Chat GPT, I managed to find make a 100% solution to two of their sample tests.
 
 Looking to find some time knowing how to write and optimize SQL code for huge data sets, but for now I'm happy to have these tests and code for reference.
 
-# Test 1
+# Test 2: SqlEventsDelta
 
-[Results](https://app.codility.com/demo/results/training53KDEQ-NRV/)
+[Problem Statement](https://app.codility.com/programmers/trainings/6/sql_events_delta/) | [Results](https://app.codility.com/demo/results/training53KDEQ-NRV/)
 
 ```sql
 WITH t1 AS
@@ -27,9 +27,9 @@ FROM events)
 SELECT DISTINCT * FROM t1 WHERE dif IS NOT NULL ORDER BY event_type
 ```
 
-# Test 2
+# Test 3: SqlWorldCup
 
-[Results](https://app.codility.com/demo/results/trainingTRME52-2PD/)
+[Problem Statement](https://app.codility.com/programmers/trainings/6/sql_world_cup/) | [Results](https://app.codility.com/demo/results/trainingTRME52-2PD/)
 
 ```sql
 WITH
