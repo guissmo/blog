@@ -1,5 +1,9 @@
 ---
 import { allBlogPostsByCategory } from "./blog.ts";
+import Header from "../components/Header";
+import "@fontsource-variable/source-code-pro";
+import "@fontsource-variable/fredoka";
+import "@fontsource/rubik-mono-one";
 ---
 
 <html lang="en">
@@ -11,7 +15,7 @@ import { allBlogPostsByCategory } from "./blog.ts";
     <title>Blog | Guissmo</title>
   </head>
   <body>
-    <h1>Blog</h1>
+    <Header />
     {
       Object.keys(allBlogPostsByCategory).map((category) => {
         return (
@@ -34,7 +38,10 @@ import { allBlogPostsByCategory } from "./blog.ts";
 
               return (
                 <p>
-                  {dateToString(date)} - <a href={`../${slug}`}>{data.title}</a>
+                  <span class="leftMargin">
+                    <span class="monospace">{dateToString(date)}</span>
+                  </span>
+                  <a href={`../${slug}`}>{data.title}</a>
                 </p>
               );
             })}
@@ -44,3 +51,31 @@ import { allBlogPostsByCategory } from "./blog.ts";
     }
   </body>
 </html>
+
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+  }
+
+  .leftMargin {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .leftMargin span {
+    position: relative;
+    display: block;
+    width: fit-content;
+    transform: translateX(-120%);
+  }
+
+  .monospace {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 300;
+  }
+
+  a {
+    font-weight: 600;
+  }
+</style>
