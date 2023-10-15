@@ -10,25 +10,23 @@ main {
   width: clamp(1px, 1000px, 95vw);
 }
 
-#logo {
-  a {
-    display: block;
-    font-family: "Rubik Mono One", sans-serif;
-    font-size: clamp(12px, 4rem, 13vw);
-    font-weight: 700;
-    width: fit-content;
-    transform: rotate(-3deg);
-    padding: 0px 0.5em;
-    text-decoration: none;
-    background-color: #292929;
-    color: white;
-  }
+#logo a {
+  display: block;
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: clamp(12px, 4rem, 13vw);
+  font-weight: 700;
+  width: fit-content;
+  transform: rotate(-3deg);
+  padding: 0px 0.5em;
+  text-decoration: none;
+  background-color: #292929;
+  color: white;
+}
 
-  a:hover {
-    text-decoration: none;
-    background-color: #1c425e;
-    color: white;
-  }
+#logo a:hover {
+  text-decoration: none;
+  background-color: #1c425e;
+  color: white;
 }
 
 a {
