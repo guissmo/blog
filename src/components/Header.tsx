@@ -1,8 +1,7 @@
 export default function Header() {
-  // return <div style={{ fontFamily: "Baybayin Robotika" }}>GiSMo</div>;
   return (
     <h1 id="logo">
-      <a href="/">GUISSMO</a>
+      <a href={`${import.meta.env.BASE_URL}/`}>GUISSMO</a>
     </h1>
   );
 }

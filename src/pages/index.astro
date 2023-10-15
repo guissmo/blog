@@ -11,44 +11,65 @@ import "@fontsource/rubik-mono-one";
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=`${import.meta.env.BASE_URL}/style.css`
+    />
     <title>Blog | Guissmo</title>
   </head>
   <body>
-    <Header />
-    {
-      Object.keys(allBlogPostsByCategory).map((category) => {
-        return (
-          <>
-            <h2>{category}</h2>
-            {allBlogPostsByCategory[category].map(({ slug, data }) => {
-              const { date } = data;
+    <main>
+      <Header />
+      <div class="postList">
+        {
+          Object.keys(allBlogPostsByCategory).map((category) => {
+            return (
+              <>
+                <>
+                  <span>&nbsp;</span>
+                  <h2>{category}</h2>
+                </>
+                {allBlogPostsByCategory[category]
+                  .slice(0, 5)
+                  .map(({ slug, data }, index) => {
+                    const { date } = data;
 
-              function dateToString(date: Date) {
-                let year = date.getFullYear();
-                let month = pad(date.getMonth() + 1);
-                let day = pad(date.getDate());
+                    function dateToString(date: Date) {
+                      let year = date.getFullYear();
+                      let month = pad(date.getMonth() + 1);
+                      let day = pad(date.getDate());
 
-                return [year, month, day].join(".");
-              }
+                      return [year, month, day].join(".");
+                    }
 
-              function pad(num: number) {
-                return num.toString().padStart(2, "0");
-              }
+                    function pad(num: number) {
+                      return num.toString().padStart(2, "0");
+                    }
 
-              return (
-                <p>
-                  <span class="leftMargin">
-                    <span class="monospace">{dateToString(date)}</span>
-                  </span>
-                  <a href={`../${slug}`}>{data.title}</a>
-                </p>
-              );
-            })}
-          </>
-        );
-      })
-    }
+                    return (
+                      <>
+                        <span
+                          style={`opacity: ${1 - index * 0.1}`}
+                          class="monospace date"
+                        >
+                          {dateToString(date)}
+                        </span>
+                        <a
+                          style={`opacity: ${1 - index * 0.1}`}
+                          href={`${import.meta.env.BASE_URL}/${slug}`}
+                        >
+                          {data.title}
+                        </a>
+                      </>
+                    );
+                  })}
+              </>
+            );
+          })
+        }
+      </div>
+    </main>
   </body>
 </html>
 
@@ -58,24 +79,18 @@ import "@fontsource/rubik-mono-one";
     padding-top: 3ex;
   }
 
-  .leftMargin {
-    position: absolute;
-    z-index: -1;
+  .date {
+    width: fit-content;
   }
 
-  .leftMargin span {
-    position: relative;
-    display: block;
-    width: fit-content;
-    transform: translateX(-120%);
+  .postList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
   }
 
   .monospace {
     font-family: "Source Code Pro Variable", sans-serif;
     font-weight: 300;
-  }
-
-  a {
-    font-weight: 600;
   }
 </style>

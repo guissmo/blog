@@ -1,7 +1,7 @@
 ---
 title: "2023 Kobo Guide - Dropbox Integration"
 layout: "../../layouts/PostLayout.astro"
-category: Personal Tech
+category: Mini Projects
 author: guissmo
 date: 2023-04-30T15:34:52+02:00
 draft: false
