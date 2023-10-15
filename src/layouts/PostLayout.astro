@@ -12,6 +12,12 @@ const { frontmatter } = Astro.props;
   <head>
     <!-- Add other Head elements here, like styles and meta tags. -->
     <meta charset="utf-8" />
+    <meta name="title" content={`${frontmatter.title} | Jared Asuncion`} />
+    <meta
+      name="description"
+      content={`${frontmatter.description} | Jared Asuncion`}
+    />
+    <meta name="author" content="Jared Asuncion" />
     <link
       rel="stylesheet"
       type="text/css"
