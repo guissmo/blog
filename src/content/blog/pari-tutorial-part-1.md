@@ -182,7 +182,7 @@ Number fields are represented in PARI by a vector containing relevant informatio
 
 To get a representation of the number field
 
-$$K = \mathbb{Q}(z) = \mathbb{Q}[X]/(z^2+1)$$
+$K = \mathbb{Q}(z) = \mathbb{Q}[X]/(z^2+1)$
 
 in PARI, we use `nfinit`:
 
@@ -226,9 +226,9 @@ gives you the matrix
 
 showing that
 
-$$
+$
 5! = 2^3 \cdot 3 \cdot 5.
-$$
+$
 
 ### Accessing elements of a matrix
 

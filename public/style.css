@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   color: #292929;
-  font-display: auto;
+  font-display: block;
 }
 
 main {
