@@ -21,6 +21,6 @@ export async function GET(context) {
       link: `/blog/${post.slug}/`,
     })),
     // (optional) inject custom xml
-    customData: `<language>en-us</language>`,
+    customData: `<language>en-us</language><image><url>http://guissmo.com/blog/favicon/favicon.ico</url></image>`,
   });
 }

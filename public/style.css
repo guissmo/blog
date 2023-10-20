@@ -49,3 +49,9 @@ pre {
   padding: 10px 20px;
   border-radius: 10px;
 }
+
+.content {
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+}
