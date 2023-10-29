@@ -1,8 +1,8 @@
 ---
 import { allBlogPostsByCategory } from "./blog.ts";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Head from "../components/Head";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Head from "../../components/Head";
 import "@fontsource-variable/source-code-pro";
 import "@fontsource-variable/fredoka";
 import "@fontsource/rubik-mono-one";
@@ -59,7 +59,7 @@ import "@fontsource/rubik-mono-one";
                         </span>
                         <a
                           style={`opacity: ${1 - index * 0.1}`}
-                          href={`${import.meta.env.BASE_URL}/${slug}`}
+                          href={`${import.meta.env.BASE_URL}/blog/${slug}`}
                         >
                           {data.title}
                         </a>
