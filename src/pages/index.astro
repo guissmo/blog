@@ -56,6 +56,7 @@ import "@fontsource/rubik-mono-one";
                 </>
                 {Object.keys(cvEntry.data).map((category) => {
                   const projectData = cvEntry.data[category];
+                  if (projectData.show == false) return;
                   const yearString = projectData.year
                     .toString()
                     .padStart(4, "0");

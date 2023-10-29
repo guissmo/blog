@@ -29,6 +29,7 @@
   },
   "prime-cert": {
     "name": "PrimeCert",
+    "show": false,
     "url": {
       "project": "https://primecert.guissmo.com"
     },
