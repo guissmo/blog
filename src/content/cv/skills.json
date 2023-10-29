@@ -1,0 +1,17 @@
+{
+  "frontend": ["React", "React Router", "MobX", "Material UI", "Next.JS"],
+  "programming": ["C", "Java", "Python", "JavaScript", "Typescript"],
+  "version control": ["Git"],
+  "markup": ["HTML", "LaTeX", "Markdown"],
+  "virtualization": ["Docker"],
+  "runtime envs": ["NodeJS"],
+  "python libs": ["Pandas", "Bokeh", "BeautifulSoup"],
+  "webservers": ["Caddy", "Nginx"],
+  "sheetstyle": ["CSS"],
+  "math software": ["PARI/GP", "SageMath"],
+  "mathematics": [
+    "algorithmic number theory",
+    "elliptic curves",
+    "cryptography"
+  ]
+}

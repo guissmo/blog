@@ -27,4 +27,4 @@ And another problem with a short problem statement:
 
 The best thing about this is each problem has a number for its answer. So you can suffer by waiting 24 hours for your inefficient program to run or try to find something that runs in less than a minute.
 
-Let me know if you get in. [Here](https://projecteuler.net/progress=guissmo)'s my account if you're interested.
+Once you get in, ask me for my friend key so that [you can see my progress](https://projecteuler.net/progress=guissmo)'s if you're interested.
