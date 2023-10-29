@@ -1,5 +1,10 @@
 ---
-import { skillData, personalProjectData } from "./cv.ts";
+import {
+  skillData,
+  personalProjectData,
+  workExperienceData,
+  educationData,
+} from "./cv.ts";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
@@ -66,11 +71,16 @@ import "@fontsource/rubik-mono-one";
                   const dateString = `${yearString}.${monthString}`;
                   return (
                     <>
-                      <span class="monospace">{dateString}</span>
+                      <span class="monospace vertical-align-center">
+                        {dateString}
+                      </span>
                       <span class="inline-list">
-                        <span class="block project-title">
+                        <span class="block cv-entry-title">
                           {projectData.name}
                         </span>
+                      </span>
+                      <span class="monospace">&nbsp;</span>
+                      <span class="inline-list">
                         <span class="block links">
                           links:
                           {Object.keys(projectData.url).map(
@@ -94,6 +104,136 @@ import "@fontsource/rubik-mono-one";
                             })}
                           </ul>
                         </span>
+                      </span>
+                    </>
+                  );
+                })}
+              </>
+            );
+          })
+        }
+        {
+          workExperienceData.map((cvEntry) => {
+            return (
+              <>
+                <>
+                  <span>&nbsp;</span>
+                  <h2>{cvEntry.id}</h2>
+                </>
+                {Object.keys(cvEntry.data).map((category) => {
+                  const workExperience = cvEntry.data[category];
+                  const yearStartString = workExperience.year_s
+                    .toString()
+                    .padStart(4, "0");
+                  const yearEndString =
+                    workExperience.year_e == undefined
+                      ? ""
+                      : workExperience.year_e.toString().padStart(2, "0");
+                  const dateString = `${yearStartString} – ${yearEndString}`;
+                  return (
+                    <>
+                      <span class="monospace vertical-align-center">
+                        {dateString}
+                      </span>
+                      <span class="inline-list">
+                        <span class="block cv-entry-title">
+                          {workExperience.position}
+                        </span>
+                      </span>
+                      <span class="monospace">&nbsp;</span>
+                      <span class="inline-list">
+                        <span class="block project-subtitle">
+                          {workExperience.company}
+                        </span>
+                        <span class="block links">
+                          links:
+                          {Object.keys(workExperience.url).map(
+                            (urlCategory, index, arrayItself) => {
+                              const url = workExperience.url[urlCategory];
+                              return (
+                                <>
+                                  <a href={url} target="_blank">
+                                    {urlCategory}
+                                  </a>
+                                  {index != arrayItself.length - 1 && " | "}
+                                </>
+                              );
+                            }
+                          )}
+                        </span>
+                        <span class="block">
+                          <ul>
+                            {workExperience.details.map((detail: string) => {
+                              return <li>{detail}</li>;
+                            })}
+                          </ul>
+                        </span>
+                      </span>
+                    </>
+                  );
+                })}
+              </>
+            );
+          })
+        }
+        {
+          educationData.map((cvEntry) => {
+            return (
+              <>
+                <>
+                  <span>&nbsp;</span>
+                  <h2>{cvEntry.id}</h2>
+                </>
+                {Object.keys(cvEntry.data).map((category) => {
+                  const education = cvEntry.data[category];
+                  const yearStartString = education.year_s
+                    .toString()
+                    .padStart(4, "0");
+                  const yearEndString =
+                    education.year_e == undefined
+                      ? ""
+                      : education.year_e.toString().padStart(2, "0");
+                  const dateString = `${yearStartString} – ${yearEndString}`;
+                  return (
+                    <>
+                      <span class="monospace vertical-align-center">
+                        {dateString}
+                      </span>
+                      <span class="inline-list">
+                        <span class="block cv-entry-title">
+                          {education.degree}
+                        </span>
+                      </span>
+                      <span class="monospace">&nbsp;</span>
+                      <span class="inline-list">
+                        <span class="block project-subtitle">
+                          {education.university}
+                        </span>
+                        <span class="block links">
+                          links:
+                          {Object.keys(education.url).map(
+                            (urlCategory, index, arrayItself) => {
+                              const url = education.url[urlCategory];
+                              return (
+                                <>
+                                  <a href={url} target="_blank">
+                                    {urlCategory}
+                                  </a>
+                                  {index != arrayItself.length - 1 && " | "}
+                                </>
+                              );
+                            }
+                          )}
+                        </span>
+                        {education.details && (
+                          <span class="block">
+                            <ul>
+                              {education.details.map((detail: string) => {
+                                return <li>{detail}</li>;
+                              })}
+                            </ul>
+                          </span>
+                        )}
                       </span>
                     </>
                   );
@@ -138,6 +278,10 @@ import "@fontsource/rubik-mono-one";
         display: block;
       }
 
+      .vertical-align-center {
+        align-self: center;
+      }
+
       .list-entry {
         display: inline-block;
       }
@@ -154,8 +298,13 @@ import "@fontsource/rubik-mono-one";
         display: block;
       }
 
-      .project-title {
+      .cv-entry-title {
         font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .project-subtitle {
+        font-weight: 500;
       }
 
       .links {
@@ -186,7 +335,7 @@ import "@fontsource/rubik-mono-one";
           padding-top: 1.5ex;
         }
 
-        .project-title {
+        .cv-entry-title {
           font-size: 1.2rem;
         }
       }

@@ -1,0 +1,45 @@
+{
+  "phd": {
+    "degree": "PhD in Mathematics",
+    "university": "Université de Bordeaux and Universiteit Leiden",
+    "url": {
+      "phd thesis": "https://inria.hal.science/hal-03210279/document",
+      "université de bordeaux": "https://www.u-bordeaux.fr/en",
+      "universiteit leiden": "https://www.universiteitleiden.nl/"
+    },
+    "month_s": 9,
+    "year_s": 2017,
+    "month_e": 5,
+    "year_e": 2022
+  },
+  "master": {
+    "degree": "ALGANT Master Programme",
+    "university": "Universiteit Leiden and Université de Bordeaux",
+    "url": {
+      "algant website": "https://algant.eu",
+      "algant alumni website": "https://algantalumni.math.cnrs.fr",
+      "master thesis": "https://www.math.u-bordeaux.fr/~ybilu/algant/documents/theses/ASUNCION.pdf",
+      "universiteit leiden": "https://www.universiteitleiden.nl/",
+      "université de bordeaux": "https://www.u-bordeaux.fr/en"
+    },
+    "month_s": 9,
+    "year_s": 2014,
+    "month_e": 8,
+    "year_e": 2016,
+    "details": [
+      "Passed a course on Cryptology in the Netherlands (168 hrs).",
+      "Passed a course on Public Key Cryptography Algorithms in France (168 hrs)."
+    ]
+  },
+  "bachelor": {
+    "degree": "Bachelor of Science in Mathematics",
+    "university": "University of the Philippines, cum laude",
+    "url": {
+      "unibersidad ng pilipinas": "https://up.edu.ph/"
+    },
+    "month_s": 6,
+    "year_s": 2012,
+    "month_e": 3,
+    "year_e": 2014
+  }
+}

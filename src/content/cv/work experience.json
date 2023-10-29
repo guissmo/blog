@@ -1,0 +1,62 @@
+{
+  "jellysmack": {
+    "position": "Software Engineer",
+    "company": "Jellysmack",
+    "url": {
+      "jellysmack": "https://jellysmack.com"
+    },
+    "month_s": 10,
+    "year_s": 2022,
+    "details": [
+      "Implements non-standard React components in a video editing web app",
+      "Upgraded Material UI installation of the project"
+    ]
+  },
+  "phd": {
+    "position": "PhD Candidate",
+    "company": "Université de Bordeaux and Universiteit Leiden",
+    "url": {
+      "université de bordeaux": "https://www.u-bordeaux.fr/en",
+      "universiteit leiden": "https://www.universiteitleiden.nl/"
+    },
+    "month_s": 9,
+    "year_s": 2017,
+    "month_e": 5,
+    "year_e": 2022,
+    "details": [
+      "Generated examples in my thesis using SAGE Math, a library written in Python",
+      "Used Jupyter notebooks to present my code."
+    ]
+  },
+  "inria": {
+    "position": "Software Engineer",
+    "company": "INRIA Bordeaux",
+    "location": "Bordeaux, France",
+    "url": {
+      "inria": "https://www.inria.fr"
+    },
+    "month_s": 10,
+    "year_s": 2016,
+    "month_e": 6,
+    "year_e": 2017,
+    "details": [
+      "Implemented the Atkin-Morain elliptic curve primality test, which was eventually used to prove the primality of the currently largest known Fibonacci prime.",
+      "My code is now part of the Git repo of the open-source computer algebra software PARI/GP."
+    ]
+  },
+  "up": {
+    "position": "Instructor",
+    "company": "University of the Philippines, Diliman",
+    "location": "Quezon City, Philippines",
+    "url": {
+      "unibersidad ng pilipinas": "https://up.edu.ph/"
+    },
+    "month_s": 6,
+    "year_s": 2012,
+    "month_e": 4,
+    "year_e": 2014,
+    "details": [
+      "Assigned every semester to teach a combination of undergraduate service courses such as College Algebra, Plane Trigonometry, Algebra and Trigonometry, Elementary Analysis I and Elementary Analysis II."
+    ]
+  }
+}
