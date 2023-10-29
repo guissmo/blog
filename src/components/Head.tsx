@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="title" content="Jared Asuncion | Blog" />
       <meta name="description" content="This is Jared Asuncion's blog." />
       <meta name="author" content="Jared Asuncion" />

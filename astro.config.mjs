@@ -6,7 +6,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://guissmo.com",
-  base: "blog",
+  base: ".",
   markdown: {
     remarkPlugins: ["remark-math"],
     rehypePlugins: [
@@ -17,13 +17,14 @@ export default defineConfig({
         },
       ],
       [
-        inspectUrls, {
+        inspectUrls,
+        {
           selectors: ["a[href]"],
           inspectEach(url) {
             url.node.properties.target = "_blank";
-          }
-        }
-      ]
+          },
+        },
+      ],
     ],
   },
   integrations: [react(), sitemap()],
