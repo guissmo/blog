@@ -36,7 +36,7 @@ import "@fontsource/rubik-mono-one";
                       <span class="monospace skill-category">{category}</span>
                       <span class="inline-list">
                         {cvEntry.data[category].map((skill: string) => {
-                          return <span class="skill-entry">{skill}</span>;
+                          return <span class="list-entry">{skill}</span>;
                         })}
                       </span>
                     </>
@@ -66,7 +66,34 @@ import "@fontsource/rubik-mono-one";
                   return (
                     <>
                       <span class="monospace">{dateString}</span>
-                      <span class="inline-list">{projectData.name}</span>
+                      <span class="inline-list">
+                        <span class="block project-title">
+                          {projectData.name}
+                        </span>
+                        <span class="block links">
+                          links:
+                          {Object.keys(projectData.url).map(
+                            (urlCategory, index, arrayItself) => {
+                              const url = projectData.url[urlCategory];
+                              return (
+                                <>
+                                  <a href={url} target="_blank">
+                                    {urlCategory}
+                                  </a>
+                                  {index != arrayItself.length - 1 && " | "}
+                                </>
+                              );
+                            }
+                          )}
+                        </span>
+                        <span class="block">
+                          <ul>
+                            {projectData.details.map((detail: string) => {
+                              return <li>{detail}</li>;
+                            })}
+                          </ul>
+                        </span>
+                      </span>
                     </>
                   );
                 })}
@@ -107,18 +134,35 @@ import "@fontsource/rubik-mono-one";
       .inline-list {
         width: 100%;
         gap: 1em;
+        display: block;
       }
 
-      .skill-entry {
+      .list-entry {
         display: inline-block;
       }
 
-      .skill-entry:not(:last-of-type):after {
-        content: ", ";
+      .list-entry:not(:last-of-type):after {
+        content: ",";
       }
 
-      .skill-entry:not(:last-of-type) {
+      .list-entry:not(:last-of-type) {
         margin-right: 0.5em;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .project-title {
+        font-weight: 600;
+      }
+
+      .links {
+        opacity: 0.7;
+      }
+
+      .links:hover {
+        opacity: 1;
       }
 
       @media screen and (max-width: 640px) {
@@ -139,6 +183,10 @@ import "@fontsource/rubik-mono-one";
 
         .skill-category {
           padding-top: 1.5ex;
+        }
+
+        .project-title {
+          font-size: 1.2rem;
         }
       }
     </style>

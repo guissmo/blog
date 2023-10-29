@@ -1,35 +1,43 @@
 {
   "rick-and-morty": {
     "name": "Rick and Morty Character Explorer",
-    "url": "https://guissmo.com/rick-and-morty",
+    "url": {
+      "project": "https://guissmo.com/rick-and-morty",
+      "code": "https://github.com/guissmo/rick-and-morty/"
+    },
     "month": 4,
     "year": 2022,
     "image": "https://camo.githubusercontent.com/0fd430b90514962841c30397d26a12fbcd5de5c55592176338e3921f32f3df71/68747470733a2f2f67756973736d6f2e636f6d2f73637265656e73686f74732f7269636b2d616e642d6d6f7274792f30312e706e67",
     "details": [
-      "Developed React app presenting information from the Rick and Morty API",
-      "Used React Router for route handling, MobX for state management, Material UI for UI"
+      "Presents information from the Rick and Morty API",
+      "Uses React Router for route handling, MobX for state management, Material UI for UI"
     ]
   },
   "hot-or-not": {
     "name": "Hot or Not",
-    "url": "https://hotornot.guissmo.com",
+    "url": {
+      "project": "https://hotornot.guissmo.com",
+      "code": "https://github.com/guissmo/hot-or-not-2"
+    },
     "month": 3,
     "year": 2022,
     "image": "https://guissmo.com/hot-or-not-data/logo.png",
     "details": [
-      "Developed web game which asks the user to guess which city is currently hotter.",
-      "Wrote app using React, OpenWeather API, Teleport Public API and deployed on my VPS using Docker."
+      "Web game which asks the user to guess which city is currently hotter.",
+      "Uses React, OpenWeather API, Teleport Public API and deployed on my VPS using Docker."
     ]
   },
   "prime-cert": {
     "name": "PrimeCert",
-    "url": "https://primecert.guissmo.com",
+    "url": {
+      "project": "https://primecert.guissmo.com"
+    },
     "month": 3,
     "year": 2022,
     "image": "https://primecert.guissmo.com/public/seo-image.jpg",
     "details": [
-      "Developed backend which generates PDF containing prime info based on user input.",
-      "Wrote app using Node.JS and deployed as a Docker container."
+      "Includes backend which generates PDF containing prime info based on user input.",
+      "Uses Node.JS and deployed as a Docker container."
     ]
   }
 }
