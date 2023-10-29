@@ -1,0 +1,119 @@
+---
+import { skillData, personalProjectData } from "./cv.ts";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Head from "../components/Head";
+import "@fontsource-variable/source-code-pro";
+import "@fontsource-variable/fredoka";
+import "@fontsource/rubik-mono-one";
+---
+
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=`${import.meta.env.BASE_URL}/style.css`
+    />
+    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
+    <Head />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jared Asuncion | Blog</title>
+  </head>
+  <body>
+    <main>
+      <Header />
+      <div class="skillList">
+        {
+          skillData.map((cvEntry) => {
+            return (
+              <>
+                <span>&nbsp;</span>
+                <h2>{cvEntry.id}</h2>
+                {Object.keys(cvEntry.data).map((category) => {
+                  return (
+                    <>
+                      <span class="monospace skill-category">{category}</span>
+                      <span class="inline-list">
+                        {cvEntry.data[category].map((skill: string) => {
+                          return <span class="skill-entry">{skill}</span>;
+                        })}
+                      </span>
+                    </>
+                  );
+                })}
+              </>
+            );
+          })
+        }
+      </div>
+      <div class="projectList">
+        {
+          personalProjectData.map((cvEntry) => {
+            return (
+              <>
+                <>
+                  <span>&nbsp;</span>
+                  <h2>{cvEntry.id}</h2>
+                </>
+                {Object.keys(cvEntry.data).map((category) => {
+                  return (
+                    <>
+                      <span class="monospace">{category}</span>
+                      <span class="inline-list">
+                        {cvEntry.data[category].name}
+                      </span>
+                    </>
+                  );
+                })}
+              </>
+            );
+          })
+        }
+      </div>
+      <Footer />
+    </main>
+    <style>
+      h2 {
+        font-weight: 700;
+        padding-top: 3ex;
+        text-transform: capitalize;
+      }
+
+      .date {
+        width: fit-content;
+      }
+
+      .skillList,
+      .projectList {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: clamp(10px, 5vw, 30px);
+      }
+
+      .monospace {
+        font-family: "Source Code Pro Variable", sans-serif;
+        font-weight: 300;
+      }
+
+      .skill-category {
+        text-align: right;
+        font-weight: 700;
+      }
+
+      .inline-list {
+        width: 100%;
+        gap: 1em;
+      }
+
+      .skill-entry {
+        display: inline-block;
+        width: fit-content;
+      }
+
+      .skill-entry:not(:last-of-type) {
+        padding-right: 1em;
+      }
+    </style>
+  </body>
+</html>
