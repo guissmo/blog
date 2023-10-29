@@ -23,7 +23,7 @@ import "@fontsource/rubik-mono-one";
   <body>
     <main>
       <Header />
-      <div class="skillList">
+      <div class="mainList">
         {
           skillData.map((cvEntry) => {
             return (
@@ -46,8 +46,6 @@ import "@fontsource/rubik-mono-one";
             );
           })
         }
-      </div>
-      <div class="projectList">
         {
           personalProjectData.map((cvEntry) => {
             return (
@@ -57,12 +55,18 @@ import "@fontsource/rubik-mono-one";
                   <h2>{cvEntry.id}</h2>
                 </>
                 {Object.keys(cvEntry.data).map((category) => {
+                  const projectData = cvEntry.data[category];
+                  const yearString = projectData.year
+                    .toString()
+                    .padStart(4, "0");
+                  const monthString = projectData.month
+                    .toString()
+                    .padStart(2, "0");
+                  const dateString = `${yearString}.${monthString}`;
                   return (
                     <>
-                      <span class="monospace">{category}</span>
-                      <span class="inline-list">
-                        {cvEntry.data[category].name}
-                      </span>
+                      <span class="monospace">{dateString}</span>
+                      <span class="inline-list">{projectData.name}</span>
                     </>
                   );
                 })}
@@ -84,8 +88,7 @@ import "@fontsource/rubik-mono-one";
         width: fit-content;
       }
 
-      .skillList,
-      .projectList {
+      .mainList {
         display: grid;
         grid-template-columns: auto 1fr;
         column-gap: clamp(10px, 5vw, 30px);
@@ -94,10 +97,10 @@ import "@fontsource/rubik-mono-one";
       .monospace {
         font-family: "Source Code Pro Variable", sans-serif;
         font-weight: 300;
+        text-align: right;
       }
 
       .skill-category {
-        text-align: right;
         font-weight: 700;
       }
 
@@ -108,11 +111,35 @@ import "@fontsource/rubik-mono-one";
 
       .skill-entry {
         display: inline-block;
-        width: fit-content;
+      }
+
+      .skill-entry:not(:last-of-type):after {
+        content: ", ";
       }
 
       .skill-entry:not(:last-of-type) {
-        padding-right: 1em;
+        margin-right: 0.5em;
+      }
+
+      @media screen and (max-width: 640px) {
+        .mainList {
+          display: grid;
+          grid-template-columns: 1fr;
+          padding: 0 10px;
+        }
+
+        .monospace {
+          text-align: unset;
+        }
+
+        .inline-list {
+          padding-left: 1em;
+          width: unset;
+        }
+
+        .skill-category {
+          padding-top: 1.5ex;
+        }
       }
     </style>
   </body>
