@@ -28,6 +28,40 @@ import "@fontsource/rubik-mono-one";
   <body>
     <main>
       <Header />
+      <div class="contactInfo">
+        <span class="monospace align-right bold">email</span>
+        <span class="inline-list"
+          ><a href="mailto:jared@guissmo.com" target="_blank"
+            ><span class="deemphasize">jared@</span><span
+              class="bold emphasize-by-opacity">guissmo</span
+            ><span class="deemphasize">.com</span></a
+          ></span
+        >
+        <span class="monospace align-right bold">blog</span>
+        <span class="inline-list"
+          ><a href="https://guissmo.com/blog" target="_blank"
+            ><span class="bold emphasize-by-opacity">guissmo</span><span
+              class="deemphasize">.com/blog</span
+            ></a
+          ></span
+        >
+        <span class="monospace align-right bold">github</span>
+        <span class="inline-list"
+          ><a href="https://github.com/guissmo" target="_blank"
+            ><span class="deemphasize">github.com/</span><span
+              class="bold emphasize-by-opacity">guissmo</span
+            ></a
+          ></span
+        >
+        <span class="monospace align-right bold">linkedin</span>
+        <span class="inline-list"
+          ><a href="https://linkedin.com/in/guissmo" target="_blank"
+            ><span class="deemphasize">linkedin.com/in/</span><span
+              class="bold emphasize-by-opacity">guissmo</span
+            ></a
+          ></span
+        >
+      </div>
       <div class="mainList">
         {
           skillData.map((cvEntry) => {
@@ -38,7 +72,9 @@ import "@fontsource/rubik-mono-one";
                 {Object.keys(cvEntry.data).map((category) => {
                   return (
                     <>
-                      <span class="monospace skill-category">{category}</span>
+                      <span class="monospace bold skill-category">
+                        {category}
+                      </span>
                       <span class="inline-list">
                         {cvEntry.data[category].map((skill: string) => {
                           return <span class="list-entry">{skill}</span>;
@@ -262,13 +298,20 @@ import "@fontsource/rubik-mono-one";
         column-gap: clamp(10px, 5vw, 30px);
       }
 
+      .contactInfo {
+        display: grid;
+        grid-template-columns: 10vw 1fr;
+        column-gap: clamp(10px, 5vw, 30px);
+        row-gap: 1ex;
+      }
+
       .monospace {
         font-family: "Source Code Pro Variable", sans-serif;
         font-weight: 300;
         text-align: right;
       }
 
-      .skill-category {
+      .bold {
         font-weight: 700;
       }
 
@@ -308,10 +351,19 @@ import "@fontsource/rubik-mono-one";
       }
 
       .links {
-        opacity: 0.7;
+        opacity: 0.8;
       }
 
       .links:hover {
+        opacity: 1;
+      }
+
+      .deemphasize {
+        opacity: 0.8;
+        font-weight: 500;
+      }
+
+      .emphasize-by-opacity {
         opacity: 1;
       }
 
@@ -322,8 +374,19 @@ import "@fontsource/rubik-mono-one";
           padding: 0 10px;
         }
 
+        .contactInfo {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          column-gap: clamp(10px, 5vw, 30px);
+          padding-right: 10vw;
+        }
+
         .monospace {
           text-align: unset;
+        }
+
+        .align-right {
+          text-align: right;
         }
 
         .inline-list {
