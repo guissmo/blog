@@ -62,6 +62,13 @@ import "@fontsource/rubik-mono-one";
           ></span
         >
       </div>
+      <div class="bio">
+        <span class="bold">Hi, I'm Jared Asuncion.</span> I love to solve problems.
+        I am experienced in algorithms, programming, and frontend development. For
+        my doctorate in mathematics, I studied algorithmic number theory and elliptic
+        curves. I am interested in open-source software. I am currently self-studying
+        backend development, and French.
+      </div>
       <div class="mainList">
         {
           skillData.map((cvEntry) => {
@@ -305,6 +312,14 @@ import "@fontsource/rubik-mono-one";
         row-gap: 1ex;
       }
 
+      .bio {
+        padding-top: 5ex;
+        padding-right: 10vw;
+        font-size: 20px;
+        text-align: justify;
+        text-align-last: left;
+      }
+
       .monospace {
         font-family: "Source Code Pro Variable", sans-serif;
         font-weight: 300;
@@ -367,6 +382,10 @@ import "@fontsource/rubik-mono-one";
         opacity: 1;
       }
 
+      .no-wrap {
+        white-space: no-wrap !important;
+      }
+
       @media screen and (max-width: 640px) {
         .mainList {
           display: grid;
@@ -376,9 +395,10 @@ import "@fontsource/rubik-mono-one";
 
         .contactInfo {
           display: grid;
-          grid-template-columns: 1fr auto;
+          width: 95%;
+          margin-left: auto;
+          grid-template-columns: auto 1fr;
           column-gap: clamp(10px, 5vw, 30px);
-          padding-right: 10vw;
         }
 
         .monospace {
@@ -400,6 +420,10 @@ import "@fontsource/rubik-mono-one";
 
         .cv-entry-title {
           font-size: 1.2rem;
+        }
+
+        .bio {
+          padding-right: 0;
         }
       }
     </style>
