@@ -31,7 +31,7 @@ import "@fontsource/rubik-mono-one";
       <div class="contactInfo">
         <span class="monospace align-right bold">blog</span>
         <span class="inline-list"
-          ><a href="https://guissmo.com/blog"
+          ><a href="./blog"
             ><span class="bold emphasize-by-opacity">guissmo</span><span
               class="deemphasize">.com/blog</span
             ></a
@@ -67,7 +67,11 @@ import "@fontsource/rubik-mono-one";
         I am experienced in algorithms, programming, and frontend development. For
         my doctorate in mathematics, I studied algorithmic number theory and elliptic
         curves. I am interested in open-source software. I am currently self-studying
-        backend development, and French.
+        backend development, and French.<br />
+        <div class="bio-footnote">
+          For the curious: <span class="bold">Guissmo</span> is my second name and
+          is unique enough to be my username in most places.
+        </div>
       </div>
       <div class="mainList">
         {
@@ -318,6 +322,11 @@ import "@fontsource/rubik-mono-one";
         font-size: 20px;
         text-align: justify;
         text-align-last: left;
+      }
+
+      .bio-footnote {
+        font-size: 1rem;
+        opacity: 0.8;
       }
 
       .monospace {
