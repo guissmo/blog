@@ -200,6 +200,16 @@ import "@fontsource/rubik-mono-one";
               }
             }
 
+            if (word[i] == "i" || word[i] == "I") {
+              result += "i";
+              continue;
+            }
+
+            if (word[i] == "l" || word[i] == "L") {
+              result += "L";
+              continue;
+            }
+
             if (Math.floor(Math.random() * 2) === 0) {
               result += word[i].toLowerCase();
             } else {
@@ -210,6 +220,382 @@ import "@fontsource/rubik-mono-one";
         }
 
         return result;
+      }
+
+      function replaceLetters(s: string) {
+        let sabi = s.toLowerCase();
+        sabi = sabi.replace(/\.\.\./g, " ~hayz~");
+        sabi = sabi.replace(/'/g, "");
+        sabi = sabi.replace(/’/g, "");
+        sabi = sabi.replace(/‘/g, "");
+
+        sabi = sabi.replace(/ok[ae]y\b/g, "k");
+        sabi = sabi.replace(/\bidol\b/g, "lodi");
+        sabi = sabi.replace(/\bmal[ou]p[ei]t\b/g, "petmalu");
+        sabi = sabi.replace(/\b(mam|maam|mom)\b/g, "mamsh");
+
+        sabi = sabi.replace(/\bhuwag\b/g, "wag");
+        sabi = sabi.replace(/\bwag\b/g, "wg");
+
+        sabi = sabi.replace(/(([dtvz])i)(to|tu)([^aeiou])/g, "$22$4");
+        sabi = sabi.replace(/(to|tu)([^aeiou]|\b)/g, "2$2");
+        sabi = sabi.replace(/too+/g, "2");
+        sabi = sabi.replace(/\b(\w+)\-\1\b/g, "$12x");
+        sabi = sabi.replace(/\b(\w{4})\1\b/g, "$12x");
+
+        sabi = sabi.replace(/-/g, "");
+
+        sabi = sabi.replace(/\bpinaka/g, "pnk");
+        sabi = sabi.replace(/\bka (na )?(lang )?ba\b/g, "$1$2b u");
+        sabi = sabi.replace(/\bka\b/g, "u");
+        sabi = sabi.replace(/\bn b u\b/g, "nb u");
+        sabi = sabi.replace(/\b([knbsp])a\b/g, "$1");
+        sabi = sabi.replace(/\b(hin)?di\b/g, "d");
+
+        sabi = sabi.replace(/\b(a?)k[ou]((ng)?)\b/g, "$1q$2");
+        sabi = sabi.replace(/\baking (\w+)\b/g, "$1 q");
+
+        sabi = sabi.replace(/sa i?yo/g, "sau");
+
+        sabi = sabi.replace(/ganoo?n/g, "ganern");
+
+        sabi = sabi.replace(/\byou/g, "u");
+        sabi = sabi.replace(/\byo\b/g, "u");
+
+        sabi = sabi.replace(/\bisa\b/g, "1");
+        sabi = sabi.replace(/\bdalawa\b/g, "2");
+        sabi = sabi.replace(/\btatlo\b/g, "3");
+        sabi = sabi.replace(/\bapat\b/g, "4");
+        sabi = sabi.replace(/\blima\b/g, "5");
+        sabi = sabi.replace(/\banim\b/g, "6");
+        sabi = sabi.replace(/\bpito\b/g, "7");
+        sabi = sabi.replace(/\bwalo\b/g, "8");
+
+        sabi = sabi.replace(/\bone\b/g, "1");
+        sabi = sabi.replace(/\btwo\b/g, "2");
+        sabi = sabi.replace(/\bthree\b/g, "3");
+        sabi = sabi.replace(/\bfour\b/g, "4");
+        sabi = sabi.replace(/\bfive\b/g, "5");
+        sabi = sabi.replace(/\bsix\b/g, "6");
+        sabi = sabi.replace(/\bseven\b/g, "7");
+        sabi = sabi.replace(/\beight\b/g, "8");
+        sabi = sabi.replace(/\bnine\b/g, "8");
+        sabi = sabi.replace(/\bten\b/g, "8");
+        sabi = sabi.replace(/ate\b/g, "8");
+
+        sabi = sabi.replace(/\bsana all\b/g, "snaol");
+        sabi = sabi.replace(/\ball\b/g, "ol");
+        sabi = sabi.replace(/\bthe\b/g, "d");
+
+        sabi = sabi.replace(/\bf+or+/g, "4");
+        sabi = sabi.replace(/\bwan+/g, "1");
+        sabi = sabi.replace(/wan+\b/g, "1");
+        sabi = sabi.replace(/\Btri\B/g, "3");
+        sabi = sabi.replace(/it[ei]n\b/g, "i10");
+        sabi = sabi.replace(/\Bt+en+\B/g, "10");
+
+        sabi = sabi.replace(/saan\b/g, "sn");
+
+        sabi = sabi.replace(/tio/g, "siyo");
+        sabi = sabi.replace(/iy([aeiou])/g, "y$1");
+        sabi = sabi.replace(/k?s[yi]([ao])/g, "x$1");
+        sabi = sabi.replace(/\byan(g?)/g, "yn$1");
+        sabi = sabi.replace(/\by[ou]n(g?)/g, "un$1");
+        sabi = sabi.replace(/kays/g, "kes");
+        sabi = sabi.replace(/([bkdgpstlmnGwry])ya/g, "$1ia");
+        sabi = sabi.replace(/\b(si|see)/g, "c");
+        sabi = sabi.replace(/\bsea\b/g, "c");
+
+        sabi = sabi.replace(/where/g, "wer");
+        sabi = sabi.replace(/who/g, "hu");
+        sabi = sabi.replace(/how/g, "hw");
+        sabi = sabi.replace(/what/g, "wat");
+        sabi = sabi.replace(/when/g, "wen");
+        sabi = sabi.replace(/why/g, "y");
+        sabi = sabi.replace(/are you\b/g, "u");
+        sabi = sabi.replace(/love\b/g, "luv");
+        sabi = sabi.replace(/\bif\b/g, "f");
+
+        sabi = sabi.replace(/\b([dr]?)in\b/g, "$1n");
+
+        sabi = sabi.replace(/ng/g, "G");
+
+        sabi = sabi.replace(/([Ga-z])ay([Ga-z])/g, "$1ai$2");
+        sabi = sabi.replace(/([^\b])ay\b/g, "$1ayz");
+        sabi = sabi.replace(/aio/g, "au");
+        sabi = sabi.replace(/kail/g, "kel");
+
+        sabi = sabi.replace(/(G[aeiou]){2}/g, "$12");
+
+        sabi = sabi.replace(/po\b/g, "p0h");
+        sabi = sabi.replace(/([mpls])o\b/g, "$10h");
+        sabi = sabi.replace(/\bno\b/g, "n0h");
+        sabi = sabi.replace(/ano\b/g, "nu");
+
+        sabi = sabi.replace(/([bkdgpstlmnwryh]a)+/g, (match, group) => {
+          return match.split("a").join("") + "a";
+        });
+
+        sabi = sabi.replace(/([bkdgpstlmnwryh]e)+/g, (match, group) => {
+          return match.split("e").join("") + "e";
+        });
+
+        sabi = sabi.replace(/([bkdgpstlmnwryh]i)+/g, (match, group) => {
+          return match.split("i").join("") + "i";
+        });
+
+        sabi = sabi.replace(/([bkdgpstlmnwryh]o)+/g, (match, group) => {
+          return match.split("o").join("") + "o";
+        });
+
+        sabi = sabi.replace(/([bkdgpstlmnwryh]u)+/g, (match, group) => {
+          return match.split("u").join("") + "u";
+        });
+
+        sabi = sabi.replace(/\Bit\b/g, "8");
+        sabi = sabi.replace(/kaloka/g, "klk");
+        sabi = sabi.replace(/kita\b/g, "kta");
+        sabi = sabi.replace(/man\b/g, "mn");
+        sabi = sabi.replace(/\Bext/g, "xt");
+
+        sabi = sabi.replace(/\bpero\b/g, "pro");
+
+        sabi = sabi.replace(
+          /\b([bkdgpstlmnGwryh])a([bkdgpstlmnGwryh])/g,
+          "$1$2"
+        );
+
+        sabi = sabi.replace(/G/g, "ng");
+
+        // sabi = sabi.replace(/([^s ])o(ng)?\b/g, "$1u$2");
+        sabi = sabi.replace(/ahingi\b/g, "enge");
+        sabi = sabi.replace(/kita\b/g, "kita");
+        sabi = sabi.replace(/kaibigan\b/g, "beshie");
+        sabi = sabi.replace(/esk\b/g, "x");
+        sabi = sabi.replace(/i([mn])e\b/g, "y$1");
+        sabi = sabi.replace(/(\w+\w{2})er\b/g, "$1r");
+        sabi = sabi.replace(/ould\b/g, "ud");
+
+        // sabi = sabi.replace(/kaloka/g, "klk");
+        // sabi = sabi.replace(/ see /g, " c ");
+        // sabi = sabi.replace(/loka/g, "lurkey");
+        // sabi = sabi.replace(/ganun/g, "ganern");
+        // sabi = sabi.replace(/ganoon/g, "ganern");
+        // sabi = sabi.replace(/ganon/g, "ganern");
+        // sabi = sabi.replace(/ friend/g, "beshie");
+        // sabi = sabi.replace(/([^ ])ay[ $]/g, "$1ayz ");
+        // sabi = sabi.replace(/esk/g, "x");
+        // sabi = sabi.replace(/ say /g, " sei ");
+        // sabi = sabi.replace(/ lang/g, " lng");
+        // sabi = sabi.replace(/ yong/g, " yng");
+        // sabi = sabi.replace(/ yong /g, " yng ");
+        // sabi = sabi.replace(/ iyong/g, " yng");
+        // sabi = sabi.replace(/time/g, "tym");
+        // sabi = sabi.replace(/say/g, "xai");
+        // sabi = sabi.replace(/baka/g, "vkh");
+        // sabi = sabi.replace(/kaka/g, "ka2");
+        // sabi = sabi.replace(/pinaka/g, "pnk");
+        // sabi = sabi.replace(/ hindi /g, " d ");
+        // sabi = sabi.replace(/ di /g, " d ");
+        // sabi = sabi.replace(/kem/g, "km");
+        // sabi = sabi.replace(/okay/g, "ok");
+        // sabi = sabi.replace(/huwag/g, "wg");
+        // sabi = sabi.replace(/wag/g, "wg");
+        // sabi = sabi.replace(/sc/g, "x");
+        // sabi = sabi.replace(/kayo/g, "kyu");
+        // sabi = sabi.replace(/tia/g, "xa");
+        // sabi = sabi.replace(/okay/g, "ok");
+        // sabi = sabi.replace(/ sc/g, " x");
+        // sabi = sabi.replace(/kayo/g, "kyu");
+        // sabi = sabi.replace(/tia/g, "xa");
+        // sabi = sabi.replace(/hehe/g, "jeje");
+        // sabi = sabi.replace(/haha/g, "jaja");
+        // sabi = sabi.replace(/jehe/g, "jeje");
+        // sabi = sabi.replace(/jaha/g, "jaja");
+        // sabi = sabi.replace(/ate/g, "z8z");
+        // sabi = sabi.replace(/ z8z /g, " ate ");
+        // sabi = sabi.replace(/z8z/g, "8");
+        // sabi = sabi.replace(/all/g, "ol");
+        // sabi = sabi.replace(/ out /g, " zoutz ");
+        // sabi = sabi.replace(/out /g, "outz ");
+        // sabi = sabi.replace(/zoutz/g, "awtz");
+        // sabi = sabi.replace(/it's/g, "8s");
+        // sabi = sabi.replace(/baby/g, "bheybie");
+        // sabi = sabi.replace(/quote/g, "kowt");
+        // sabi = sabi.replace(/siya/g, "xia");
+        // sabi = sabi.replace(/kasi/g, "kz");
+        // sabi = sabi.replace(/ike/g, "yk");
+        // sabi = sabi.replace(/ are /g, " r ");
+        // sabi = sabi.replace(/are /g, "eyr");
+        // sabi = sabi.replace(/this/g, "dis");
+        // sabi = sabi.replace(/that/g, "dat");
+        // sabi = sabi.replace(/those/g, "doze");
+        // sabi = sabi.replace(/these/g, "deez");
+        // sabi = sabi.replace(/ the /g, " d ");
+        // sabi = sabi.replace(/sayo/g, "xeio");
+        // sabi = sabi.replace(/girl/g, "gurl");
+        // sabi = sabi.replace(/ano/g, "nu");
+        // sabi = sabi.replace(/s /g, "z ");
+        // sabi = sabi.replace(/hindi/g, "ndi");
+        // sabi = sabi.replace(/ka lang/g, "lng u");
+        // sabi = sabi.replace(/nandito/g, "dito");
+        // sabi = sabi.replace(/dito na ako/g, "d2 n p0h me");
+        // sabi = sabi.replace(/po /g, "p0h ");
+        // sabi = sabi.replace(/gusto/g, "gs2");
+        // sabi = sabi.replace(/no /g, "n0h ");
+        // sabi = sabi.replace(/siy/g, "x");
+        // sabi = sabi.replace(/nang/g, "ng");
+        // sabi = sabi.replace(/heto/g, "eto");
+        // sabi = sabi.replace(/eto /g, "e2 ");
+        // sabi = sabi.replace(/etong /g, "e2ng ");
+        // sabi = sabi.replace(/sy/g, "x");
+        // sabi = sabi.replace(/love/g, "luv");
+        // sabi = sabi.replace(/hate/g, "8");
+        // sabi = sabi.replace(/dito/g, "d2");
+        // sabi = sabi.replace(/ka na ba[^A-Za-z]/g, "n b u");
+        // sabi = sabi.replace(/ka na/g, "n u");
+        // sabi = sabi.replace(/hindi ba/g, "db");
+        // sabi = sabi.replace(/di ba/g, "db");
+        // sabi = sabi.replace(/di /g, "d ");
+        // sabi = sabi.replace(/ngayon/g, "ngaun");
+        // sabi = sabi.replace(/text/g, "txt");
+        // sabi = sabi.replace(/to you/g, "2u");
+        // sabi = sabi.replace(/ayo /g, "au ");
+        // sabi = sabi.replace(/ife/g, "yf");
+        // sabi = sabi.replace(/oo /g, "uu ");
+        // sabi = sabi.replace(/nandito/g, "nnd2");
+        // sabi = sabi.replace(/yon/g, "yn");
+        // sabi = sabi.replace(/who/g, "hu");
+        // sabi = sabi.replace(/what/g, "wat");
+        // sabi = sabi.replace(/when/g, "wen");
+        // sabi = sabi.replace(/where/g, "wer");
+        // sabi = sabi.replace(/yan/g, "yn");
+        // sabi = sabi.replace(/punta/g, "pnta");
+        // sabi = sabi.replace(/ am /g, " m ");
+        // sabi = sabi.replace(/good morning/g, "gudam");
+        // sabi = sabi.replace(/good afternoon/g, "gudpm");
+        // sabi = sabi.replace(/good evening/g, "gudpm");
+        // sabi = sabi.replace(/hello/g, "eow p0h");
+        // sabi = sabi.replace(/sige/g, "cge");
+        // sabi = sabi.replace(/sure/g, "xur");
+        // sabi = sabi.replace(/happy/g, "hpi");
+        // sabi = sabi.replace(/na ba[^A-Za-z]/g, "nb$1");
+        // sabi = sabi.replace(/yung/g, "ung");
+        // sabi = sabi.replace(/friend/g, "friendship");
+        // sabi = sabi.replace(/ti/g, "t");
+        // sabi = sabi.replace(/bi/g, "b");
+        // sabi = sabi.replace(/baby/g, "beybi");
+        // sabi = sabi.replace(/babes/g, "bebs");
+        // sabi = sabi.replace(/to you/g, "2u");
+        // sabi = sabi.replace(/for you/g, "4u");
+        // sabi = sabi.replace(/mong/g, "u");
+        // sabi = sabi.replace(/ mo /g, " u ");
+        // sabi = sabi.replace(/ si /g, " c ");
+        // sabi = sabi.replace(/ sina /g, " cna ");
+        // sabi = sabi.replace(/to/g, "2");
+        // sabi = sabi.replace(/you/g, "u");
+        // sabi = sabi.replace(/\./g, " p0h.");
+        // sabi = sabi.replace(/\?/g, ", n0h?");
+        // sabi = sabi.replace(/!/g, " lolz!");
+        // sabi = sabi.replace(/night/g, "nyt");
+        // sabi = sabi.replace(/saan/g, "sn");
+        // sabi = sabi.replace(/kailan/g, "klan");
+        // sabi = sabi.replace(/paano/g, "pnu");
+        // sabi = sabi.replace(/bakit/g, "y");
+        // sabi = sabi.replace(/sinu-sino/g, "cnucnu");
+        // sabi = sabi.replace(/sino-sino/g, "cnucnu");
+        // sabi = sabi.replace(/nu ang/g, "nu");
+        // sabi = sabi.replace(/friendster/g, "frndstr");
+        // sabi = sabi.replace(/testimonial/g, "testi");
+        // sabi = sabi.replace(/really/g, "rly");
+        // sabi = sabi.replace(/sino/g, "cnu");
+        // sabi = sabi.replace(/jared/g, "pogi");
+        // sabi = sabi.replace(/guissmo/g, "gwapo");
+        // sabi = sabi.replace(/ikaw/g, "u");
+        // sabi = sabi.replace(/ako/g, "aq");
+        // sabi = sabi.replace(/ ko/g, " q");
+        // sabi = sabi.replace(/ and /g, " nd ");
+        // sabi = sabi.replace(/hin/g, "hn");
+        // sabi = sabi.replace(/hai/g, "zzhzaizz");
+        // sabi = sabi.replace(/lai/g, "zzlzaizz");
+        // sabi = sabi.replace(/kai/g, "zzkzaizz");
+        // sabi = sabi.replace(/nai/g, "zznzaizz");
+        // sabi = sabi.replace(/bai/g, "zzbzaizz");
+        // sabi = sabi.replace(/gai/g, "zzgzaizz");
+        // sabi = sabi.replace(/mai/g, "zzmzaizz");
+        // sabi = sabi.replace(/wai/g, "zzwzaizz");
+        // sabi = sabi.replace(/pai/g, "zzpzaizz");
+        // sabi = sabi.replace(/sai/g, "zzpzaizz");
+        // sabi = sabi.replace(/haa/g, "zzhzaazz");
+        // sabi = sabi.replace(/laa/g, "zzlzaazz");
+        // sabi = sabi.replace(/kaa/g, "zzkzaazz");
+        // sabi = sabi.replace(/naa/g, "zznzaazz");
+        // sabi = sabi.replace(/baa/g, "zzbzaazz");
+        // sabi = sabi.replace(/gaa/g, "zzgzaazz");
+        // sabi = sabi.replace(/maa/g, "zzmzaazz");
+        // sabi = sabi.replace(/waa/g, "zzwzaazz");
+        // sabi = sabi.replace(/paa/g, "zzpzaazz");
+        // sabi = sabi.replace(/saa/g, "zzpzaazz");
+        // sabi = sabi.replace(/na /g, "zznzazz");
+        // sabi = sabi.replace(/ba /g, "zzbzazz");
+        // sabi = sabi.replace(/ga /g, "zzgzazz");
+        // sabi = sabi.replace(/ma /g, "zzmzazz");
+        // sabi = sabi.replace(/wa /g, "zzwzazz");
+        // sabi = sabi.replace(/pa /g, "zzpzazz");
+        // sabi = sabi.replace(/ha /g, "zzhzazz");
+        // sabi = sabi.replace(/ka /g, "zzkzazz");
+        // sabi = sabi.replace(/sa /g, "zzszazz");
+        // sabi = sabi.replace(/na/g, "n");
+        // sabi = sabi.replace(/ba/g, "b");
+        // sabi = sabi.replace(/ga/g, "g");
+        // sabi = sabi.replace(/ma/g, "m");
+        // sabi = sabi.replace(/wa/g, "w");
+        // sabi = sabi.replace(/pa/g, "p");
+        // sabi = sabi.replace(/ka/g, "k");
+        // sabi = sabi.replace(/sa/g, "s");
+        // sabi = sabi.replace(/zzkzazz/g, "ka ");
+        // sabi = sabi.replace(/zznzazz/g, "na ");
+        // sabi = sabi.replace(/zzbzazz/g, "ba ");
+        // sabi = sabi.replace(/zzgzazz/g, "ga ");
+        // sabi = sabi.replace(/zzmzazz/g, "ma ");
+
+        // sabi = sabi.replace(/zzwzazz/g, "wa ");
+        // sabi = sabi.replace(/zzpzazz/g, "pa ");
+        // sabi = sabi.replace(/zzszazz/g, "sa ");
+        // sabi = sabi.replace(/zzhzazz/g, "ha ");
+        // sabi = sabi.replace(/zzkzazz/g, "ka ");
+        // sabi = sabi.replace(/zznzaizz/g, "nai");
+        // sabi = sabi.replace(/zzbzaizz/g, "bai");
+        // sabi = sabi.replace(/zzgzaizz/g, "gai");
+        // sabi = sabi.replace(/zzmzaizz/g, "mai");
+        // sabi = sabi.replace(/zzwzaizz/g, "wai");
+        // sabi = sabi.replace(/zzpzaizz/g, "pai");
+        // sabi = sabi.replace(/zzhzaizz/g, "hai");
+        // sabi = sabi.replace(/zzlzaizz/g, "lai");
+        // sabi = sabi.replace(/zzkzaizz/g, "kai");
+        // sabi = sabi.replace(/zzszaizz/g, "sai");
+        // sabi = sabi.replace(/zznzaazz/g, "naa");
+        // sabi = sabi.replace(/zzbzaazz/g, "baa");
+        // sabi = sabi.replace(/zzgzaazz/g, "gaa");
+        // sabi = sabi.replace(/zzmzaazz/g, "maa");
+        // sabi = sabi.replace(/zzwzaazz/g, "waa");
+        // sabi = sabi.replace(/zzpzaazz/g, "paa");
+        // sabi = sabi.replace(/zzhzaazz/g, "haa");
+        // sabi = sabi.replace(/zzlzaazz/g, "laa");
+        // sabi = sabi.replace(/zzkzaazz/g, "kaa");
+        // sabi = sabi.replace(/zzszaazz/g, "saa");
+        // sabi = sabi.replace(/vkh/g, "vkah");
+        // sabi = sabi.replace(/ the /g, " d ");
+        // sabi = sabi.replace(/ air/g, "zzzairzzz");
+        // sabi = sabi.replace(/air/g, "r");
+        // sabi = sabi.replace(/zzzairzzz/g, " air");
+        // sabi = sabi.replace(/ ka /g, " u ");
+        // sabi = sabi.replace(/who u, n0h?/g, "hu u?");
+        // sabi = sabi.replace(/syo/g, "sau");
+        // sabi = sabi.replace(/ is /g, " s ");
+        // sabi = sabi.replace(/ are /g, " r ");
+        // sabi = sabi.replace(/p0h/g, "p0wh");
+        return sabi;
       }
 
       function translate(inp: string | string[]) {
@@ -242,232 +628,7 @@ import "@fontsource/rubik-mono-one";
         // }
 
         sabi = sabi.toLowerCase();
-        sabi = sabi.replace(/\.\.\./g, " ~hayz~");
-        sabi = sabi.replace(/'/g, "");
-        sabi = sabi.replace(/’/g, "");
-        sabi = sabi.replace(/‘/g, "");
-        sabi = sabi.replace(/-/g, " ||-||");
-        sabi = sabi.replace(/,/g, " ||,||");
-        sabi = sabi.replace(/kaloka/g, "klk");
-        sabi = sabi.replace(/ see /g, " c ");
-        sabi = sabi.replace(/loka/g, "lurkey");
-        sabi = sabi.replace(/ganun/g, "ganern");
-        sabi = sabi.replace(/ganoon/g, "ganern");
-        sabi = sabi.replace(/ganon/g, "ganern");
-        sabi = sabi.replace(/ friend/g, "beshie");
-        sabi = sabi.replace(/([^ ])ay[ $]/g, "$1ayz ");
-        sabi = sabi.replace(/esk/g, "x");
-        sabi = sabi.replace(/ say /g, " sei ");
-        sabi = sabi.replace(/ lang/g, " lng");
-        sabi = sabi.replace(/ yong/g, " yng");
-        sabi = sabi.replace(/ yong /g, " yng ");
-        sabi = sabi.replace(/ iyong/g, " yng");
-        sabi = sabi.replace(/time/g, "tym");
-        sabi = sabi.replace(/say/g, "xai");
-        sabi = sabi.replace(/baka/g, "vkh");
-        sabi = sabi.replace(/kaka/g, "ka2");
-        sabi = sabi.replace(/pinaka/g, "pnk");
-        sabi = sabi.replace(/ hindi /g, " d ");
-        sabi = sabi.replace(/ di /g, " d ");
-        sabi = sabi.replace(/kem/g, "km");
-        sabi = sabi.replace(/okay/g, "ok");
-        sabi = sabi.replace(/huwag/g, "wg");
-        sabi = sabi.replace(/wag/g, "wg");
-        sabi = sabi.replace(/sc/g, "x");
-        sabi = sabi.replace(/kayo/g, "kyu");
-        sabi = sabi.replace(/tia/g, "xa");
-        sabi = sabi.replace(/okay/g, "ok");
-        sabi = sabi.replace(/ sc/g, " x");
-        sabi = sabi.replace(/kayo/g, "kyu");
-        sabi = sabi.replace(/tia/g, "xa");
-        sabi = sabi.replace(/hehe/g, "jeje");
-        sabi = sabi.replace(/haha/g, "jaja");
-        sabi = sabi.replace(/jehe/g, "jeje");
-        sabi = sabi.replace(/jaha/g, "jaja");
-        sabi = sabi.replace(/ate/g, "z8z");
-        sabi = sabi.replace(/ z8z /g, " ate ");
-        sabi = sabi.replace(/z8z/g, "8");
-        sabi = sabi.replace(/all/g, "ol");
-        sabi = sabi.replace(/ out /g, " zoutz ");
-        sabi = sabi.replace(/out /g, "outz ");
-        sabi = sabi.replace(/zoutz/g, "awtz");
-        sabi = sabi.replace(/it's/g, "8s");
-        sabi = sabi.replace(/baby/g, "bheybie");
-        sabi = sabi.replace(/quote/g, "kowt");
-        sabi = sabi.replace(/siya/g, "xia");
-        sabi = sabi.replace(/kasi/g, "kz");
-        sabi = sabi.replace(/ike/g, "yk");
-        sabi = sabi.replace(/ are /g, " r ");
-        sabi = sabi.replace(/are /g, "eyr");
-        sabi = sabi.replace(/this/g, "dis");
-        sabi = sabi.replace(/that/g, "dat");
-        sabi = sabi.replace(/those/g, "doze");
-        sabi = sabi.replace(/these/g, "deez");
-        sabi = sabi.replace(/ the /g, " d ");
-        sabi = sabi.replace(/sayo/g, "xeio");
-        sabi = sabi.replace(/girl/g, "gurl");
-        sabi = sabi.replace(/ano/g, "nu");
-        sabi = sabi.replace(/s /g, "z ");
-        sabi = sabi.replace(/hindi/g, "ndi");
-        sabi = sabi.replace(/ka lang/g, "lng u");
-        sabi = sabi.replace(/nandito/g, "dito");
-        sabi = sabi.replace(/dito na ako/g, "d2 n p0h me");
-        sabi = sabi.replace(/po /g, "p0h ");
-        sabi = sabi.replace(/gusto/g, "gs2");
-        sabi = sabi.replace(/no /g, "n0h ");
-        sabi = sabi.replace(/siy/g, "x");
-        sabi = sabi.replace(/nang/g, "ng");
-        sabi = sabi.replace(/heto/g, "eto");
-        sabi = sabi.replace(/eto /g, "e2 ");
-        sabi = sabi.replace(/etong /g, "e2ng ");
-        sabi = sabi.replace(/sy/g, "x");
-        sabi = sabi.replace(/love/g, "luv");
-        sabi = sabi.replace(/hate/g, "8");
-        sabi = sabi.replace(/dito/g, "d2");
-        sabi = sabi.replace(/ka na ba[^A-Za-z]/g, "n b u");
-        sabi = sabi.replace(/ka na/g, "n u");
-        sabi = sabi.replace(/hindi ba/g, "db");
-        sabi = sabi.replace(/di ba/g, "db");
-        sabi = sabi.replace(/di /g, "d ");
-        sabi = sabi.replace(/ngayon/g, "ngaun");
-        sabi = sabi.replace(/text/g, "txt");
-        sabi = sabi.replace(/to you/g, "2u");
-        sabi = sabi.replace(/ayo /g, "au ");
-        sabi = sabi.replace(/ife/g, "yf");
-        sabi = sabi.replace(/oo /g, "uu ");
-        sabi = sabi.replace(/nandito/g, "nnd2");
-        sabi = sabi.replace(/yon/g, "yn");
-        sabi = sabi.replace(/who/g, "hu");
-        sabi = sabi.replace(/what/g, "wat");
-        sabi = sabi.replace(/when/g, "wen");
-        sabi = sabi.replace(/where/g, "wer");
-        sabi = sabi.replace(/yan/g, "yn");
-        sabi = sabi.replace(/punta/g, "pnta");
-        sabi = sabi.replace(/ am /g, " m ");
-        sabi = sabi.replace(/good morning/g, "gudam");
-        sabi = sabi.replace(/good afternoon/g, "gudpm");
-        sabi = sabi.replace(/good evening/g, "gudpm");
-        sabi = sabi.replace(/hello/g, "eow p0h");
-        sabi = sabi.replace(/sige/g, "cge");
-        sabi = sabi.replace(/sure/g, "xur");
-        sabi = sabi.replace(/happy/g, "hpi");
-        sabi = sabi.replace(/na ba[^A-Za-z]/g, "nb$1");
-        sabi = sabi.replace(/yung/g, "ung");
-        sabi = sabi.replace(/friend/g, "friendship");
-        sabi = sabi.replace(/ti/g, "t");
-        sabi = sabi.replace(/bi/g, "b");
-        sabi = sabi.replace(/baby/g, "beybi");
-        sabi = sabi.replace(/babes/g, "bebs");
-        sabi = sabi.replace(/to you/g, "2u");
-        sabi = sabi.replace(/for you/g, "4u");
-        sabi = sabi.replace(/mong/g, "u");
-        sabi = sabi.replace(/ mo /g, " u ");
-        sabi = sabi.replace(/ si /g, " c ");
-        sabi = sabi.replace(/ sina /g, " cna ");
-        sabi = sabi.replace(/to/g, "2");
-        sabi = sabi.replace(/you/g, "u");
-        sabi = sabi.replace(/\./g, " p0h.");
-        sabi = sabi.replace(/\?/g, ", n0h?");
-        sabi = sabi.replace(/!/g, " lolz!");
-        sabi = sabi.replace(/tu/g, "2u");
-        sabi = sabi.replace(/night/g, "nyt");
-        sabi = sabi.replace(/saan/g, "sn");
-        sabi = sabi.replace(/kailan/g, "klan");
-        sabi = sabi.replace(/paano/g, "pnu");
-        sabi = sabi.replace(/bakit/g, "y");
-        sabi = sabi.replace(/sinu-sino/g, "cnucnu");
-        sabi = sabi.replace(/sino-sino/g, "cnucnu");
-        sabi = sabi.replace(/nu ang/g, "nu");
-        sabi = sabi.replace(/friendster/g, "frndstr");
-        sabi = sabi.replace(/testimonial/g, "testi");
-        sabi = sabi.replace(/really/g, "rly");
-        sabi = sabi.replace(/sino/g, "cnu");
-        sabi = sabi.replace(/jared/g, "pogi");
-        sabi = sabi.replace(/guissmo/g, "gwapo");
-        sabi = sabi.replace(/ikaw/g, "u");
-        sabi = sabi.replace(/ako/g, "aq");
-        sabi = sabi.replace(/ ko/g, " q");
-        sabi = sabi.replace(/ and /g, " nd ");
-        sabi = sabi.replace(/hin/g, "hn");
-        sabi = sabi.replace(/hai/g, "zzhzaizz");
-        sabi = sabi.replace(/lai/g, "zzlzaizz");
-        sabi = sabi.replace(/kai/g, "zzkzaizz");
-        sabi = sabi.replace(/nai/g, "zznzaizz");
-        sabi = sabi.replace(/bai/g, "zzbzaizz");
-        sabi = sabi.replace(/gai/g, "zzgzaizz");
-        sabi = sabi.replace(/mai/g, "zzmzaizz");
-        sabi = sabi.replace(/wai/g, "zzwzaizz");
-        sabi = sabi.replace(/pai/g, "zzpzaizz");
-        sabi = sabi.replace(/sai/g, "zzpzaizz");
-        sabi = sabi.replace(/haa/g, "zzhzaazz");
-        sabi = sabi.replace(/laa/g, "zzlzaazz");
-        sabi = sabi.replace(/kaa/g, "zzkzaazz");
-        sabi = sabi.replace(/naa/g, "zznzaazz");
-        sabi = sabi.replace(/baa/g, "zzbzaazz");
-        sabi = sabi.replace(/gaa/g, "zzgzaazz");
-        sabi = sabi.replace(/maa/g, "zzmzaazz");
-        sabi = sabi.replace(/waa/g, "zzwzaazz");
-        sabi = sabi.replace(/paa/g, "zzpzaazz");
-        sabi = sabi.replace(/saa/g, "zzpzaazz");
-        sabi = sabi.replace(/na /g, "zznzazz");
-        sabi = sabi.replace(/ba /g, "zzbzazz");
-        sabi = sabi.replace(/ga /g, "zzgzazz");
-        sabi = sabi.replace(/ma /g, "zzmzazz");
-        sabi = sabi.replace(/wa /g, "zzwzazz");
-        sabi = sabi.replace(/pa /g, "zzpzazz");
-        sabi = sabi.replace(/ha /g, "zzhzazz");
-        sabi = sabi.replace(/ka /g, "zzkzazz");
-        sabi = sabi.replace(/sa /g, "zzszazz");
-        sabi = sabi.replace(/na/g, "n");
-        sabi = sabi.replace(/ba/g, "b");
-        sabi = sabi.replace(/ga/g, "g");
-        sabi = sabi.replace(/ma/g, "m");
-        sabi = sabi.replace(/wa/g, "w");
-        sabi = sabi.replace(/pa/g, "p");
-        sabi = sabi.replace(/ka/g, "k");
-        sabi = sabi.replace(/sa/g, "s");
-        sabi = sabi.replace(/zzkzazz/g, "ka ");
-        sabi = sabi.replace(/zznzazz/g, "na ");
-        sabi = sabi.replace(/zzbzazz/g, "ba ");
-        sabi = sabi.replace(/zzgzazz/g, "ga ");
-        sabi = sabi.replace(/zzmzazz/g, "ma ");
-
-        sabi = sabi.replace(/zzwzazz/g, "wa ");
-        sabi = sabi.replace(/zzpzazz/g, "pa ");
-        sabi = sabi.replace(/zzszazz/g, "sa ");
-        sabi = sabi.replace(/zzhzazz/g, "ha ");
-        sabi = sabi.replace(/zzkzazz/g, "ka ");
-        sabi = sabi.replace(/zznzaizz/g, "nai");
-        sabi = sabi.replace(/zzbzaizz/g, "bai");
-        sabi = sabi.replace(/zzgzaizz/g, "gai");
-        sabi = sabi.replace(/zzmzaizz/g, "mai");
-        sabi = sabi.replace(/zzwzaizz/g, "wai");
-        sabi = sabi.replace(/zzpzaizz/g, "pai");
-        sabi = sabi.replace(/zzhzaizz/g, "hai");
-        sabi = sabi.replace(/zzlzaizz/g, "lai");
-        sabi = sabi.replace(/zzkzaizz/g, "kai");
-        sabi = sabi.replace(/zzszaizz/g, "sai");
-        sabi = sabi.replace(/zznzaazz/g, "naa");
-        sabi = sabi.replace(/zzbzaazz/g, "baa");
-        sabi = sabi.replace(/zzgzaazz/g, "gaa");
-        sabi = sabi.replace(/zzmzaazz/g, "maa");
-        sabi = sabi.replace(/zzwzaazz/g, "waa");
-        sabi = sabi.replace(/zzpzaazz/g, "paa");
-        sabi = sabi.replace(/zzhzaazz/g, "haa");
-        sabi = sabi.replace(/zzlzaazz/g, "laa");
-        sabi = sabi.replace(/zzkzaazz/g, "kaa");
-        sabi = sabi.replace(/zzszaazz/g, "saa");
-        sabi = sabi.replace(/vkh/g, "vkah");
-        sabi = sabi.replace(/ the /g, " d ");
-        sabi = sabi.replace(/ air/g, "zzzairzzz");
-        sabi = sabi.replace(/air/g, "r");
-        sabi = sabi.replace(/zzzairzzz/g, " air");
-        sabi = sabi.replace(/ ka /g, " u ");
-        sabi = sabi.replace(/who u, n0h?/g, "hu u?");
-        sabi = sabi.replace(/syo/g, "sau");
-        sabi = sabi.replace(/ is /g, " s ");
-        sabi = sabi.replace(/ are /g, " r ");
-        sabi = sabi.replace(/p0h/g, "p0wh");
+        sabi = replaceLetters(sabi);
         sabi = sabi.replace(/\|\|-\|/g, "-");
         sabi = sabi.replace(/\|\|,\|\|/g, ",");
         sabi = sabi.replace(/  /g, " ");
@@ -500,6 +661,11 @@ import "@fontsource/rubik-mono-one";
 
       const inputBox = document.getElementById("inputBox");
       inputBox.addEventListener("input", () => {
+        document.getElementById("translated").innerText = translate(
+          inputBox.value
+        );
+      });
+      inputBox.addEventListener("keyup", () => {
         document.getElementById("translated").innerText = translate(
           inputBox.value
         );
