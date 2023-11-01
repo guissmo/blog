@@ -64,4 +64,5 @@ pre {
   width: 100%;
   overflow: auto scroll;
   white-space: nowrap;
+  font-weight: 300;
 }

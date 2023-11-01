@@ -10,6 +10,7 @@ const { frontmatter } = Astro.props;
 
 <html>
   <head>
+    <title>{frontmatter.title} | Jared Asuncion</title>
     <!-- Add other Head elements here, like styles and meta tags. -->
     <meta charset="utf-8" />
     <meta name="title" content={`${frontmatter.title} | Jared Asuncion`} />
@@ -81,10 +82,6 @@ const { frontmatter } = Astro.props;
   h1:not(#logo) {
     font-weight: 800;
     padding-top: 2ex;
-  }
-
-  a {
-    font-weight: 600;
   }
 
   .content {

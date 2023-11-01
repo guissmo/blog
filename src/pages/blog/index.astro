@@ -23,9 +23,11 @@ import "@fontsource/rubik-mono-one";
   <body>
     <main>
       <Header />
-      <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
-      <span class="raquo">&raquo;</span>
-      <a href="#">Blog</a>
+      <div class="breadcrumbs">
+        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
+        <span class="raquo">&raquo;</span>
+        <a href="#">Blog</a>
+      </div>
       <div class="postList">
         {
           Object.keys(allBlogPostsByCategory).map((category) => {
