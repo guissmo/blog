@@ -12,7 +12,7 @@ tags:
   - apps
 ---
 
-I was supposed to be the playing [the Guardians of the Galaxy game](https://store.steampowered.com/app/1088850/Marvels_Guardians_of_the_Galaxy/) I bought from leboncoin this weekend but my GPU was apparently too weak so that game has to wait and I had nothing to do. So why not make a single page app and really test out Astro.
+I was supposed to be the playing [the Guardians of the Galaxy game](https://store.steampowered.com/app/1088850/Marvels_Guardians_of_the_Galaxy/) I bought from leboncoin this weekend but my GPU was apparently too weak so that game has to wait and I had nothing to do. So why not make a [single page app](https://guissmo.com/lola) with a YouTube embed and really test out Astro.
 
 ## Migration to Astro
 
@@ -26,7 +26,7 @@ Updating the website is now as simple as an `npm run build` and an `rsync` to my
 
 Astro supposedly supports React components. To test this, I wrote a single page "app" that plays [Lola](https://www.youtube.com/watch?v=XTCnxizYs80), a song containing exclusively four-letter words.
 
-I'm quite happy with how [the app](https://www.youtube.com/watch?v=XTCnxizYs80) ended up. I even sent the to the comedian who composed the song hoping that he'll appreciate it.
+I'm quite happy with how [the app](https://guissmo.com/lola) ended up. I even sent the to the comedian who composed the song hoping that he'll appreciate it.
 
 ### React Components in Astro
 
