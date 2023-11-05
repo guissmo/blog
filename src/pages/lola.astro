@@ -112,15 +112,15 @@ const lyrics = `
 [00:50.14]Just
 [00:50.42]hits
 [00:50.70]diff
-[00:51.35]Free
+[00:51.40]Free
 [00:51.55]jazz
-[00:51.75]funk
-[00:51.94]rock
-[00:52.10]with
+[00:51.80]funk
+[00:51.95]rock
+[00:52.30]with
 [00:52.69]Lola
-[00:53.49]
-[00:53.54]That
-[00:53.54]shit
+[00:53.29]
+[00:53.44]That
+[00:53.64]shit
 [00:53.82]hits
 [00:54.39]diff
 [00:55.19]
@@ -181,7 +181,7 @@ const lyrics = `
 [01:21.57]Just
 [01:22.14]JPEG
 [01:23.27]pics
-[01:25.27]pics`;
+[01:25.27]REDO`;
 
 let lines = lyrics.trim().split("\n");
 ---
@@ -196,36 +196,68 @@ let lines = lyrics.trim().split("\n");
     <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
     <Head />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <title>Jared Asuncion | Karaokle Test</title>
+    <title>Lola</title>
   </head>
   <body class="bg-dark">
-    <!-- 5RaxWDDo8As -->
-    <!-- PJ-KP0fdtxc -->
-    <!-- 0J3wIDAaLSU -->
-    <!-- gzLvORW24tw -->
-    <!-- wfxt1SGWAI8 -->
-
-    <!-- CONTAINER -->
-    <!-- <div id="container"> -->
-
-    <!-- <div id="main-div"> -->
     <center>
-      <div
-        class="player js-player"
-        id="the-player"
-        data-youtube-videoid="XTCnxizYs80"
-      >
+      <div class="content-container">
+        <div
+          class="player js-player"
+          id="the-player"
+          data-youtube-videoid="XTCnxizYs80"
+          style={{ display: "none" }}
+        >
+        </div>
+        <p style={{ fontFamily: "Fredoka Variable", color: "white" }}>
+          a song containing exclusively four-letter words by<br /><a
+            href="https://brettdomino.bandcamp.com"
+            target="_blank"
+            class="link">Brett Domino</a
+          >
+        </p>
+        <YoutubePlayer
+          client:only="react"
+          lines={lines}
+          lrcOffset={timeAdjust}
+        />
       </div>
-      <YoutubePlayer client:only="react" lines={lines} lrcOffset={timeAdjust} />
+      <div class="subtle-footer">
+        <p
+          style={{
+            fontFamily: "Fredoka Variable",
+            color: "white",
+            textAlign: "right",
+            opacity: 0.8,
+          }}
+        >
+          webpage made by <a href="https://guissmo.com" class="link">guissmo</a>
+        </p>
+      </div>
     </center>
+    <style>
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .link {
+        color: lightblue;
+      }
+
+      .link:hover {
+        background: darkred;
+      }
+
+      .subtle-footer {
+        position: absolute;
+        bottom: 3vh;
+        right: 3vw;
+        max-width: 70vw;
+      }
+    </style>
   </body>
 </html>

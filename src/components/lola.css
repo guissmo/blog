@@ -3,7 +3,7 @@
 }
 
 .word {
-  width: 100%;
+  width: clamp(25vw, 600px, 100vw);
   display: flex;
   border: 5px white solid;
   box-sizing: border-box;
@@ -12,8 +12,13 @@
 
 .letter-box {
   width: 25%;
-  height: 125px;
-  background: darkred;
+  aspect-ratio: 1;
+  background: rgb(101, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(101, 0, 0, 1) 0%,
+    rgba(139, 0, 0, 1) 6%
+  );
   flex-basis: auto;
   text-transform: uppercase;
   border: 5px white solid;
@@ -27,4 +32,27 @@
   color: white;
   font-size: 88px;
   font-weight: 600;
+  pointer-events: none;
+}
+
+.action {
+  width: 25%;
+  aspect-ratio: 1;
+  background: rgb(101, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(101, 0, 0, 1) 0%,
+    rgba(139, 0, 0, 1) 6%
+  );
+  flex-basis: auto;
+  text-transform: uppercase;
+  border: 5px white solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.action .letter {
+  color: white;
 }
