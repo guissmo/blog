@@ -83,8 +83,8 @@ const lyrics = `
 [00:33.98]Jona
 [00:34.54]feel
 [00:34.82]sick
-[00:35.67]That
-[00:35.96]boy's
+[00:35.37]That
+[00:35.66]boy's
 [00:35.96]hips
 [00:36.33]ain't
 [00:36.53]that
@@ -109,7 +109,7 @@ const lyrics = `
 [00:47.87]Wine
 [00:48.44]with
 [00:48.72]Lola
-[00:50.14]Just
+[00:49.74]Just
 [00:50.42]hits
 [00:50.70]diff
 [00:51.40]Free
@@ -194,7 +194,10 @@ let lines = lyrics.trim().split("\n");
       href=`${import.meta.env.BASE_URL}/style.css`
     />
     <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <Head />
+    <Head
+      title="Lola"
+      description="A karaoke-version of Brett Domino's song Lola."
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Lola</title>
   </head>
@@ -205,7 +208,6 @@ let lines = lyrics.trim().split("\n");
           class="player js-player"
           id="the-player"
           data-youtube-videoid="XTCnxizYs80"
-          style={{ display: "none" }}
         >
         </div>
         <p style={{ fontFamily: "Fredoka Variable", color: "white" }}>
@@ -220,6 +222,15 @@ let lines = lyrics.trim().split("\n");
           lines={lines}
           lrcOffset={timeAdjust}
         />
+        <p
+          style={{ fontFamily: "Fredoka Variable", color: "white", opacity: 0 }}
+        >
+          a song containing exclusively four-letter words by<br /><a
+            href="https://brettdomino.bandcamp.com"
+            target="_blank"
+            class="link">Brett Domino</a
+          >
+        </p>
       </div>
       <div class="subtle-footer">
         <p
@@ -235,6 +246,13 @@ let lines = lyrics.trim().split("\n");
       </div>
     </center>
     <style>
+      #the-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+      }
       .content-container {
         display: flex;
         flex-direction: column;

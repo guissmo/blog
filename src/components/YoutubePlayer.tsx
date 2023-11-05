@@ -398,26 +398,6 @@ export default function YoutubePlayer({
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // useEffect(() => {
-  //   const handleIsPlayingChange = () => {
-  //     document.querySelector("#the-player")!.style.display = "none";
-  //     //@ts-ignore
-  //     setIsPlaying(Boolean(window.player.played));
-  //   };
-
-  //   //@ts-ignore
-  //   if (window.player !== undefined) {
-  //     //@ts-ignore
-  //     window.player.addEventListener("play", handleIsPlayingChange);
-  //     window.player.addEventListener("pause", handleIsPlayingChange);
-  //   }
-
-  //   return () => {
-  //     window.player.removeEventListener("play", handleIsPlayingChange);
-  //     window.player.removeEventListener("pause", handleIsPlayingChange);
-  //   };
-  // }, []);
-
   const div = document.querySelector("#the-player");
   const player = (window.player = youtube({
     el: div,

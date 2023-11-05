@@ -3,8 +3,10 @@ import "./lola.css";
 
 function FourLetterWord({ word }: { word: string }) {
   const safe = word.replace(/[^a-zA-Z]/g, "").padEnd(4, ".");
-  let classNameStr = "letter-box";
-  if (safe === "PLAY") classNameStr = "action";
+  let letterBoxClass = "letter-box";
+  let letterClass = "letter";
+  if (safe === "PLAY") letterBoxClass = "action";
+  if (safe === "WAIT") letterClass += " loading";
   if (safe !== "PLAY" && safe !== "REDO" && safe !== "WAIT") {
     //@ts-ignore
     document.title = safe.toUpperCase();
@@ -14,33 +16,33 @@ function FourLetterWord({ word }: { word: string }) {
   }
   return (
     <div className="word">
-      <span className={classNameStr}>
+      <span className={letterBoxClass}>
         <span
-          className={"letter"}
+          className={letterClass}
           style={{ opacity: safe.charAt(0) == "." ? 0 : 1 }}
         >
           {safe.charAt(0)}
         </span>
       </span>
-      <span className={classNameStr}>
+      <span className={letterBoxClass}>
         <span
-          className={"letter"}
+          className={letterClass}
           style={{ opacity: safe.charAt(1) == "." ? 0 : 1 }}
         >
           {safe.charAt(1)}
         </span>
       </span>
-      <span className={classNameStr}>
+      <span className={letterBoxClass}>
         <span
-          className={"letter"}
+          className={letterClass}
           style={{ opacity: safe.charAt(2) == "." ? 0 : 1 }}
         >
           {safe.charAt(2)}
         </span>
       </span>
-      <span className={classNameStr}>
+      <span className={letterBoxClass}>
         <span
-          className={"letter"}
+          className={letterClass}
           style={{ opacity: safe.charAt(3) == "." ? 0 : 1 }}
         >
           {safe.charAt(3)}
@@ -70,7 +72,7 @@ export default function Lyrics({
   const [time, setTime] = useState(0);
   const [lineIndex, setLineIndex] = useState(0);
 
-  const [word, setWord] = useState("PLAY");
+  const [word, setWord] = useState("WAIT");
 
   useEffect(() => {
     const handleTimeChange = () => {
@@ -84,6 +86,21 @@ export default function Lyrics({
     return () => {
       //@ts-ignore
       window.player.removeEventListener("timeupdate", handleTimeChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleReady = () => {
+      //@ts-ignore
+      setWord("PLAY");
+    };
+    //@ts-ignore
+    if (window.player !== undefined)
+      //@ts-ignore
+      window.player.addEventListener("ready", handleReady);
+    return () => {
+      //@ts-ignore
+      window.player.removeEventListener("ready", handleReady);
     };
   }, []);
 
@@ -121,8 +138,8 @@ export default function Lyrics({
           : () => {}
       }
       style={{
-        cursor: lineIndex < 1 || word == "REDO" ? "pointer" : "unset",
-        pointerEvents: lineIndex < 1 || word == "REDO" ? "auto" : "none",
+        cursor: word == "PLAY" || word == "REDO" ? "pointer" : "unset",
+        pointerEvents: word == "PLAY" || word == "REDO" ? "auto" : "none",
       }}
     >
       <FourLetterWord word={word} />

@@ -56,3 +56,16 @@
 .action .letter {
   color: white;
 }
+
+@keyframes pulse {
+  0% {
+    color: rgb(255, 255, 255, 0.6);
+  }
+  100% {
+    color: rgb(255, 255, 255, 0.9);
+  }
+}
+
+.loading {
+  animation: pulse 5s infinite;
+}
