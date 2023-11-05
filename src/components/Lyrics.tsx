@@ -60,19 +60,8 @@ function processLine(line: string) {
   return { start: time, text: text.trim() };
 }
 
-export default function Lyrics({
-  player,
-  lines,
-  lrcOffset,
-}: {
-  player: any;
-  lines: string[];
-  lrcOffset: number;
-}) {
+function useVideoPlayerTimestamp() {
   const [time, setTime] = useState(0);
-  const [lineIndex, setLineIndex] = useState(0);
-
-  const [word, setWord] = useState("WAIT");
 
   useEffect(() => {
     const handleTimeChange = () => {
@@ -88,6 +77,23 @@ export default function Lyrics({
       window.player.removeEventListener("timeupdate", handleTimeChange);
     };
   }, []);
+
+  return time;
+}
+
+export default function Lyrics({
+  player,
+  lines,
+  lrcOffset,
+}: {
+  player: any;
+  lines: string[];
+  lrcOffset: number;
+}) {
+  const time = useVideoPlayerTimestamp();
+  const [lineIndex, setLineIndex] = useState(0);
+
+  const [word, setWord] = useState("WAIT");
 
   useEffect(() => {
     const handleReady = () => {
@@ -132,7 +138,6 @@ export default function Lyrics({
               //@ts-ignore
               window.player.currentTime = 0;
               setWord("PLAY");
-              setTime(0);
               setLineIndex(0);
             }
           : () => {}

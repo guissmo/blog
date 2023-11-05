@@ -396,8 +396,6 @@ export default function YoutubePlayer({
   lines: string[];
   lrcOffset: number;
 }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   const div = document.querySelector("#the-player");
   const player = (window.player = youtube({
     el: div,
