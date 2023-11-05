@@ -1,4 +1,25 @@
 import { useEffect, useState } from "react";
+import "./lola.css";
+
+function FourLetterWord({ word }: { word: string }) {
+  const safe = word.replace(/[^a-zA-Z]/g, "").padEnd(4, " ");
+  return (
+    <div className="word">
+      <span className="letter-box">
+        <span class="letter">{safe.charAt(0)}</span>
+      </span>
+      <span className="letter-box">
+        <span class="letter">{safe.charAt(1)}</span>
+      </span>
+      <span className="letter-box">
+        <span class="letter">{safe.charAt(2)}</span>
+      </span>
+      <span className="letter-box">
+        <span class="letter">{safe.charAt(3)}</span>
+      </span>
+    </div>
+  );
+}
 
 function processLine(line: string) {
   let [timeStr, text] = line.trim().split("]");
@@ -42,6 +63,10 @@ export default function Lyrics({
   }, [time]);
 
   return (
-    <div>{lineIndex < 1 ? "" : processLine(lines[lineIndex - 1]).text}</div>
+    <div>
+      <FourLetterWord
+        word={lineIndex < 1 ? "" : processLine(lines[lineIndex - 1]).text}
+      />
+    </div>
   );
 }

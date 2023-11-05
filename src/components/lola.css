@@ -1,0 +1,30 @@
+.bg-dark {
+  background: black;
+}
+
+.word {
+  width: 100%;
+  display: flex;
+  border: 5px white solid;
+  box-sizing: border-box;
+  font-family: "Source Code Pro Variable";
+}
+
+.letter-box {
+  width: 25%;
+  height: 125px;
+  background: darkred;
+  flex-basis: auto;
+  text-transform: uppercase;
+  border: 5px white solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.letter {
+  color: white;
+  font-size: 88px;
+  font-weight: 600;
+}
