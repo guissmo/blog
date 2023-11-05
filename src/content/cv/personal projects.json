@@ -1,4 +1,18 @@
 {
+  "lola": {
+    "name": "Lola: An App For a Song With Only Four Letter Words",
+    "url": {
+      "project": "https://guissmo.com/lola",
+      "blog post": "https://guissmo.com/blog/lola-an-app-for-a-song-with-only-for-letter-words",
+      "code": "https://github.com/guissmo/blog/blob/main/src/pages/lola.astro"
+    },
+    "month": 11,
+    "year": 2023,
+    "details": [
+      "Uses React components in the Astro open-source web framework",
+      "Syncs lyrics with a hidden YouTube embed"
+    ]
+  },
   "rick-and-morty": {
     "name": "Rick and Morty Character Explorer",
     "url": {
