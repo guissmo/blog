@@ -196,17 +196,12 @@ let lines = lyrics.trim().split("\n");
 
     <!-- <div id="main-div"> -->
     <center>
-      <h1>NOPLPdle (alpha)</h1>
       <div
         class="player js-player"
         id="the-player"
         data-youtube-videoid="XTCnxizYs80"
       >
       </div>
-      <div class=".top-pane">
-        <h3>La ballade des gens heureux - Gerard Lenorman</h3>
-      </div>
-      <p class="lyric noplp-box">&nbsp;</p>
       <YoutubePlayer client:only="react" lines={lines} lrcOffset={timeAdjust} />
     </center>
   </body>
