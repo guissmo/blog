@@ -246,13 +246,13 @@ let lines = lyrics.trim().split("\n");
             color: "white",
             textAlign: "left",
             opacity: 0.4,
-            maxWidth: "40vw",
+            maxWidth: "80vw",
           }}
         >
           tap or click a <span class="four-letter">four</span>-letter <span
             class="four-letter">word</span
-          > to <span class="four-letter">play</span><br />or pause music in the
-          middle of the <span class="four-letter">song</span>
+          > to <span class="four-letter">play</span> or pause music in the middle
+          of the <span class="four-letter">song</span>
         </p>
       </div>
       <div class="subtle-footer">
@@ -262,7 +262,7 @@ let lines = lyrics.trim().split("\n");
             color: "white",
             textAlign: "right",
             opacity: 0.8,
-            maxWidth: "40vw",
+            maxWidth: "20vw",
           }}
         >
           webpage <span class="four-letter">made</span> by <a
@@ -324,7 +324,7 @@ let lines = lyrics.trim().split("\n");
         //@ts-ignore
         if (window.player == null) return;
         if (window.player.paused == null) return;
-        if (window.player.play == null) {
+        if (window.player.play == null && window.player.currentTime > 0) {
           window.player.play();
         }
         //@ts-ignore
