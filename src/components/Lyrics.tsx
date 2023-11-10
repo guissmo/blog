@@ -140,11 +140,19 @@ export default function Lyrics({
               setWord("PLAY");
               setLineIndex(0);
             }
-          : () => {}
+          : () => {
+              if (word == "WAIT") return;
+              //@ts-ignore
+              if (window.player.played == true) window.player.pause();
+              else {
+                //@ts-ignore
+                if (window.player.paused == true) window.player.play();
+              }
+            }
       }
       style={{
-        cursor: word == "PLAY" || word == "REDO" ? "pointer" : "unset",
-        pointerEvents: word == "PLAY" || word == "REDO" ? "auto" : "none",
+        cursor: word != "WAIT" ? "pointer" : "wait",
+        pointerEvents: word != "WAIT" ? "auto" : "none",
       }}
     >
       <FourLetterWord word={word} />

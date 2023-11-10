@@ -209,7 +209,9 @@ let lines = lyrics.trim().split("\n");
         >
         </div>
         <p style={{ fontFamily: "Fredoka Variable", color: "white" }}>
-          a song containing exclusively four-letter words by<br /><a
+          a <span class="four-letter">song</span> containing exclusively <span
+            class="four-letter">four</span
+          >-letter words by<br /><a
             href="https://brettdomino.bandcamp.com"
             target="_blank"
             class="link">Brett Domino</a
@@ -221,13 +223,36 @@ let lines = lyrics.trim().split("\n");
           lrcOffset={timeAdjust}
         />
         <p
-          style={{ fontFamily: "Fredoka Variable", color: "white", opacity: 0 }}
+          style={{
+            fontFamily: "Fredoka Variable",
+            color: "white",
+            opacity: 0,
+            pointerEvents: "none",
+          }}
         >
-          a song containing exclusively four-letter words by<br /><a
+          a <span class="four-letter">song</span> containing exclusively <span
+            class="four-letter">four</span
+          >-letter words by<br /><a
             href="https://brettdomino.bandcamp.com"
             target="_blank"
             class="link">Brett Domino</a
           >
+        </p>
+      </div>
+      <div class="subtle-footer-left play-pause-notice">
+        <p
+          style={{
+            fontFamily: "Fredoka Variable",
+            color: "white",
+            textAlign: "left",
+            opacity: 0.4,
+            maxWidth: "40vw",
+          }}
+        >
+          tap or click a <span class="four-letter">four</span>-letter <span
+            class="four-letter">word</span
+          > to <span class="four-letter">play</span><br />or pause music in the
+          middle of the <span class="four-letter">song</span>
         </p>
       </div>
       <div class="subtle-footer">
@@ -237,13 +262,24 @@ let lines = lyrics.trim().split("\n");
             color: "white",
             textAlign: "right",
             opacity: 0.8,
+            maxWidth: "40vw",
           }}
         >
-          webpage made by <a href="https://guissmo.com" class="link">guissmo</a>
+          webpage <span class="four-letter">made</span> by <a
+            href="https://guissmo.com"
+            class="link">guissmo</a
+          >
         </p>
       </div>
     </center>
     <style>
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+        height: 100vh;
+      }
+
       #the-player {
         position: absolute;
         top: 0;
@@ -275,6 +311,37 @@ let lines = lyrics.trim().split("\n");
         right: 3vw;
         max-width: 70vw;
       }
+
+      .subtle-footer-left {
+        position: absolute;
+        bottom: 3vh;
+        left: 3vw;
+        max-width: 70vw;
+      }
     </style>
+    <script>
+      function playPause() {
+        //@ts-ignore
+        if (window.player == null) return;
+        if (window.player.paused == null) return;
+        if (window.player.play == null) {
+          window.player.play();
+        }
+        //@ts-ignore
+        if (window.player!.paused) window.player!.play();
+        //@ts-ignore
+        else window.player!.pause();
+      }
+
+      const fourLetters = Array.from(
+        document.getElementsByClassName("four-letter")
+      );
+
+      fourLetters.map((elt) => {
+        elt.addEventListener("click", () => {
+          playPause();
+        });
+      });
+    </script>
   </body>
 </html>
