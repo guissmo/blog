@@ -1,6 +1,6 @@
 {
   "frontend": ["React", "React Router", "MobX", "Material UI", "Next.JS"],
-  "programming": ["C", "Java", "Python", "JavaScript", "Typescript"],
+  "programming": ["C", "Java", "Python", "JavaScript", "Typescript", "QBasic"],
   "version control": ["Git"],
   "markup": ["HTML", "LaTeX", "Markdown"],
   "virtualization": ["Docker"],

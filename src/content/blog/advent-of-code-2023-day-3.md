@@ -204,7 +204,7 @@ grid.find_gear_ratio()
 
     467835
 
-## I Just Want Your Extra Time and Your Immutable Keys
+## I Just Want Your Extra Time and Your (Immutable) Keys
 
 While writing this blog post, I noticed how artificial this line was:
 
