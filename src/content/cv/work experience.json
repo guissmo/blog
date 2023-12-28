@@ -8,8 +8,13 @@
     "month_s": 10,
     "year_s": 2022,
     "details": [
-      "Implements non-standard React components in a video editing web app",
-      "Upgraded Material UI installation of the project"
+      "Found, reproduced, reported and fixed more than 120 bugs within a year",
+      "Communicated regularly with PM and design team to ensure we are aligned with the product vision",
+      "Contributed to codebase within my first month and migrated the app to a more recent MUI version",
+      "Implemented drag-and-drop with snap behavior and resize operations that preserved aspect ratio",
+      "Enhanced accessibility with context-aware keyboard shortcuts",
+      "Optimized app performance by analyzing data profiled in Chrome and Firefox's dev tools",
+      "Implemented custom UI components in line with design specifications"
     ]
   },
   "phd": {

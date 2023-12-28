@@ -1,4 +1,20 @@
 {
+  "jokes": {
+    "name": "Corninator: A Jokes App In Next.JS",
+    "url": {
+      "project": "https://jokes.guissmo.com",
+      "code": "https://github.com/guissmo/next-jokes"
+    },
+    "month": 12,
+    "year": 2023,
+    "details": [
+      "NextJS app which implements GET and POST API endpoints that interact with data from an SQLite database populated with jokes.",
+      "Ensured type-safety by using Typescript and an object-relational manager Prisma.",
+      "Wrote frontend which implements routes and fetches data from the aforementioned API.",
+      "Created a Dockerfile and a Docker image to use in a Docker Compose file I wrote.",
+      "Deployed app for public use, using Caddy as a reverse proxy to connect with the Docker container."
+    ]
+  },
   "lola": {
     "name": "Lola: An App For a Song With Only Four Letter Words",
     "url": {
@@ -53,6 +69,49 @@
     "details": [
       "Includes backend which generates PDF containing prime info based on user input.",
       "Uses Node.JS and deployed as a Docker container."
+    ]
+  },
+  "carlo-problems": {
+    "name": "Goodbye, Carlo: Physics Problems Solver",
+    "show": true,
+    "url": {
+      "project": "/assets/old-projects/physicsProblems.xls",
+      "goodbye carlo video": "https://www.youtube.com/watch?v=375DRoD9i7o"
+    },
+    "month": 9,
+    "year": 2007,
+    "details": [
+      "Excel file that solves formulaic problems, with step-by-step solutions, given by our Physics high school teacher",
+      "Locked some Excel cells for a better user experience",
+      "Was not at all required in class"
+    ]
+  },
+  "ibudge": {
+    "name": "iBudge: Student Org Budget Proposal Excel Sheet",
+    "show": true,
+    "url": {
+      "project": "/assets/old-projects/iBudgev2.xls"
+    },
+    "month": 6,
+    "year": 2007,
+    "details": [
+      "Excel file used by all 56 student organizations to submit their budget proposal",
+      "Uses locked cells, VLOOKUP, and includes a cell that displays errors for better UX"
+    ]
+  },
+  "qbasic-poker": {
+    "name": "QBasic Poker",
+    "show": true,
+    "url": {
+      "code": "https://github.com/guissmo/qbasic-poker",
+      "blog post": "https://guissmo.com/blog/qbasic-poker/"
+    },
+    "month": 3,
+    "year": 2007,
+    "details": [
+      "Used the QBasic, as prescribed by a school project, to code a Poker game.",
+      "Used Paint, Excel, and Notepad to draw the graphics pixel-by-pixel, as is common in QBasic.",
+      "Still works in the present day using a QBasic emulator."
     ]
   }
 }

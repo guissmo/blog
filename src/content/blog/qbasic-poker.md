@@ -126,7 +126,7 @@ c9 = INT(RND * 52) + 1
 c0 = INT(RND * 52) + 1
 ```
 
-And since I was not sophisticated enough to know loops back then, we have verbose code to make sure all of these cards are distinct.
+I knew how to do loops back then, but I don't think I bothered to _Ask Jeeves_ how to do that in QBasic. So, we have verbose code to make sure all of these cards are distinct.
 
 ```
 
