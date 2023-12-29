@@ -11,6 +11,13 @@ import Head from "../components/Head";
 import "@fontsource-variable/source-code-pro";
 import "@fontsource-variable/fredoka";
 import "@fontsource/rubik-mono-one";
+
+export function dateString(data: any) {
+  if (data.year_s === undefined) return ``;
+  if (data.year_s == data.year_e) return data.year_s;
+  if (data.year_e === undefined) return `${data.year_s} -`;
+  return `${data.year_s} - ${data.year_e}`;
+}
 ---
 
 <html lang="en">
@@ -82,7 +89,7 @@ import "@fontsource/rubik-mono-one";
           skillData.map((cvEntry) => {
             return (
               <>
-                <span>&nbsp;</span>
+                <span class="hide-on-mobile">&nbsp;</span>
                 <h2>{cvEntry.id}</h2>
                 {Object.keys(cvEntry.data).map((category) => {
                   return (
@@ -107,7 +114,7 @@ import "@fontsource/rubik-mono-one";
             return (
               <>
                 <>
-                  <span>&nbsp;</span>
+                  <span class="hide-on-mobile">&nbsp;</span>
                   <h2>{cvEntry.id}</h2>
                 </>
                 {Object.keys(cvEntry.data)
@@ -132,7 +139,7 @@ import "@fontsource/rubik-mono-one";
                             {projectData.name}
                           </span>
                         </span>
-                        <span class="monospace">&nbsp;</span>
+                        <span class="monospace hide-on-mobile">&nbsp;</span>
                         <span class="inline-list">
                           <span class="block links">
                             links:
@@ -168,7 +175,7 @@ import "@fontsource/rubik-mono-one";
         {
           Object.keys(personalProjectData[0].data).length > 3 && (
             <>
-              <span>&nbsp;</span>
+              <span class="hide-on-mobile">&nbsp;</span>
               <span class="inline-list">
                 <a href="/projects">
                   &raquo; View all{" "}
@@ -183,71 +190,87 @@ import "@fontsource/rubik-mono-one";
             return (
               <>
                 <>
-                  <span>&nbsp;</span>
+                  <span class="hide-on-mobile">&nbsp;</span>
                   <h2>{cvEntry.id}</h2>
                 </>
-                {Object.keys(cvEntry.data).map((category) => {
-                  const workExperience = cvEntry.data[category];
-                  const yearStartString = workExperience.year_s
-                    .toString()
-                    .padStart(4, "0");
-                  const yearEndString =
-                    workExperience.year_e == undefined
-                      ? ""
-                      : workExperience.year_e.toString().padStart(2, "0");
-                  const dateString = `${yearStartString} – ${yearEndString}`;
-                  return (
-                    <>
-                      <span class="monospace vertical-align-center">
-                        {dateString}
-                      </span>
-                      <span class="inline-list">
-                        <span class="block cv-entry-title">
-                          {workExperience.position}
+                {Object.keys(cvEntry.data)
+                  .filter((_, index) => index < 3)
+                  .map((category) => {
+                    const workExperience = cvEntry.data[category];
+                    const yearStartString = workExperience.year_s
+                      .toString()
+                      .padStart(4, "0");
+                    const yearEndString =
+                      workExperience.year_e == undefined
+                        ? ""
+                        : workExperience.year_e.toString().padStart(2, "0");
+                    // const dateString = `${yearStartString} – ${yearEndString}`;
+                    return (
+                      <>
+                        <span class="monospace vertical-align-center">
+                          {dateString(workExperience)}
                         </span>
-                      </span>
-                      <span class="monospace">&nbsp;</span>
-                      <span class="inline-list">
-                        <span class="block project-subtitle">
-                          {workExperience.company}
+                        <span class="inline-list">
+                          <span class="block cv-entry-title">
+                            {workExperience.position}
+                          </span>
                         </span>
-                        <span class="block links">
-                          links:
-                          {Object.keys(workExperience.url).map(
-                            (urlCategory, index, arrayItself) => {
-                              const url = workExperience.url[urlCategory];
-                              return (
-                                <>
-                                  <a href={url} target="_blank">
-                                    {urlCategory}
-                                  </a>
-                                  {index != arrayItself.length - 1 && " | "}
-                                </>
-                              );
-                            }
-                          )}
+                        <span class="monospace hide-on-mobile">&nbsp;</span>
+                        <span class="inline-list">
+                          <span class="block project-subtitle">
+                            {workExperience.company}
+                          </span>
+                          <span class="block links">
+                            links:
+                            {Object.keys(workExperience.url).map(
+                              (urlCategory, index, arrayItself) => {
+                                const url = workExperience.url[urlCategory];
+                                return (
+                                  <>
+                                    <a href={url} target="_blank">
+                                      {urlCategory}
+                                    </a>
+                                    {index != arrayItself.length - 1 && " | "}
+                                  </>
+                                );
+                              }
+                            )}
+                          </span>
+                          <span class="block">
+                            <ul>
+                              {workExperience.details.map((detail: string) => {
+                                return <li>{detail}</li>;
+                              })}
+                            </ul>
+                          </span>
                         </span>
-                        <span class="block">
-                          <ul>
-                            {workExperience.details.map((detail: string) => {
-                              return <li>{detail}</li>;
-                            })}
-                          </ul>
-                        </span>
-                      </span>
-                    </>
-                  );
-                })}
+                      </>
+                    );
+                  })}
               </>
             );
           })
+        }
+        {
+          Object.keys(workExperienceData[0].data).length > 3 && (
+            <>
+              <span class="hide-on-mobile">&nbsp;</span>
+              <span class="inline-list">
+                <a href="/work-experience">
+                  &raquo; View all{" "}
+                  {Object.keys(workExperienceData[0].data).length} work
+                  experience
+                </a>
+              </span>
+            </>
+          )
         }
         {
           educationData.map((cvEntry) => {
             return (
               <>
                 <>
-                  <span>&nbsp;</span>
+                  <span class="hide-on-mobile">&nbsp;</span>
                   <h2>{cvEntry.id}</h2>
                 </>
                 {Object.keys(cvEntry.data).map((category) => {
@@ -270,7 +293,7 @@ import "@fontsource/rubik-mono-one";
                           {education.degree}
                         </span>
                       </span>
-                      <span class="monospace">&nbsp;</span>
+                      <span class="monospace hide-on-mobile">&nbsp;</span>
                       <span class="inline-list">
                         <span class="block project-subtitle">
                           {education.university}
@@ -452,6 +475,10 @@ import "@fontsource/rubik-mono-one";
 
         .bio {
           padding-right: 0;
+        }
+
+        .hide-on-mobile {
+          display: none !important;
         }
       }
     </style>

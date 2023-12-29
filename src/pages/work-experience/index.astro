@@ -4,13 +4,20 @@ import {
   personalProjectData,
   workExperienceData,
   educationData,
-} from "../cv.ts";
-import Header from "../../components/Header.tsx";
-import Footer from "../../components/Footer.tsx";
-import Head from "../../components/Head.tsx";
+} from "../cv";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Head from "../../components/Head";
 import "@fontsource-variable/source-code-pro";
 import "@fontsource-variable/fredoka";
 import "@fontsource/rubik-mono-one";
+
+export function dateString(data: any) {
+  if (data.year_s === undefined) return ``;
+  if (data.year_s == data.year_e) return data.year_s;
+  if (data.year_e === undefined) return `${data.year_s} -`;
+  return `${data.year_s} - ${data.year_e}`;
+}
 ---
 
 <html lang="en">
@@ -23,7 +30,7 @@ import "@fontsource/rubik-mono-one";
     <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
     <Head />
     <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | Projects</title>
+    <title>Jared Asuncion | Work Experience</title>
   </head>
   <body>
     <main>
@@ -31,43 +38,46 @@ import "@fontsource/rubik-mono-one";
       <div class="breadcrumbs">
         <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
         <span class="raquo">&raquo;</span>
-        <a href="#">Personal Projects</a>
+        <a href="#">Work Experience</a>
       </div>
       <!-- Add other UI components here, like common headers and footers. -->
-      <h1>Personal Projects</h1>
+      <h1>Work Experience</h1>
       <!-- 2. Rendered HTML will be passed into the default slot. -->
       <div class="mainList">
         {
-          personalProjectData.map((cvEntry) => {
+          workExperienceData.map((cvEntry) => {
             return (
               <>
                 {Object.keys(cvEntry.data).map((category) => {
-                  const projectData = cvEntry.data[category];
-                  if (projectData.show == false) return;
-                  const yearString = projectData.year
+                  const workExperience = cvEntry.data[category];
+                  const yearStartString = workExperience.year_s
                     .toString()
                     .padStart(4, "0");
-                  const monthString = projectData.month
-                    .toString()
-                    .padStart(2, "0");
-                  const dateString = `${yearString}.${monthString}`;
+                  const yearEndString =
+                    workExperience.year_e == undefined
+                      ? ""
+                      : workExperience.year_e.toString().padStart(2, "0");
+                  // const dateString = `${yearStartString} – ${yearEndString}`;
                   return (
                     <>
                       <span class="monospace vertical-align-center">
-                        {dateString}
+                        {dateString(workExperience)}
                       </span>
                       <span class="inline-list">
                         <span class="block cv-entry-title">
-                          {projectData.name}
+                          {workExperience.position}
                         </span>
                       </span>
                       <span class="monospace hide-on-mobile">&nbsp;</span>
                       <span class="inline-list">
+                        <span class="block project-subtitle">
+                          {workExperience.company}
+                        </span>
                         <span class="block links">
                           links:
-                          {Object.keys(projectData.url).map(
+                          {Object.keys(workExperience.url).map(
                             (urlCategory, index, arrayItself) => {
-                              const url = projectData.url[urlCategory];
+                              const url = workExperience.url[urlCategory];
                               return (
                                 <>
                                   <a href={url} target="_blank">
@@ -81,7 +91,7 @@ import "@fontsource/rubik-mono-one";
                         </span>
                         <span class="block">
                           <ul>
-                            {projectData.details.map((detail: string) => {
+                            {workExperience.details.map((detail: string) => {
                               return <li>{detail}</li>;
                             })}
                           </ul>

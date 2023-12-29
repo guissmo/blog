@@ -63,5 +63,31 @@
     "details": [
       "Assigned every semester to teach a combination of undergraduate service courses such as College Algebra, Plane Trigonometry, Algebra and Trigonometry, Elementary Analysis I and Elementary Analysis II."
     ]
+  },
+  "ahs-math-varsity": {
+    "position": "Trainer",
+    "company": "Ateneo de Manila High School",
+    "location": "Quezon City, Philippines",
+    "url": {
+      "ateneo": "https://www.ateneo.edu/ashs"
+    },
+    "year_s": 2010,
+    "year_e": 2010,
+    "details": [
+      "Trained he math varsity team in Ateneo de Manila High School weekly in preparation for local and national math contests."
+    ]
+  },
+  "mtg-trainer": {
+    "position": "Trainer",
+    "company": "Mathematics Trainers' Guild (MTG)",
+    "location": "Philippines",
+    "url": {
+      "ateneo": "https://www.mtgphil.org"
+    },
+    "year_s": 2008,
+    "year_e": 2010,
+    "details": [
+      "Taught in the MTG Mathematical Olympiad Summer Training Program which consisted of handpicked students which would represent the Philippines to international math competitions. The training usually lasted for three to four weeks during the summer vacation"
+    ]
   }
 }
