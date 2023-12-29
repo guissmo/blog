@@ -2,19 +2,22 @@
 import classNames from "classnames";
 import style from "../styles/global.module.css";
 import DateComponent from "./DateComponent.astro";
-const { data, max, href, noun } = Astro.props;
+const { data, max, href, noun, full } = Astro.props;
 ---
 
 {
     data.map((cvEntry: any) => {
       return (
         <>
-          <>
-            <span class="hide-on-mobile">&nbsp;</span>
-            <h2 class={style.section}>{cvEntry.id}</h2>
-          </>
+          {
+            full != true &&
+            <>
+              <span class="hide-on-mobile">&nbsp;</span>
+              <h2 class={style.section}>{cvEntry.id}</h2>
+            </>
+          }
           {Object.keys(cvEntry.data)
-            .filter((_, index) => max ? index < max : true)
+            .filter((_, index) => max && full != true ? index < max : true)
             .map((category) => {
               const entryData = cvEntry.data[category];
               if (entryData.show == false) return;
@@ -25,14 +28,14 @@ const { data, max, href, noun } = Astro.props;
                   </span>
                   <span class={classNames(style.inlineList)}>
                     <span class="cv-entry-title">
-                      {entryData.name ? entryData.name : entryData.position}
+                      {entryData.name ? entryData.name : entryData.position ? entryData.position : entryData.degree}
                     </span>
                   </span>
-                  <span class="monospace hide-on-mobile">&nbsp;</span>
-                  <span class="inline-list">
-                    { entryData.company && 
+                  <span class={classNames(style.monospace, style.hideOnMobile)}>&nbsp;</span>
+                  <span class={classNames(style.inlineList)}>
+                    { entryData.company || entryData.university && 
                       <span class={classNames(style.block, style.subtitle)}>
-                            {entryData.company}
+                            {entryData.company ? entryData.company : entryData.university}
                       </span>
                     }
                     <span class={classNames(style.block, "links")}>
@@ -53,7 +56,7 @@ const { data, max, href, noun } = Astro.props;
                     </span>
                     <span class="block">
                       <ul>
-                        {entryData.details.map((detail: string) => {
+                        {entryData.details && entryData.details.map((detail: string) => {
                           return <li>{detail}</li>;
                         })}
                       </ul>

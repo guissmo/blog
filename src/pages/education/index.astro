@@ -1,0 +1,195 @@
+---
+import {
+  skillData,
+  personalProjectData,
+  workExperienceData,
+  educationData,
+} from "../cv";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Head from "../../components/Head";
+import "@fontsource-variable/source-code-pro";
+import "@fontsource-variable/fredoka";
+import "@fontsource/rubik-mono-one";
+import CVSection from "../../components/CVSection.astro";
+import style from "../../styles/global.module.css";
+---
+
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=`${import.meta.env.BASE_URL}/style.css`
+    />
+    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
+    <Head />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jared Asuncion | Education</title>
+  </head>
+  <body>
+    <main>
+      <Header />
+      <div class="breadcrumbs">
+        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
+        <span class="raquo">&raquo;</span>
+        <a href="#">Education</a>
+      </div>
+      <!-- Add other UI components here, like common headers and footers. -->
+      <h1>Education</h1>
+      <!-- 2. Rendered HTML will be passed into the default slot. -->
+      <div class={style.mainList}>
+        <CVSection data={educationData} full />
+      </div>
+      <Footer />
+    </main>
+    <style>
+      h2 {
+        font-weight: 700;
+        padding-top: 3ex;
+        text-transform: capitalize;
+      }
+
+      .date {
+        width: fit-content;
+      }
+
+      .mainList {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: clamp(10px, 5vw, 30px);
+      }
+
+      .contactInfo {
+        display: grid;
+        grid-template-columns: 10vw 1fr;
+        column-gap: clamp(10px, 5vw, 30px);
+        row-gap: 1ex;
+      }
+
+      .bio {
+        padding-top: 5ex;
+        padding-right: 10vw;
+        font-size: 20px;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .bio-footnote {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      .monospace {
+        font-family: "Source Code Pro Variable", sans-serif;
+        font-weight: 300;
+        text-align: right;
+      }
+
+      .bold {
+        font-weight: 700;
+      }
+
+      .inline-list {
+        width: 100%;
+        gap: 1em;
+        display: block;
+      }
+
+      .vertical-align-center {
+        align-self: center;
+      }
+
+      .list-entry {
+        display: inline-block;
+      }
+
+      .list-entry:not(:last-of-type):after {
+        content: ",";
+      }
+
+      .list-entry:not(:last-of-type) {
+        margin-right: 0.5em;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .cv-entry-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .project-subtitle {
+        font-weight: 500;
+      }
+
+      .links {
+        opacity: 0.8;
+      }
+
+      .links:hover {
+        opacity: 1;
+      }
+
+      .deemphasize {
+        opacity: 0.8;
+        font-weight: 500;
+      }
+
+      .emphasize-by-opacity {
+        opacity: 1;
+      }
+
+      .no-wrap {
+        white-space: no-wrap !important;
+      }
+
+      @media screen and (max-width: 640px) {
+        .mainList {
+          display: grid;
+          grid-template-columns: 1fr;
+          padding: 0 10px;
+        }
+
+        .contactInfo {
+          display: grid;
+          width: 95%;
+          margin-left: auto;
+          grid-template-columns: auto 1fr;
+          column-gap: clamp(10px, 5vw, 30px);
+        }
+
+        .monospace {
+          text-align: unset;
+        }
+
+        .align-right {
+          text-align: right;
+        }
+
+        .inline-list {
+          padding-left: 1em;
+          width: unset;
+        }
+
+        .skill-category {
+          padding-top: 1.5ex;
+        }
+
+        .cv-entry-title {
+          font-size: 1.2rem;
+        }
+
+        .bio {
+          padding-right: 0;
+        }
+
+        .hide-on-mobile {
+          display: none !important;
+        }
+      }
+    </style>
+  </body>
+</html>

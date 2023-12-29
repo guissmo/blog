@@ -45,6 +45,12 @@ h2.section {
   font-weight: 500;
 }
 
+.mainList {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: clamp(10px, 5vw, 30px);
+}
+
 @media screen and (max-width: 640px) {
   .monospace {
     text-align: unset;
