@@ -71,11 +71,29 @@
       "Uses Node.JS and deployed as a Docker container."
     ]
   },
+  "jologs": {
+    "name": "Jologs-inator",
+    "show": true,
+    "url": {
+      "2008 version": "/jologs",
+      "2023 version": "/chatjejept",
+      "jejemon info": "https://en.wikipedia.org/wiki/Jejemon",
+      "me on tv": "https://www.youtube.com/watch?v=oL1v0ZO9PGw"
+    },
+    "month": 8,
+    "year": 2008,
+    "details": [
+      "Project that simulates how people who identify as Jejemon talk",
+      "Originally written in PHP and deployed to a free web host that no longer exists",
+      "Got interviewed on Philippine TV for this",
+      "Rewritten in 2023 in Javascript"
+    ]
+  },
   "carlo-problems": {
     "name": "Goodbye, Carlo: Physics Problems Solver",
     "show": true,
     "url": {
-      "project": "/assets/old-projects/physicsProblems.xls",
+      "excel file": "/assets/old-projects/physicsProblems.xls",
       "goodbye carlo video": "https://www.youtube.com/watch?v=375DRoD9i7o"
     },
     "month": 9,
@@ -90,7 +108,7 @@
     "name": "iBudge: Student Org Budget Proposal Excel Sheet",
     "show": true,
     "url": {
-      "project": "/assets/old-projects/iBudgev2.xls"
+      "excel file": "/assets/old-projects/iBudgev2.xls"
     },
     "month": 6,
     "year": 2007,
@@ -109,8 +127,8 @@
     "month": 3,
     "year": 2007,
     "details": [
-      "Used the QBasic, as prescribed by a school project, to code a Poker game.",
-      "Used Paint, Excel, and Notepad to draw the graphics pixel-by-pixel, as is common in QBasic.",
+      "Used QBasic, as prescribed by a school project, to code a Poker game.",
+      "Used Paint, Excel, and Notepad to draw the graphics pixel-by-pixel.",
       "Still works in the present day using a QBasic emulator."
     ]
   }

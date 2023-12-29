@@ -110,58 +110,73 @@ import "@fontsource/rubik-mono-one";
                   <span>&nbsp;</span>
                   <h2>{cvEntry.id}</h2>
                 </>
-                {Object.keys(cvEntry.data).map((category) => {
-                  const projectData = cvEntry.data[category];
-                  if (projectData.show == false) return;
-                  const yearString = projectData.year
-                    .toString()
-                    .padStart(4, "0");
-                  const monthString = projectData.month
-                    .toString()
-                    .padStart(2, "0");
-                  const dateString = `${yearString}.${monthString}`;
-                  return (
-                    <>
-                      <span class="monospace vertical-align-center">
-                        {dateString}
-                      </span>
-                      <span class="inline-list">
-                        <span class="block cv-entry-title">
-                          {projectData.name}
+                {Object.keys(cvEntry.data)
+                  .filter((_, index) => index < 3)
+                  .map((category) => {
+                    const projectData = cvEntry.data[category];
+                    if (projectData.show == false) return;
+                    const yearString = projectData.year
+                      .toString()
+                      .padStart(4, "0");
+                    const monthString = projectData.month
+                      .toString()
+                      .padStart(2, "0");
+                    const dateString = `${yearString}.${monthString}`;
+                    return (
+                      <>
+                        <span class="monospace vertical-align-center">
+                          {dateString}
                         </span>
-                      </span>
-                      <span class="monospace">&nbsp;</span>
-                      <span class="inline-list">
-                        <span class="block links">
-                          links:
-                          {Object.keys(projectData.url).map(
-                            (urlCategory, index, arrayItself) => {
-                              const url = projectData.url[urlCategory];
-                              return (
-                                <>
-                                  <a href={url} target="_blank">
-                                    {urlCategory}
-                                  </a>
-                                  {index != arrayItself.length - 1 && " | "}
-                                </>
-                              );
-                            }
-                          )}
+                        <span class="inline-list">
+                          <span class="block cv-entry-title">
+                            {projectData.name}
+                          </span>
                         </span>
-                        <span class="block">
-                          <ul>
-                            {projectData.details.map((detail: string) => {
-                              return <li>{detail}</li>;
-                            })}
-                          </ul>
+                        <span class="monospace">&nbsp;</span>
+                        <span class="inline-list">
+                          <span class="block links">
+                            links:
+                            {Object.keys(projectData.url).map(
+                              (urlCategory, index, arrayItself) => {
+                                const url = projectData.url[urlCategory];
+                                return (
+                                  <>
+                                    <a href={url} target="_blank">
+                                      {urlCategory}
+                                    </a>
+                                    {index != arrayItself.length - 1 && " | "}
+                                  </>
+                                );
+                              }
+                            )}
+                          </span>
+                          <span class="block">
+                            <ul>
+                              {projectData.details.map((detail: string) => {
+                                return <li>{detail}</li>;
+                              })}
+                            </ul>
+                          </span>
                         </span>
-                      </span>
-                    </>
-                  );
-                })}
+                      </>
+                    );
+                  })}
               </>
             );
           })
+        }
+        {
+          Object.keys(personalProjectData[0].data).length > 3 && (
+            <>
+              <span>&nbsp;</span>
+              <span class="inline-list">
+                <a href="/projects">
+                  &raquo; View all{" "}
+                  {Object.keys(personalProjectData[0].data).length} projects
+                </a>
+              </span>
+            </>
+          )
         }
         {
           workExperienceData.map((cvEntry) => {

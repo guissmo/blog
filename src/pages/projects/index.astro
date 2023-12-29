@@ -1,0 +1,245 @@
+---
+import {
+  skillData,
+  personalProjectData,
+  workExperienceData,
+  educationData,
+} from "../cv.ts";
+import Header from "../../components/Header.tsx";
+import Footer from "../../components/Footer.tsx";
+import Head from "../../components/Head.tsx";
+import "@fontsource-variable/source-code-pro";
+import "@fontsource-variable/fredoka";
+import "@fontsource/rubik-mono-one";
+---
+
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=`${import.meta.env.BASE_URL}/style.css`
+    />
+    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
+    <Head />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jared Asuncion | Projects</title>
+  </head>
+  <body>
+    <main>
+      <Header />
+      <div class="breadcrumbs">
+        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
+        <span class="raquo">&raquo;</span>
+        <a href="#">Personal Projects</a>
+      </div>
+      <!-- Add other UI components here, like common headers and footers. -->
+      <h1>Personal Projects</h1>
+      <!-- 2. Rendered HTML will be passed into the default slot. -->
+      <div class="mainList">
+        {
+          personalProjectData.map((cvEntry) => {
+            return (
+              <>
+                {Object.keys(cvEntry.data).map((category) => {
+                  const projectData = cvEntry.data[category];
+                  if (projectData.show == false) return;
+                  const yearString = projectData.year
+                    .toString()
+                    .padStart(4, "0");
+                  const monthString = projectData.month
+                    .toString()
+                    .padStart(2, "0");
+                  const dateString = `${yearString}.${monthString}`;
+                  return (
+                    <>
+                      <span class="monospace vertical-align-center">
+                        {dateString}
+                      </span>
+                      <span class="inline-list">
+                        <span class="block cv-entry-title">
+                          {projectData.name}
+                        </span>
+                      </span>
+                      <span class="monospace">&nbsp;</span>
+                      <span class="inline-list">
+                        <span class="block links">
+                          links:
+                          {Object.keys(projectData.url).map(
+                            (urlCategory, index, arrayItself) => {
+                              const url = projectData.url[urlCategory];
+                              return (
+                                <>
+                                  <a href={url} target="_blank">
+                                    {urlCategory}
+                                  </a>
+                                  {index != arrayItself.length - 1 && " | "}
+                                </>
+                              );
+                            }
+                          )}
+                        </span>
+                        <span class="block">
+                          <ul>
+                            {projectData.details.map((detail: string) => {
+                              return <li>{detail}</li>;
+                            })}
+                          </ul>
+                        </span>
+                      </span>
+                    </>
+                  );
+                })}
+              </>
+            );
+          })
+        }
+      </div>
+      <Footer />
+    </main>
+    <style>
+      h2 {
+        font-weight: 700;
+        padding-top: 3ex;
+        text-transform: capitalize;
+      }
+
+      .date {
+        width: fit-content;
+      }
+
+      .mainList {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: clamp(10px, 5vw, 30px);
+      }
+
+      .contactInfo {
+        display: grid;
+        grid-template-columns: 10vw 1fr;
+        column-gap: clamp(10px, 5vw, 30px);
+        row-gap: 1ex;
+      }
+
+      .bio {
+        padding-top: 5ex;
+        padding-right: 10vw;
+        font-size: 20px;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .bio-footnote {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      .monospace {
+        font-family: "Source Code Pro Variable", sans-serif;
+        font-weight: 300;
+        text-align: right;
+      }
+
+      .bold {
+        font-weight: 700;
+      }
+
+      .inline-list {
+        width: 100%;
+        gap: 1em;
+        display: block;
+      }
+
+      .vertical-align-center {
+        align-self: center;
+      }
+
+      .list-entry {
+        display: inline-block;
+      }
+
+      .list-entry:not(:last-of-type):after {
+        content: ",";
+      }
+
+      .list-entry:not(:last-of-type) {
+        margin-right: 0.5em;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .cv-entry-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .project-subtitle {
+        font-weight: 500;
+      }
+
+      .links {
+        opacity: 0.8;
+      }
+
+      .links:hover {
+        opacity: 1;
+      }
+
+      .deemphasize {
+        opacity: 0.8;
+        font-weight: 500;
+      }
+
+      .emphasize-by-opacity {
+        opacity: 1;
+      }
+
+      .no-wrap {
+        white-space: no-wrap !important;
+      }
+
+      @media screen and (max-width: 640px) {
+        .mainList {
+          display: grid;
+          grid-template-columns: 1fr;
+          padding: 0 10px;
+        }
+
+        .contactInfo {
+          display: grid;
+          width: 95%;
+          margin-left: auto;
+          grid-template-columns: auto 1fr;
+          column-gap: clamp(10px, 5vw, 30px);
+        }
+
+        .monospace {
+          text-align: unset;
+        }
+
+        .align-right {
+          text-align: right;
+        }
+
+        .inline-list {
+          padding-left: 1em;
+          width: unset;
+        }
+
+        .skill-category {
+          padding-top: 1.5ex;
+        }
+
+        .cv-entry-title {
+          font-size: 1.2rem;
+        }
+
+        .bio {
+          padding-right: 0;
+        }
+      }
+    </style>
+  </body>
+</html>
