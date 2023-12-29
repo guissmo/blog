@@ -1,0 +1,20 @@
+---
+import style from "./global.module.css";
+const { title, href, text, target } = Astro.props;
+import classNames from "classnames";
+const arr = text.split(/(guissmo)/g);
+---
+
+<span class={classNames(style.monospace, style.alignRight, style.bold)}
+  >{title}</span
+>
+<span class={style.inlineList}>
+  <a href={href} target={target ? target : '_self'}
+    >{
+      arr.map((s: string) => {
+        if (s == "guissmo") return <span class={classNames(style.bold, style.emphasizeByOpacity)}>guissmo</span>;
+        return <span class={classNames(style.bold, style.deemphasize)}>{s}</span>;
+      })
+    }</a
+  >
+</span>

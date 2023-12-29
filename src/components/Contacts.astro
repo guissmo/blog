@@ -1,0 +1,10 @@
+<div class="contactInfo"><slot /></div>
+
+<style>
+  .contactInfo {
+    display: grid;
+    grid-template-columns: 10vw 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+    row-gap: 1ex;
+  }
+</style>

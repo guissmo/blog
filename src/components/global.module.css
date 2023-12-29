@@ -1,0 +1,47 @@
+.monospace {
+  font-family: "Source Code Pro Variable", sans-serif;
+  font-weight: 300;
+  text-align: right;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.inlineList {
+  width: 100%;
+  gap: 1em;
+  display: block;
+}
+
+.deemphasize {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.emphasizeByOpacity {
+  opacity: 1;
+}
+
+@media screen and (max-width: 640px) {
+  .monospace {
+    text-align: unset;
+  }
+
+  .alignRight {
+    text-align: right;
+  }
+
+  .inlineList {
+    padding-left: 1em;
+    width: unset;
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+}

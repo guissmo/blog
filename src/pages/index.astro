@@ -11,6 +11,9 @@ import Head from "../components/Head";
 import "@fontsource-variable/source-code-pro";
 import "@fontsource-variable/fredoka";
 import "@fontsource/rubik-mono-one";
+import type React from "react";
+import ContactInfo from "../components/ContactInfo.astro";
+import Contacts from "../components/Contacts.astro";
 
 export function dateString(data: any) {
   if (data.year_s === undefined) return ``;
@@ -35,45 +38,20 @@ export function dateString(data: any) {
   <body>
     <main>
       <Header />
-      <div class="contactInfo">
-        <span class="monospace align-right bold">blog</span>
-        <span class="inline-list"
-          ><a href="./blog"
-            ><span class="bold emphasize-by-opacity">guissmo</span><span
-              class="deemphasize">.com/blog</span
-            ></a
-          ></span
-        >
-        <span class="monospace align-right bold">email</span>
-        <span class="inline-list"
-          ><a
-            href="javascript:location='mailto:\u006a\u0061\u0072\u0065\u0064\u0040\u0067\u0075\u0069\u0073\u0073\u006d\u006f\u002e\u0063\u006f\u006d';void 0"
-            ><span class="deemphasize"
-              ><script type="text/javascript">
-                document.write("\u006a\u0061\u0072\u0065\u0064\u0040");
-              </script></span
-            ><span class="bold emphasize-by-opacity">guissmo</span><span
-              class="deemphasize">.com</span
-            ></a
-          ></span
-        >
-        <span class="monospace align-right bold">github</span>
-        <span class="inline-list"
-          ><a href="https://github.com/guissmo" target="_blank"
-            ><span class="deemphasize">github.com/</span><span
-              class="bold emphasize-by-opacity">guissmo</span
-            ></a
-          ></span
-        >
-        <span class="monospace align-right bold">linkedin</span>
-        <span class="inline-list"
-          ><a href="https://linkedin.com/in/guissmo" target="_blank"
-            ><span class="deemphasize">linkedin.com/in/</span><span
-              class="bold emphasize-by-opacity">guissmo</span
-            ></a
-          ></span
-        >
-      </div>
+      <Contacts>
+        <ContactInfo 
+          title="blog"
+          href="./blog"
+          text="guissmo.com/blog"
+        />
+        <ContactInfo 
+          title="email"
+          href="javascript:location='mailto:\u006a\u0061\u0072\u0065\u0064\u0040\u0067\u0075\u0069\u0073\u0073\u006d\u006f\u002e\u0063\u006f\u006d';void 0"
+          text="jared@guissmo.com"
+         />
+        <ContactInfo title="github" href="https://github.com/guissmo" target="_blank" text="github.com/guissmo" />
+        <ContactInfo title="linkedin" href="https://linkedin.com/in/guissmo"  target="_blank" text="linkedin.com/in/guissmo" />
+      </Contacts>
       <div class="bio">
         <span class="bold">Hi, I'm Jared Asuncion.</span> I've been solving math
         problems for more than 19 years, publishing my websites online for more than
@@ -351,13 +329,6 @@ export function dateString(data: any) {
         column-gap: clamp(10px, 5vw, 30px);
       }
 
-      .contactInfo {
-        display: grid;
-        grid-template-columns: 10vw 1fr;
-        column-gap: clamp(10px, 5vw, 30px);
-        row-gap: 1ex;
-      }
-
       .bio {
         padding-top: 5ex;
         padding-right: 10vw;
@@ -369,22 +340,6 @@ export function dateString(data: any) {
       .bio-footnote {
         font-size: 1rem;
         opacity: 0.8;
-      }
-
-      .monospace {
-        font-family: "Source Code Pro Variable", sans-serif;
-        font-weight: 300;
-        text-align: right;
-      }
-
-      .bold {
-        font-weight: 700;
-      }
-
-      .inline-list {
-        width: 100%;
-        gap: 1em;
-        display: block;
       }
 
       .vertical-align-center {
@@ -424,15 +379,6 @@ export function dateString(data: any) {
         opacity: 1;
       }
 
-      .deemphasize {
-        opacity: 0.8;
-        font-weight: 500;
-      }
-
-      .emphasize-by-opacity {
-        opacity: 1;
-      }
-
       .no-wrap {
         white-space: no-wrap !important;
       }
@@ -444,25 +390,8 @@ export function dateString(data: any) {
           padding: 0 10px;
         }
 
-        .contactInfo {
-          display: grid;
-          width: 95%;
-          margin-left: auto;
-          grid-template-columns: auto 1fr;
-          column-gap: clamp(10px, 5vw, 30px);
-        }
-
         .monospace {
           text-align: unset;
-        }
-
-        .align-right {
-          text-align: right;
-        }
-
-        .inline-list {
-          padding-left: 1em;
-          width: unset;
         }
 
         .skill-category {
