@@ -52,6 +52,12 @@ h2.section {
 }
 
 @media screen and (max-width: 640px) {
+  .mainList {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
   .monospace {
     text-align: unset;
   }

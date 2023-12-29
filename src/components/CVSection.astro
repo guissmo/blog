@@ -12,7 +12,7 @@ const { data, max, href, noun, full } = Astro.props;
           {
             full != true &&
             <>
-              <span class="hide-on-mobile">&nbsp;</span>
+              <span class={style.hideOnMobile}>&nbsp;</span>
               <h2 class={style.section}>{cvEntry.id}</h2>
             </>
           }
@@ -100,5 +100,13 @@ const { data, max, href, noun, full } = Astro.props;
 
       .block{
         display: block;
+      }
+
+      @media screen and (max-width: 640px) {
+
+        .cv-entry-title {
+          font-size: 1.2rem;
+        }
+
       }
   </style>
