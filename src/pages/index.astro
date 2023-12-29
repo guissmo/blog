@@ -14,6 +14,9 @@ import "@fontsource/rubik-mono-one";
 import type React from "react";
 import ContactInfo from "../components/ContactInfo.astro";
 import Contacts from "../components/Contacts.astro";
+import classNames from "classnames";
+import style from "../styles/global.module.css";
+import CVSection from "../components/CVSection.astro";
 
 export function dateString(data: any) {
   if (data.year_s === undefined) return ``;
@@ -72,7 +75,7 @@ export function dateString(data: any) {
                 {Object.keys(cvEntry.data).map((category) => {
                   return (
                     <>
-                      <span class="monospace bold skill-category">
+                      <span class={classNames(style.monospace, style.bold, "skill-category")}>
                         {category}
                       </span>
                       <span class="inline-list">
@@ -87,82 +90,8 @@ export function dateString(data: any) {
             );
           })
         }
-        {
-          personalProjectData.map((cvEntry) => {
-            return (
-              <>
-                <>
-                  <span class="hide-on-mobile">&nbsp;</span>
-                  <h2>{cvEntry.id}</h2>
-                </>
-                {Object.keys(cvEntry.data)
-                  .filter((_, index) => index < 3)
-                  .map((category) => {
-                    const projectData = cvEntry.data[category];
-                    if (projectData.show == false) return;
-                    const yearString = projectData.year
-                      .toString()
-                      .padStart(4, "0");
-                    const monthString = projectData.month
-                      .toString()
-                      .padStart(2, "0");
-                    const dateString = `${yearString}.${monthString}`;
-                    return (
-                      <>
-                        <span class="monospace vertical-align-center">
-                          {dateString}
-                        </span>
-                        <span class="inline-list">
-                          <span class="block cv-entry-title">
-                            {projectData.name}
-                          </span>
-                        </span>
-                        <span class="monospace hide-on-mobile">&nbsp;</span>
-                        <span class="inline-list">
-                          <span class="block links">
-                            links:
-                            {Object.keys(projectData.url).map(
-                              (urlCategory, index, arrayItself) => {
-                                const url = projectData.url[urlCategory];
-                                return (
-                                  <>
-                                    <a href={url} target="_blank">
-                                      {urlCategory}
-                                    </a>
-                                    {index != arrayItself.length - 1 && " | "}
-                                  </>
-                                );
-                              }
-                            )}
-                          </span>
-                          <span class="block">
-                            <ul>
-                              {projectData.details.map((detail: string) => {
-                                return <li>{detail}</li>;
-                              })}
-                            </ul>
-                          </span>
-                        </span>
-                      </>
-                    );
-                  })}
-              </>
-            );
-          })
-        }
-        {
-          Object.keys(personalProjectData[0].data).length > 3 && (
-            <>
-              <span class="hide-on-mobile">&nbsp;</span>
-              <span class="inline-list">
-                <a href="/projects">
-                  &raquo; View all{" "}
-                  {Object.keys(personalProjectData[0].data).length} projects
-                </a>
-              </span>
-            </>
-          )
-        }
+        <CVSection data={personalProjectData} max={3} href="/projects" noun="projects" />
+        <CVSection data={workExperienceData} max={3} href="/work-experience" noun="work experiences" />
         {
           workExperienceData.map((cvEntry) => {
             return (
@@ -342,10 +271,6 @@ export function dateString(data: any) {
         opacity: 0.8;
       }
 
-      .vertical-align-center {
-        align-self: center;
-      }
-
       .list-entry {
         display: inline-block;
       }
@@ -369,14 +294,6 @@ export function dateString(data: any) {
 
       .project-subtitle {
         font-weight: 500;
-      }
-
-      .links {
-        opacity: 0.8;
-      }
-
-      .links:hover {
-        opacity: 1;
       }
 
       .no-wrap {
@@ -404,10 +321,6 @@ export function dateString(data: any) {
 
         .bio {
           padding-right: 0;
-        }
-
-        .hide-on-mobile {
-          display: none !important;
         }
       }
     </style>

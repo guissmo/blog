@@ -27,6 +27,24 @@
   opacity: 1;
 }
 
+.verticalAlignCenter {
+  align-self: center;
+}
+
+h2.section {
+  font-weight: 700;
+  padding-top: 3ex;
+  text-transform: capitalize;
+}
+
+.block {
+  display: block;
+}
+
+.subtitle {
+  font-weight: 500;
+}
+
 @media screen and (max-width: 640px) {
   .monospace {
     text-align: unset;
@@ -41,7 +59,7 @@
     width: unset;
   }
 
-  .hide-on-mobile {
+  .hideOnMobile {
     display: none !important;
   }
 }
