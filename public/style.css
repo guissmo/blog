@@ -6,7 +6,7 @@ body {
 }
 
 main {
-  font-family: "Fredoka Variable", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   line-height: 1.8;
   width: clamp(1px, 1000px, 95vw);
 }

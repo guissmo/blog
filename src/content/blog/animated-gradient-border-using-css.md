@@ -38,20 +38,18 @@ And this is possible using the following HTML code and a dash of CSS magic.
 </div>
 ```
 
-You might be on a browser which doesn't support the tricks we will use. But we can always fallback with Javascript.
-
 # Setting Up
 
-Borders in CSS do not support gradients. Or at least I didn't find out how.
-
-And so, for our workaround, we will need to layer two elements on top of each other, one slightly smaller, to emulate a bordered element.
+After some online searches, I didn't find out how to have borders in CSS with gradients. And so, for my workaround, we will need to layer two elements on top of each other, one slightly smaller, to emulate a bordered element.
 
 <!--raw html-->
+<div style="max-width: 90%; overflow: hidden;">
 <div class="pretend-border">
   ME PRETENDING TO BE A BORDER
   <button class="needs-border">
-  I NEED A BORDER
+  I NEED A FAKE BORDER
   </button>
+</div>
 </div>
 
 To achieve that, we have the following CSS code:
@@ -140,7 +138,7 @@ to get this:
 <div class="bad-animation polyfill-gradient-animation">
 </div>
 
-As you can see, it has an ugly discontinuinty. So we still have to fix it.
+As you can see, it has an ugly discontinuity. So we still have to fix it.
 
 # Fixing the Discontinuity
 
@@ -149,7 +147,7 @@ We actually discovered a limitation of conic-gradient. Everything beyond 360 deg
 I fixed this by simulating a "second" conic gradient behind the first one, which is just one turn late. This way, as soon as one part of the gradient goes beyond $360$ degrees, the exact gradient "comes out" of $0$ degrees. This $0$ and $360$ degree angle is the point of discontinuity we saw earlier.
 
 ```css
-.border-gradient {
+.gradient-border {
   --angle: 1turn;
   animation: 2s rotate linear infinite;
   border-radius: 15px;
@@ -177,7 +175,7 @@ Bringing back our "inner layer", we get this:
   <button class="button">YAY!</button>
 </div>
 
-# Cheating with Javascript
+# Javascript Fallback
 
 If you're using Safari or some other lame browser, the animation might not have been working this whole time. This is because not all browsers implement this properly. I can't understand why because everything seems to be supported according to [caniuseit](https://caniuse.com/), so I must be missing something.
 
@@ -209,7 +207,7 @@ So to conclude, if you have a lame browser, this probably wont work:
   <button class="button">MAYBE?</button>
 </div>
 
-But adding the Javascript polyfill, it should work whatever.
+But adding the Javascript polyfill, this one should:
 
 <!--raw html-->
 <div class="gradient-border polyfill-gradient-animation">
@@ -246,6 +244,7 @@ setInterval(() => {
 .pretend-border {
   position: relative;
   width: fit-content;
+  overflow: hidden;
   height: 50px;
   background: cyan;
   display: flex;
@@ -316,9 +315,8 @@ setInterval(() => {
   );
 
   position: relative;
-  width: 300px;
+  width: min(300px, 95vw);
   height: 50px;
-  pointer-events: none;
 }
 
 .bad-animation {
@@ -336,7 +334,7 @@ setInterval(() => {
   );
 
   position: relative;
-  width: 300px;
+  width: min(300px, 95vw);
   height: 50px;
   pointer-events: none;
 }
@@ -345,6 +343,7 @@ setInterval(() => {
   
   position: absolute;
   cursor: pointer;
+  z-index: 10;
   
   font-size: 20px;
 
