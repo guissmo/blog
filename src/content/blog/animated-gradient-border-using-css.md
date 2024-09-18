@@ -1,7 +1,7 @@
 ---
 title: "Making an animated gradient border using CSS"
 layout: "../../layouts/PostLayout.astro"
-category: Front End
+category: Code
 author: guissmo
 date: 2024-02-14T21:12:04+00:00
 draft: false

@@ -3,7 +3,7 @@
   "programming": ["C", "Java", "Python", "JavaScript", "Typescript", "QBasic"],
   "version control": ["Git"],
   "markup": ["HTML", "LaTeX", "Markdown"],
-  "virtualization": ["Docker"],
+  "backend tools": ["Docker", "AWS", "Postman"],
   "runtime envs": ["NodeJS"],
   "python libs": ["Pandas", "Bokeh", "BeautifulSoup"],
   "webservers": ["Caddy", "Nginx"],

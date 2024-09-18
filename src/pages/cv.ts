@@ -13,3 +13,6 @@ export const workExperienceData = cvData.filter(
 export const educationData = cvData.filter(
   (cvCategory) => cvCategory.id == "education"
 );
+export const mathData = cvData.filter(
+  (cvCategory) => cvCategory.id == "math"
+);

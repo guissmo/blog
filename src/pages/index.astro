@@ -4,6 +4,7 @@ import {
   personalProjectData,
   workExperienceData,
   educationData,
+  mathData,
 } from "./cv.ts";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -93,6 +94,7 @@ import CVSection from "../components/CVSection.astro";
         <CVSection data={personalProjectData} max={3} href="/projects" noun="personal projects" />
         <CVSection data={workExperienceData} max={3} href="/work-experience" noun="work experiences" />
         <CVSection data={educationData} max={3} href="/education" noun="education milestones" />
+        <!-- <CVSection data={mathData} max={3} href="/math" noun="math" /> -->
       </div>
       <Footer />
     </main>

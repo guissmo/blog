@@ -1,6 +1,6 @@
 {
   "jellysmack": {
-    "position": "Software Engineer",
+    "position": "Software Engineer (Frontend and Backend)",
     "company": "Jellysmack",
     "url": {
       "jellysmack": "https://jellysmack.com"
@@ -8,13 +8,14 @@
     "month_s": 10,
     "year_s": 2022,
     "details": [
-      "Found, reproduced, reported and fixed more than 120 bugs within a year",
-      "Communicated regularly with PM and design team to ensure we are aligned with the product vision",
+      "Worked on a browser-based video editing tool where I found, reproduced, reported and fixed more than 120 bugs within a year",
       "Contributed to codebase within my first month and migrated the app to a more recent MUI version",
-      "Implemented drag-and-drop with snap behavior and resize operations that preserved aspect ratio",
-      "Enhanced accessibility with context-aware keyboard shortcuts",
-      "Optimized app performance by analyzing data profiled in Chrome and Firefox's dev tools",
-      "Implemented custom UI components in line with design specifications"
+      "As the sole dev in the team: developed a static landing page using Next.JS and deployed it to Amazon AWS Cloudfront within a month",
+      "Optimized browser app performance by analyzing data profiled in Chrome and Firefox's dev tools",
+      "Implemented custom UI components in line with design specifications",
+      "Investigated YouTube video suggestions to improve AI-powered idea recommendation chat bot",
+      "Contributed to the documentation of the four different projects I have worked on",
+      "Worked with adjacent teams to diagnose bugs"
     ]
   },
   "phd": {

@@ -2,7 +2,6 @@
   "jokes": {
     "name": "Corninator: A Jokes App In Next.JS",
     "url": {
-      "project": "https://jokes.guissmo.com",
       "code": "https://github.com/guissmo/next-jokes"
     },
     "month": 12,
@@ -59,9 +58,10 @@
   },
   "prime-cert": {
     "name": "PrimeCert",
-    "show": false,
+    "show": true,
     "url": {
-      "project": "https://primecert.guissmo.com"
+      "project": "https://primecert.guissmo.com",
+      "code": "https://github.com/guissmo/nodejs-ecpp"
     },
     "month": 3,
     "year": 2022,
@@ -75,7 +75,6 @@
     "name": "Jologs-inator",
     "show": true,
     "url": {
-      "2008 version": "/jologs",
       "2023 version": "/chatjejept",
       "jejemon info": "https://en.wikipedia.org/wiki/Jejemon",
       "me on tv": "https://www.youtube.com/watch?v=oL1v0ZO9PGw"

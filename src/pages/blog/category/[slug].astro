@@ -1,8 +1,9 @@
 ---
-import { allBlogPostsByCategory } from "./blog.ts";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Head from "../../components/Head";
+import { getCollection } from "astro:content";
+import { allBlogPostsByCategory } from "../blog";
+import Head from "../../../components/Head";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import "@fontsource-variable/source-code-pro";
 import '@fontsource/fira-sans/100.css';
 import '@fontsource/fira-sans/200.css';
@@ -14,7 +15,24 @@ import '@fontsource/fira-sans/700.css';
 import '@fontsource/fira-sans/800.css';
 import '@fontsource/fira-sans/900.css';
 import "@fontsource/rubik-mono-one";
-const POST_PREVIEW_LIMIT = 3;
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  return Object.entries(allBlogPostsByCategory).map((k, val) => {
+    return ({
+    params: { 
+      slug: k[0].toLowerCase().replaceAll(" ", "-"),
+    },
+    props: { 
+      category: {
+        render: () => k[0]
+      },
+    },
+  })});
+}
+// // 2. For your template, you can get the entry directly from the prop
+// const { entry } = Astro.props;
+// const { Content } = await entry.render();
 ---
 
 <html lang="en">
@@ -22,12 +40,12 @@ const POST_PREVIEW_LIMIT = 3;
     <link
       rel="stylesheet"
       type="text/css"
-      href=`${import.meta.env.BASE_URL}/style.css`
+      href=`${import.meta.env.BASE_URL}/../../style.css`
     />
     <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
     <Head />
     <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | Blog</title>
+    <title>Jared Asuncion | {Astro.props.category.render()}</title>
   </head>
   <body>
     <main>
@@ -35,19 +53,16 @@ const POST_PREVIEW_LIMIT = 3;
       <div class="breadcrumbs">
         <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
         <span class="raquo">&raquo;</span>
-        <a href="#">Blog</a>
+        <a href="/blog">Blog</a>
+        <span class="raquo">&raquo;</span>
+        <a href="#">{Astro.props.category.render()}</a>
       </div>
       <div class="postList">
-        {
-          Object.keys(allBlogPostsByCategory).map((category) => {
-            return (
-              <>
                 <>
                   <span>&nbsp;</span>
-                  <h2><a class="category-link" href={`/blog/category/${category.toLowerCase().replaceAll(" ", "-")}`}>{category}</a></h2>
+                  <h2>{Astro.props.category.render()}</h2>
                 </>
-                {allBlogPostsByCategory[category]
-                  .slice(0, POST_PREVIEW_LIMIT)
+                {allBlogPostsByCategory[Astro.props.category.render()]
                   .map(({ slug, data }, index) => {
                     const { date } = data;
 
@@ -75,25 +90,20 @@ const POST_PREVIEW_LIMIT = 3;
                         >
                           {data.title}
                         </a>
+                        <span
+                          class="monospace date"
+                        >
+                          &nbsp;
+                        </span>
+                        <span class="desc-text">
+                          {data.description}
+                        </span>
                       </>
                     );
                   })
                   }
-                    {
-                      allBlogPostsByCategory[category].length > POST_PREVIEW_LIMIT && <>
-                  <span
-                          class="monospace date"
-                        >&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
-                  <span>
-                    <a class="full-category-link" href={`/blog/category/${category.toLowerCase().replaceAll(" ", "-")}`}>
-                      see more posts about {category}</a>
-                  </span>
-                  </>}
-              </>
-            )
-          }
-          )
-                }
+                  <>
+                  </>
       </div>
       <Footer />
     </main>
@@ -118,18 +128,13 @@ const POST_PREVIEW_LIMIT = 3;
         font-weight: 300;
       }
 
-      .full-category-link {
-        /* color: royalblue; */
-        opacity: 0.6;
+      .full-category.render()-link {
+        /* margin-left: 10px; */
+        color: royalblue;
       }
 
-      .category-link {
-        /* color: royalblue; */
-        font-weight: 700;
-      }
-
-      .category-link:hover {
-      
+      .desc-text {
+        margin-bottom: 2ex;
       }
     </style>
   </body>

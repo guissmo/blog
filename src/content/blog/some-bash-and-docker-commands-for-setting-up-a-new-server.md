@@ -32,6 +32,10 @@ sudo nano /etc/hostname
 sudo nano /etc/hosts
 ```
 
+## Syncthing
+
+[Link to install syncthing](../bash-and-docker-commands-for-setting-up-a-new-server)
+
 ## Docker
 
 ### Installation

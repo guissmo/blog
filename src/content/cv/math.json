@@ -1,0 +1,397 @@
+{
+    "preprints":{
+       "paper1":{
+          "title":"Computing the Hilbert Class Fields of Quartic CM Fields Using Complex Multiplication",
+          "date":"27 Apr 2021",
+          "type":"conference",
+          "links":{
+             "hal":"https://hal.archives-ouvertes.fr/hal-03210279/",
+             "arxiv":"https://arxiv.org/abs/2104.13639"
+          }
+       }
+    },
+    "conferences":{
+       "2020icms":{
+          "name":"International Congress of Mathematical Software",
+          "link":"http://icms-conference.org/2020/",
+          "loc":"Online (TU Braunschweig)",
+          "city":"Braunschweig, Germany",
+          "date":"13 - 16 Jul 2020",
+          "type":"conference"
+       },
+        "2020ants":{
+          "name":"Algorithmic Number Theory Symposium",
+          "link":"https://www.math.auckland.ac.nz/~sgal018/ANTS/",
+          "loc":"Online (University of Auckland, New Zealand)",
+          "city":"Auckland, New Zealand",
+          "date":"29 Jun – 4 Jul 2020",
+          "type":"conference",
+          "talks":[
+            "ants2020poster"
+          ]
+       },
+       "2020jncf":{
+          "name":"Journées nationales de calcul formel",
+          "link":"https://conferences.cirm-math.fr/2326.html",
+          "loc":"​Centre International de Rencontres Mathématiques",
+          "city":"Marseille, France",
+          "date":"2 – 6 Mar 2020",
+          "type":"conference",
+          "talks":[
+            "jncf2020"
+          ]
+       },
+       "2020grenoble":{
+          "name":"14th PARI/GP Atelier",
+          "link":"https://pari.math.u-bordeaux.fr/Events/PARI2020/",
+          "loc":"Institut Fourier, Université Grenoble Alpes",
+          "city":"Grenoble, France",
+          "date":"20 – 24 Jan 2020",
+          "type":"conference",
+          "talks":[
+            "atelier2020"
+          ]
+       },
+       "2019diamant":{
+          "name":"Diamant Symposium Fall 2019",
+          "link":"http://websites.math.leidenuniv.nl/diamant/index.php?pid=symposium1911",
+          "loc":"Hotel Van der Valk",
+          "city":"Utrecht, The Netherlands",
+          "date":"28 – 29 Nov 2019",
+          "type":"conference",
+          "talks":[
+             "diamant2019"
+          ]
+       },
+       "2019luxbdx":{
+          "name":"Luxembourg PhD Away Days",
+          "link":"http://math.uni.lu/docsem/semester/2019.html#winter",
+          "loc":"Université de Bordeaux",
+          "city":"Bordeaux, France",
+          "date":"19 – 21 Oct 2019",
+          "type":"conference",
+          "talks":[
+             "luxbdx2019"
+          ]
+       },
+       "2019istanbul":{
+          "name":"Journées Arithmétiques XXXI",
+          "link":"http://math.gsu.edu.tr/ja2019",
+          "loc":"Istanbul University, Faculty of Sciences, Vezneciler, Istanbul",
+          "city":"Istanbul, Turkey",
+          "date":"1 – 5 Jul 2019",
+          "type":"conference",
+          "talks":[
+             "ja2019"
+          ]
+       },
+       "2019bristol":{
+          "name":"CMI-HIMR School in Computational Number Theory",
+          "link":"https://heilbronn.ac.uk/2018/09/11/cmi-himr-summer-school-in-computational-number-theory/",
+          "loc":"Queen’s Building, University of Bristol",
+          "city":"Bristol, United Kingdom",
+          "date":"16 – 29 Jun 2019",
+          "type":"conference"
+       },
+       "2019benasque":{
+          "name":"2019 ALGANT Alumni Association Symposium",
+          "link":"http://benasque.org/2019aan",
+          "loc":"Centro de Ciencias de Benasque Pedro Pascual",
+          "city":"Benasque, Spain",
+          "date":"22 – 26 May 2019",
+          "type":"conference",
+          "talks":[
+             "benasque2019",
+             "benasque2019speed"
+          ]
+       },
+       "2018diamant":{
+          "name":"Diamant Symposium Fall 2018",
+          "link":"http://websites.math.leidenuniv.nl/diamant/index.php?pid=symposium1811",
+          "loc":"Hotel Van der Valk",
+          "city":"Veenendaal, The Netherlands",
+          "date":"29 – 30 Nov 2018",
+          "type":"conference"
+       },
+       "2018pari":{
+          "name":"10th PARI/GP Atelier",
+          "link":"https://pari.math.u-bordeaux.fr/Events/PARI2018/",
+          "loc":"Laboratoire de mathématiques de Besançon",
+          "city":"Besançon, France",
+          "date":"15 – 19 Jan 2018",
+          "type":"conference",
+          "talks":[
+            "atelierecpp"
+          ]
+       },
+       "2017seams":{
+           "name":"Southeast Asian Mathematical Society (SEAMS) School: Topics on Elliptic Curves",
+          "link":"http://www.rnta.eu/manila2017/",
+          "loc":"Institute of Mathematics - University of the Philippines Diliman",
+          "city":"Quezon City, Philippines",
+          "date":"16 - 25 July 2017",
+          "type":"conference",
+          "talks":[
+            "seams2017"
+          ]
+       },
+       "2017pari":{
+          "name":"8th PARI/GP Atelier",
+          "link":"http://pari.math.u-bordeaux.fr/Events/PARI2017b/",
+          "loc":"Institut Camille Jordan, Université Lyon 1",
+          "city":"Lyon, France",
+          "date":"9 – 13 Jan 2017",
+          "type":"conference"
+       },
+       "2015ecc":{
+          "name":"19th Workshop on Elliptic Curve Cryptography (ECC)",
+          "link":"http://ecc2015.math.u-bordeaux1.fr/",
+          "loc":"Université de Bordeaux",
+          "city":"Bordeaux, France",
+          "date":"28 – 30 Sep 2015",
+          "type":"conference"
+       },
+       "2015nmc":{
+          "name":"51ste Nederlands Mathematisch Congres",
+          "link":"https://www.wiskgenoot.nl/index.php?page=40&sid=1",
+          "loc":"Universiteit Leiden",
+          "city":"Leiden, Netherlands",
+          "date":"14 – 15 Sep 2015",
+          "type":"conference"
+       },
+       "2014msp":{
+          "name":"Mathematical Society of the Philippines: 2014 Convention",
+          "link":"https://www.scribd.com/document/240520870/2014-MSP-Anouncement",
+          "loc":"Sarabia Manor Hotel and Convention Center",
+          "city":"Ilo-ilo, Philippines",
+          "date":"26 – 27 May 2014",
+          "type":"conference"
+       },
+       "2013cimpa":{
+          "name":"CIMPA-ICTP: Research School on Algebraic Curves over Finite Fields and Applications",
+          "link":"https://math.upd.edu.ph/old/index8987.html?option=com_content&view=article&id=318:cimpars-2013&catid=105&Itemid=794",
+          "loc":"University of the Philippines, Diliman",
+          "city":"Quezon City, Philippines",
+          "date":"22 July – 2 Aug 2013",
+          "type":"conference"
+       }
+    },
+    "talks":{
+          "ants2020poster":{
+          "type":"poster",
+          "title":"Computing the Hilbert class field of quartic CM fields",
+          "event":"2020poster",
+          "date":"4 Jul 2020",
+          "duration":15,
+          "links":{
+             "poster":"files/2020ants/poster.pdf"
+          }
+       },
+       "jncf2020":{
+          "type":"contributed",
+          "title":"Computing abelian extensions of quartic fields using complex multiplication",
+          "event":"2020jncf",
+          "date":"5 Mar 2020",
+          "duration":30,
+          "links":{
+             "slides":"files/2020jncf/jncf.pdf"
+          }
+       },
+        "atelier2020":{
+          "type":"contributed",
+          "title":"Finite abelian group morphisms in PARI/GP",
+          "event":"2020grenoble",
+          "date":"21 Jan 2020",
+          "duration":30,
+          "links":{
+             "slides":"files/2020grenoble/slides.pdf",
+             "code in slides":"files/2020grenoble/copypasteme.gp",
+             "abgrps.gp":"files/2020grenoble/abgrp20200120.gp"
+          }
+       },
+       "diamant2019":{
+          "type":"contributed",
+          "title":"Computing Hilbert class fields of quartic CM-fields using complex multiplication",
+          "event":"2019diamant",
+          "date":"28 Nov 2019",
+          "duration":20,
+          "links":{
+             "slides":"files/2019diamant/slides.pdf"
+          }
+       },
+       "lambda2019":{
+          "type":"seminar",
+          "title":"Explicit Construction of Abelian Extensions of Number Fields",
+          "seminar":"lambda",
+          "date":"21 Nov 2019",
+          "duration":60,
+          "links":{
+             "abstract":"https://www.math.u-bordeaux.fr/imb/seminaire-des-doctorants?year=2000",
+             "slides":"files/2019lambda/slides.pdf"
+          }
+       },
+       "luxbdx2019":{
+          "type":"contributed",
+          "title":"Elliptic Curve Primality Proving",
+          "event":"2019luxbdx",
+          "date":"18 Oct 2019",
+          "duration":20,
+          "links":{
+             "slides":"files/2019luxbdx/slides.pdf"
+          }
+       },
+       "lfant2019":{
+          "type":"seminar",
+          "title":"Computing Hilbert class fields of quartic CM fields using Complex Multiplication",
+          "seminar":"lfant",
+          "date":"8 Oct 2019",
+          "duration":60,
+          "links":{
+             "abstract":"https://lfant.math.u-bordeaux.fr/index.php?category=seminar&page=2019"
+          }
+       },
+       "ja2019":{
+          "type":"contributed",
+          "title":"Computing Hilbert class fields of quartic CM-fields using complex multiplication",
+          "event":"2019istanbul",
+          "date":"4 July 2019",
+          "duration":20,
+          "links":{
+             "slides":"files/ja2019/talk.pdf"
+          }
+       },
+       "benasque2019":{
+          "type":"contributed",
+          "title":"Abelian extensions of number fields",
+          "event":"2019benasque",
+          "date":"23 May 2019",
+          "duration":30,
+          "links":{
+             "slides":"files/benasque2019/slides.pdf"
+          }
+       },
+       "benasque2019speed":{
+          "type":"speed",
+          "title":"Elliptic Curve Primality Proving in Two Minutes",
+          "event":"2019benasque",
+          "date":"23 May 2019",
+          "duration":2,
+          "links":{
+             "slides":"files/benasque2019/speedtalk.pdf"
+          }
+       },
+       "lfantecpp":{
+          "type":"seminar",
+          "title":"ECPP in PARI/GP",
+          "seminar":"lfant",
+          "date":"29 Jan 2018",
+          "duration":60,
+          "links":{
+             "slides":"files/lfantseminar/ecpplong.pdf",
+             "code":"files/lfantseminar/code.gp"
+          }
+       },
+       "atelierecpp":{
+          "type":"contributed",
+          "title":"ECPP in PARI/GP",
+          "event":"2018pari",
+          "date":"18 Jan 2018",
+          "duration":30,
+          "links":{
+             "slides":"files/pari2018/ecpp.pdf",
+             "code":"files/pari2018/code.gp"
+          }
+       },
+       "leiden2017":{
+          "type":"seminar",
+          "title":"Tower decomposition of Hilbert class fields",
+          "seminar":"algnt",
+          "date":"6 Nov 2017",
+          "duration":60,
+          "links":{
+             "abstract":"https://www.google.com/calendar/event?eid=M29qNmsxZ3RoNWlhZHFyNWsybm9qODgwa24gdDg0cmVhc2dnZTJkMWg5MWdpZ21jMWsya3NAZw&ctz=Europe/Amsterdam"
+          }
+       },
+       "seams2017":{
+          "type":"invited",
+          "title":"Elliptic curves in PARI/GP",
+          "event":"2017seams",
+          "date":"25 July 2017",
+          "duration":60,
+          "links":{
+             "slides":"files/seams2017/ec.pdf",
+             "code":"files/seams2017/code.gp"
+          }
+       },
+       "latex2014":{
+          "type":"invited",
+          "title":"LaTeX tutorial",
+          "date":"16 Jan 2014",
+          "duration":60,
+          "links":{
+             "slides":"files/latex2014/slides.pdf",
+             "examples":"files/latex2014/files.zip"
+          }
+       }
+    },
+    "seminars":{
+       "lfant":{
+          "name":"LFANT Seminar",
+          "link":"https://lfant.math.u-bordeaux.fr/index.php?category=seminar",
+          "loc":"Université de Bordeaux",
+          "city":"Bordeaux, France",
+          "active":"2015 -",
+          "talks":[
+             "lfantecpp",
+             "lfant2019"
+          ],
+          "type":"seminar"
+       },
+       "algnt":{
+          "name":"Leiden Algebra Geometry and Number Theory Seminar",
+          "link":"http://www.math.leidenuniv.nl/~streng/algseminar/",
+          "loc":"Universiteit Leiden",
+          "city":"Leiden, The Netherlands",
+          "active":"2017 - ",
+          "talks":[
+             "leiden2017"
+          ],
+          "type":"seminar"
+       },
+       "lambda":{
+          "name":"Séminaire des doctorants, Bordeaux",
+          "link":"https://www.math.u-bordeaux.fr/imb/seminaire-des-doctorants?year=2000",
+          "loc":"Université de Bordeaux",
+          "city":"Bordeaux, France",
+          "active":"2017 - ",
+          "talks":[
+             "lambda2019"
+          ],
+          "type":"seminar"
+       },
+       "intercity":{
+          "name":"Intercity Number Theory Seminar",
+          "link":"http://www.math.leidenuniv.nl/~desmit/ic/current.html",
+          "city":"The Netherlands",
+          "active":"2017 - ",
+          "type":"seminar"
+       },
+       "leidencolloq":{
+          "name":"Leiden General Mathematics Colloquium",
+          "link":"http://www.math.leidenuniv.nl/~streng/colloquium/",
+          "loc":"Universiteit Leiden",
+          "city":"Leiden, The Netherlands",
+          "active":"2018 - ",
+          "type":"seminar"
+       },
+       "updseminar":{
+          "name":"UPD Coding and Number Theory Seminar",
+          "link":"https://math.upd.edu.ph/old/indexc750.html?option=com_content&view=article&id=313&Itemid=788",
+          "loc":"University of the Philippines, Diliman",
+          "city":"Quezon City, Philippines",
+          "active":"2010 - 2014",
+          "type":"seminar"
+       }
+    }
+ }
+ 
