@@ -10,15 +10,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
 import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
 import type React from "react";
 import ContactInfo from "../components/ContactInfo.astro";
@@ -26,162 +26,174 @@ import Contacts from "../components/Contacts.astro";
 import classNames from "classnames";
 import style from "../styles/global.module.css";
 import CVSection from "../components/CVSection.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href=`${import.meta.env.BASE_URL}/style.css`
+<PageLayout frontmatter={{ title: "Guissmo" }} breadcrumbData={{}}>
+  <Contacts>
+    <ContactInfo title="blog" href="./blog" text="guissmo.com/blog" />
+    <ContactInfo
+      title="email"
+      href="javascript:location='mailto:\u006a\u0061\u0072\u0065\u0064\u0040\u0067\u0075\u0069\u0073\u0073\u006d\u006f\u002e\u0063\u006f\u006d';void 0"
+      text="jared@guissmo.com"
     />
-    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <Head />
-    <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | Website</title>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <Contacts>
-        <ContactInfo 
-          title="blog"
-          href="./blog"
-          text="guissmo.com/blog"
-        />
-        <ContactInfo 
-          title="email"
-          href="javascript:location='mailto:\u006a\u0061\u0072\u0065\u0064\u0040\u0067\u0075\u0069\u0073\u0073\u006d\u006f\u002e\u0063\u006f\u006d';void 0"
-          text="jared@guissmo.com"
-         />
-        <ContactInfo title="github" href="https://github.com/guissmo" target="_blank" text="github.com/guissmo" />
-        <ContactInfo title="linkedin" href="https://linkedin.com/in/guissmo"  target="_blank" text="linkedin.com/in/guissmo" />
-      </Contacts>
-      <div class="bio">
-        <span class={style.bold}>Hi, I'm Jared Asuncion.</span> I've been solving math
-        problems since 2001, publishing my webpages online since 2005, and coding solutions to algorithmic problems since 2007.<br
-        />
-        <div class="bio-footnote">
-          For the curious: <span class={style.bold}>Guissmo</span> is my second name and
-          is unique enough to be my username in most places.
-        </div>
-      </div>
-      <div class="mainList">
-        {
-          skillData.map((cvEntry) => {
-            return (
-              <>
-                <span class="hide-on-mobile">&nbsp;</span>
-                <h2>{cvEntry.id}</h2>
-                {Object.keys(cvEntry.data).map((category) => {
-                  return (
-                    <>
-                      <span class={classNames(style.monospace, style.bold, "skill-category")}>
-                        {category}
-                      </span>
-                      <span class="inline-list">
-                        {cvEntry.data[category].map((skill: string) => {
-                          return <span class="list-entry">{skill}</span>;
-                        })}
-                      </span>
-                    </>
-                  );
-                })}
-              </>
-            );
-          })
-        }
-        <CVSection data={personalProjectData} max={3} href="/projects" noun="personal projects" />
-        <CVSection data={workExperienceData} max={3} href="/work-experience" noun="work experiences" />
-        <CVSection data={educationData} max={3} href="/education" noun="education milestones" />
-        <!-- <CVSection data={mathData} max={3} href="/math" noun="math" /> -->
-      </div>
-      <Footer />
-    </main>
-    <style>
-      h2 {
-        font-weight: 700;
-        padding-top: 3ex;
-        text-transform: capitalize;
-      }
+    <ContactInfo
+      title="github"
+      href="https://github.com/guissmo"
+      target="_blank"
+      text="github.com/guissmo"
+    />
+    <ContactInfo
+      title="linkedin"
+      href="https://linkedin.com/in/guissmo"
+      target="_blank"
+      text="linkedin.com/in/guissmo"
+    />
+  </Contacts>
+  <div class="bio">
+    <span class={style.bold}>Hi, I'm Jared Asuncion.</span> I've been solving math
+    problems since 2001, publishing my webpages online since 2005, and coding solutions
+    to algorithmic problems since 2007.<br />
+    <div class="bio-footnote">
+      For the curious: <span class={style.bold}>Guissmo</span> is my second name
+      and is unique enough to be my username in most places.
+    </div>
+  </div>
+  <div class="mainList">
+    {
+      skillData.map((cvEntry) => {
+        return (
+          <>
+            <span class="hide-on-mobile">&nbsp;</span>
+            <h2>{cvEntry.id}</h2>
+            {Object.keys(cvEntry.data).map((category) => {
+              return (
+                <>
+                  <span
+                    class={classNames(
+                      style.monospace,
+                      style.bold,
+                      "skill-category"
+                    )}
+                  >
+                    {category}
+                  </span>
+                  <span class="inline-list">
+                    {cvEntry.data[category].map((skill: string) => {
+                      return <span class="list-entry">{skill}</span>;
+                    })}
+                  </span>
+                </>
+              );
+            })}
+          </>
+        );
+      })
+    }
+    <CVSection
+      data={personalProjectData}
+      max={3}
+      href="/projects"
+      noun="personal projects"
+    />
+    <CVSection
+      data={workExperienceData}
+      max={3}
+      href="/work-experience"
+      noun="work experiences"
+    />
+    <CVSection
+      data={educationData}
+      max={3}
+      href="/education"
+      noun="education milestones"
+    />
+    <!-- <CVSection data={mathData} max={3} href="/math" noun="math" /> -->
+  </div>
+</PageLayout>
 
-      .date {
-        width: fit-content;
-      }
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+    text-transform: capitalize;
+  }
 
-      .mainList {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        column-gap: clamp(10px, 5vw, 30px);
-      }
+  .date {
+    width: fit-content;
+  }
 
-      .bio {
-        padding-top: 5ex;
-        padding-right: 10px;
-        padding-left: 10px;
-        font-size: 20px;
-        text-align: justify;
-        text-align-last: left;
-      }
+  .mainList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+  }
 
-      .bio-footnote {
-        font-size: 1rem;
-        opacity: 0.6;
-        margin-top: 1rem;
-      }
+  .bio {
+    padding-top: 5ex;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    text-align: justify;
+    text-align-last: left;
+  }
 
-      .list-entry {
-        display: inline-block;
-      }
+  .bio-footnote {
+    font-size: 1rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+  }
 
-      .list-entry:not(:last-of-type):after {
-        content: ",";
-      }
+  .list-entry {
+    display: inline-block;
+  }
 
-      .list-entry:not(:last-of-type) {
-        margin-right: 0.5em;
-      }
+  .list-entry:not(:last-of-type):after {
+    content: ",";
+  }
 
-      .block {
-        display: block;
-      }
+  .list-entry:not(:last-of-type) {
+    margin-right: 0.5em;
+  }
 
-      .cv-entry-title {
-        font-weight: 600;
-        font-size: 1.2rem;
-      }
+  .block {
+    display: block;
+  }
 
-      .project-subtitle {
-        font-weight: 500;
-      }
+  .cv-entry-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
 
-      .no-wrap {
-        white-space: no-wrap !important;
-      }
+  .project-subtitle {
+    font-weight: 500;
+  }
 
-      @media screen and (max-width: 640px) {
-        .mainList {
-          display: grid;
-          grid-template-columns: 1fr;
-          padding: 0 10px;
-        }
+  .no-wrap {
+    white-space: no-wrap !important;
+  }
 
-        .monospace {
-          text-align: unset;
-        }
+  @media screen and (max-width: 640px) {
+    .mainList {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 0 10px;
+    }
 
-        .skill-category {
-          padding-top: 1.5ex;
-        }
+    .monospace {
+      text-align: unset;
+    }
 
-        .cv-entry-title {
-          font-size: 1.2rem;
-        }
+    .skill-category {
+      padding-top: 1.5ex;
+    }
 
-        .bio {
-          padding-right: 0;
-        }
-      }
-    </style>
-  </body>
-</html>
+    .cv-entry-title {
+      font-size: 1.2rem;
+    }
+
+    .bio {
+      padding-right: 0;
+    }
+  }
+</style>

@@ -102,6 +102,11 @@ const { frontmatter } = Astro.props;
       font-weight: 400;
     }
 
+    body {
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+    }
+
     h1:not(#logo) {
       font-weight: 800;
       padding-top: 2ex;
@@ -194,6 +199,7 @@ const { frontmatter } = Astro.props;
     justify-content: center;
     padding: 1rem;
     margin: 0;
+    z-index: 1000;
   }
 
   .nav-toggle {
@@ -210,7 +216,7 @@ const { frontmatter } = Astro.props;
     background: white;
     color: #292929;
     border-radius: 5px;
-    z-index: 100;
+    z-index: 2001;
   }
 </style>
 
@@ -240,6 +246,9 @@ const { frontmatter } = Astro.props;
   @media (max-width: 799px) {
     html{
     scroll-padding-top: 6rem;
+    }
+    .page-content {
+      width: 100%;
     }
   }
 

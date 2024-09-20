@@ -29,7 +29,7 @@ const { frontmatter, breadcrumbData } = Astro.props;
   </div>
 </BaseLayout>
 
-<style is:global>
+<!-- <style is:global>
   body {
     font-family: "Fira Sans", sans-serif;
     font-weight: 400;
@@ -49,11 +49,10 @@ const { frontmatter, breadcrumbData } = Astro.props;
     padding-left: 0.3em;
     padding-right: 0.3em;
   }
-</style>
-
+</style> -->
 
 <style>
-  @media (min-width: 800px) {
+  /* @media (min-width: 800px) {
     .content {
       display: flex;
       gap: 5rem;
@@ -75,8 +74,8 @@ const { frontmatter, breadcrumbData } = Astro.props;
     div.nav-toggle {
       display: none;
     }
-  }
-  @media (max-width: 799px) {
+  } */
+  /* @media (max-width: 799px) {
   
     .hidden {
       display: none;
@@ -95,78 +94,73 @@ const { frontmatter, breadcrumbData } = Astro.props;
       overflow-y: auto;
       background: rgb(255, 255, 255, 0.9);
     }
-  }
-  
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3rem;
-      width: 100%;
-      background: white;
-      box-shadow: 0px 10px 10px lightgray;
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      margin: 0;
-    }
-  
-    .nav-toggle {
-      cursor: pointer;
-      text-align: center;
-      user-select: none;
-      position: fixed;
-      display: block;
-      font-size: 1.5rem;
-      top: 1rem;
-      right: 1rem;
-      height: 3rem;
-      width: 3rem;
-      background: white;
-      color: #292929;
-      border-radius: 5px;
-      z-index: 100;
-    }
-  </style>
-  
-  <style is:global>
-  
-    h1#logo {
-      padding: 0;
-      margin: 0;
-    }
-      #logo a {
-    display: block;
-    font-family: "Rubik Mono One", sans-serif;
-    font-size: 0.8em;
-    font-weight: 700;
-    width: fit-content;
-    transform: rotate(0deg);
-    padding: 0px 0.2em;
-    text-decoration: none;
-    background-color: #292929;
-    }
-  
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 3rem;
-    }
-  
-    @media (max-width: 799px) {
-      html{
-      scroll-padding-top: 6rem;
-      }
-    }
-  
-    body {
-      padding: 0 1rem;
-      margin: 0;
-    }
-    .content {
-      padding: 0;
-    }
+  } */
 
+  /* .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 10px 10px lightgray;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+  } */
+
+
+  <style>
+  @media (min-width: 800px) {
     .page-content {
       width: 80%;
     }
-  </style>
+  }
+
+  @media (max-width: 799px) {
+    .page-content {
+      width: 100%;
+    }
+  }
+</style>
+
+<style is:global>
+  @media (min-width: 800px) {
+    .page-content {
+      width: 80%;
+    }
+    .sticky-toc {
+      position: sticky;
+      top: 0;
+      padding: 1rem;
+      max-height: calc(100vh - 2rem);
+      min-width: 20%;
+      overflow-y: auto;
+    }
+  }
+
+  @media (max-width: 799px) {
+    .page-content {
+      width: 100%;
+      padding-top: 6rem;
+    }
+    .sticky-toc {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: min(300px, 100vw);
+      max-width: 100vw;
+      padding: 2rem;
+      margin-left: auto;
+      margin-right auto;
+      overflow-y: auto;
+      background: rgb(255, 255, 255, 0.9);
+      z-index: 2000;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+</style>

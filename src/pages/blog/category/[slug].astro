@@ -4,138 +4,97 @@ import { allBlogPostsByCategory } from "../blog";
 import Head from "../../../components/Head";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
-import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';
-import "@fontsource/rubik-mono-one";
+import PageLayout from "../../../layouts/PageLayout.astro";
 
-// 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   return Object.entries(allBlogPostsByCategory).map((k, val) => {
-    return ({
-    params: { 
-      slug: k[0].toLowerCase().replaceAll(" ", "-"),
-    },
-    props: { 
-      category: {
-        render: () => k[0]
+    return {
+      params: {
+        slug: k[0].toLowerCase().replaceAll(" ", "-"),
       },
-    },
-  })});
+      props: {
+        category: {
+          render: () => k[0],
+        },
+      },
+    };
+  });
 }
-// // 2. For your template, you can get the entry directly from the prop
-// const { entry } = Astro.props;
-// const { Content } = await entry.render();
+
+const breadcrumbData = {
+  title: "Blog",
+  href: `${import.meta.env.BASE_URL}/blog`,
+  child: {
+    title: Astro.props.category.render(),
+  },
+};
 ---
 
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href=`${import.meta.env.BASE_URL}/../../style.css`
-    />
-    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <Head />
-    <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | {Astro.props.category.render()}</title>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <div class="breadcrumbs">
-        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
-        <span class="raquo">&raquo;</span>
-        <a href="/blog">Blog</a>
-        <span class="raquo">&raquo;</span>
-        <a href="#">{Astro.props.category.render()}</a>
-      </div>
-      <div class="postList">
-                <>
-                  <span>&nbsp;</span>
-                  <h2>{Astro.props.category.render()}</h2>
-                </>
-                {allBlogPostsByCategory[Astro.props.category.render()]
-                  .map(({ slug, data }, index) => {
-                    const { date } = data;
+<PageLayout frontmatter={{ title: "Blog" }} breadcrumbData={breadcrumbData}>
+  <div class="postList">
+    <>
+      <span>&nbsp;</span>
+      <h2>{Astro.props.category.render()}</h2>
+    </>
+    {
+      allBlogPostsByCategory[Astro.props.category.render()].map(
+        ({ slug, data }, index) => {
+          const { date } = data;
 
-                    function dateToString(date: Date) {
-                      let year = date.getFullYear();
-                      let month = pad(date.getMonth() + 1);
-                      let day = pad(date.getDate());
+          function dateToString(date: Date) {
+            let year = date.getFullYear();
+            let month = pad(date.getMonth() + 1);
+            let day = pad(date.getDate());
 
-                      return [year, month, day].join(".");
-                    }
+            return [year, month, day].join(".");
+          }
 
-                    function pad(num: number) {
-                      return num.toString().padStart(2, "0");
-                    }
+          function pad(num: number) {
+            return num.toString().padStart(2, "0");
+          }
 
-                    return (
-                      <>
-                        <span
-                          class="monospace date"
-                        >
-                          {dateToString(date)}
-                        </span>
-                        <a
-                          href={`${import.meta.env.BASE_URL}/blog/${slug}`}
-                        >
-                          {data.title}
-                        </a>
-                        <span
-                          class="monospace date"
-                        >
-                          &nbsp;
-                        </span>
-                        <span class="desc-text">
-                          {data.description}
-                        </span>
-                      </>
-                    );
-                  })
-                  }
-                  <>
-                  </>
-      </div>
-      <Footer />
-    </main>
-    <style>
-      h2 {
-        font-weight: 700;
-        padding-top: 3ex;
-      }
+          return (
+            <>
+              <span class="monospace date">{dateToString(date)}</span>
+              <a href={`${import.meta.env.BASE_URL}/blog/${slug}`}>
+                {data.title}
+              </a>
+              <span class="monospace date">&nbsp;</span>
+              <span class="desc-text">{data.description}</span>
+            </>
+          );
+        }
+      )
+    }
+  </div>
+</PageLayout>
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+  }
 
-      .date {
-        width: fit-content;
-      }
+  .date {
+    width: fit-content;
+  }
 
-      .postList {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        column-gap: clamp(10px, 5vw, 30px);
-      }
+  .postList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+  }
 
-      .monospace {
-        font-family: "Source Code Pro Variable", sans-serif;
-        font-weight: 300;
-      }
+  .monospace {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 300;
+  }
 
-      .full-category.render()-link {
-        /* margin-left: 10px; */
-        color: royalblue;
-      }
+  .full-category.render()-link {
+    /* margin-left: 10px; */
+    color: royalblue;
+  }
 
-      .desc-text {
-        margin-bottom: 2ex;
-      }
-    </style>
-  </body>
-</html>
+  .desc-text {
+    margin-bottom: 2ex;
+  }
+</style>

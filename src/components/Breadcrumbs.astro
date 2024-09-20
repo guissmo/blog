@@ -2,18 +2,20 @@
 const { data } = Astro.props;
 ---
 
-<ul>
-  <li>
-    {
-      data.child ? (
-        <a href={data.href}>{data.title}</a>
-      ) : (
-        <span>{data.title}</span>
-      )
-    }
-    {data.child && <Astro.self data={data.child} />}
-  </li>
-</ul>
+{
+  data.title && (
+    <ul>
+      <li>
+        {data.child ? (
+          <a href={data.href}>{data.title}</a>
+        ) : (
+          <span>{data.title}</span>
+        )}
+        {data.child && <Astro.self data={data.child} />}
+      </li>
+    </ul>
+  )
+}
 
 <style>
   ul {
