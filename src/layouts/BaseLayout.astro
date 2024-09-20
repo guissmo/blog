@@ -1,17 +1,46 @@
 ---
 import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';import "@fontsource/rubik-mono-one";
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
+import "@fontsource/rubik-mono-one";
+import Header from "../components/Header";
+import TableOfContents from "../components/TableOfContents.astro";
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props;
 ---
+
+<script>
+  let navVisible = true;
+
+  function toggleNavVisibility() {
+    navVisible = !navVisible;
+    let nav = document.querySelector(".sticky-toc");
+    if (nav) {
+      nav.classList.toggle("hidden", !navVisible);
+    }
+    const navToggle = document.querySelector(".nav-toggle");
+    if (navToggle) {
+      if (navVisible) {
+        navToggle.textContent = "×";
+      } else {
+        navToggle.textContent = "≡";
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector(".nav-toggle");
+    navToggle?.addEventListener("click", toggleNavVisibility);
+  });
+  toggleNavVisibility();
+</script>
 
 <html>
   <head>
@@ -56,32 +85,169 @@ const { frontmatter } = Astro.props;
     <link rel="manifest" href="/blog/favicon/site.webmanifest" />
   </head>
   <body>
-    <slot />
+    <main>
+      <div class="header">
+        <Header />
+      </div>
+      <div class="nav-toggle">≡</div>
+      <span class="content">
+        <slot />
+      </span>
+    </main>
   </body>
+
+  <style is:global>
+    body {
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 400;
+    }
+
+    h1:not(#logo) {
+      font-weight: 800;
+      padding-top: 2ex;
+    }
+
+    p code,
+    li code {
+      font-family: "Source Code Pro Variable", sans-serif;
+      font-weight: 800;
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      padding-left: 0.3em;
+      padding-right: 0.3em;
+    }
+  </style>
 </html>
 
-<style is:global>
-  body {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 400;
-  }
-
-  h1:not(#logo) {
-    font-weight: 800;
-    padding-top: 2ex;
-  }
-
+<style>
+@media (min-width: 800px) {
   .content {
-    padding-top: 3ex;
+    display: flex;
+    gap: 5rem;
+  }
+  .sticky-toc {
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    max-height: calc(100vh - 2rem);
+    min-width: 20%;
+    overflow-y: auto;
+  }
+  .post-content {
+    max-width: 80%;
+  }
+  div.header {
+    display: none;
+  }
+  div.nav-toggle {
+    display: none;
+  }
+}
+@media (max-width: 799px) {
+
+  .hidden {
+    display: none;
   }
 
-  p code,
-  li code {
-    font-family: "Source Code Pro Variable", sans-serif;
-    font-weight: 800;
-    border: 1px solid darkgray;
+  .sticky-toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(300px, 100vw);
+    max-width: 100vw;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right auto;
+    overflow-y: auto;
+    background: rgb(255, 255, 255, 0.9);
+  }
+}
+
+  ul {
+    text-align: left;
+    list-style-type: '» ';
+    padding-left: 1em;
+    padding-top: 0;
+    margin-top: 0;
+    line-height: 1.3;
+  }
+
+  ul ul {
+    padding-left: 1rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 10px 10px lightgray;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .nav-toggle {
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    position: fixed;
+    display: block;
+    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+    height: 3rem;
+    width: 3rem;
+    background: white;
+    color: #292929;
     border-radius: 5px;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
+    z-index: 100;
+  }
+</style>
+
+<style is:global>
+
+  h1#logo {
+    padding: 0;
+    margin: 0;
+  }
+    #logo a {
+  display: block;
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  width: fit-content;
+  transform: rotate(0deg);
+  padding: 0px 0.2em;
+  text-decoration: none;
+  background-color: #292929;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+
+  @media (max-width: 799px) {
+    html{
+    scroll-padding-top: 6rem;
+    }
+  }
+
+  body {
+    padding: 0 1rem;
+    margin: 0;
+  }
+  .content {
+    padding: 0;
   }
 </style>

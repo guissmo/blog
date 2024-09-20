@@ -1,14 +1,15 @@
 ---
 import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';import "@fontsource/rubik-mono-one";
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
+import "@fontsource/rubik-mono-one";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PostLayout from "./PostLayout.astro";
@@ -18,30 +19,25 @@ const { frontmatter, headings } = Astro.props;
 ---
 
 <PostLayout {...Astro.props}>
-    <div class="preface">
-      <p>Il s'agit d'une collaboration entre moi, <b>Jared Asuncion</b>, et le prof de maths <b>Pierre Brun</b> pour réaliser ces notes de cours.
-      Ce sont les notes de cours pour son cours d'NSI en terminale pendant l'année académique 2024-2025.
-      Elles ont été initialement rédigées sous forme de notebooks Jupyter, mais nous les avons converties en HTML pour une meilleure lisibilité dans les browsers.</p>
-      <p>C'est un travail en cours. N'hésitez pas à nous contacter à <a href="mailto:nsi@guissmo.com">nsi@guissmo.com</a> pour vos commentaires, suggestions, encouragements ou offres de prépa (pour Pierre) !</p>
-    </div>
-    <slot />
+  <div class="preface">
+    <p>
+      Il s'agit d'une collaboration entre moi, <b>Jared Asuncion</b>, et le prof
+      de maths <b>Pierre Brun</b> pour réaliser ces notes de cours. Ce sont les notes
+      de cours pour son cours d'NSI en terminale pendant l'année académique 2024-2025.
+      Elles ont été initialement rédigées sous forme de notebooks Jupyter, mais nous
+      les avons converties en HTML pour une meilleure lisibilité dans les browsers.
+    </p>
+    <p>
+      C'est un travail en cours. N'hésitez pas à nous contacter à <a
+        href="mailto:nsi@guissmo.com">nsi@guissmo.com</a
+      > pour vos commentaires, suggestions, encouragements ou offres de prépa (pour
+      Pierre) !
+    </p>
+  </div>
+  <slot />
 </PostLayout>
 
 <style is:global>
-  body {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 400;
-  }
-
-  h1:not(#logo) {
-    font-weight: 800;
-    padding-top: 2ex;
-  }
-
-  .content {
-    padding-top: 3ex;
-  }
-
   p code,
   li code {
     font-family: "Source Code Pro Variable", sans-serif;
@@ -52,238 +48,218 @@ const { frontmatter, headings } = Astro.props;
     padding-right: 0.3em;
   }
 
-div.rendered_html {
-	font-family: "";
-	color: rgba(0, 0, 0, 0.8)!important;
-}
-
-h2 {
-	color: rgba(0, 0, 0, 1);
-}
-
-h3 {
-	color: rgba(0, 0, 0, 0.9);
-	text-decoration: underline;
-}
-
-h4 {
-	color: rgba(0, 0, 0, 0.85);
-}
-
-div.test {
-	color: red;
-	border: 1px solid black;
-}
-div.info {
-	margin-top: 3px;
-	margin-bottom: 3px;
-	padding: 12px;
-	background: aliceblue;
-	border-left: 3px solid skyblue;
-}
-div.warn {
-	margin-top: 3px;
-	margin-bottom: 3px;
-	padding: 12px;
-	background: lightyellow;
-	border-left: 3px solid goldenrod;
-}
-div.err {
-	margin-top: 3px;
-	margin-bottom: 3px;
-	padding: 12px;
-	background: lightpink;
-	border-left: 3px solid darkred;
-}
-div.example {
-	margin-top: 3px;
-	margin-bottom: 3px;
-	padding: 12px;
-	background: #e2fee2;
-	border-left: 3px solid teal;
-}
-div.exer-start::before {
-	content: 'EXERCICE';
-	font-weight: bold;
-	text-align: center;
-}
-div.exer-start-live::before {
-	content: 'EXERCICE TOUS ENSEMBLE';
-	font-weight: bold;
-	text-align: center;
-}
-div.exer-hard::before {
-	content: 'EXERCICE ⭐'
-}
-div.exer-champ::before {
-	content: 'EXERCICE '🏆
-}
-div.text_cell_render {
-	overflow-y: visible;
-}
-div.rendered_html li {
-	padding-top: 1ex;
-	padding-bottom: 1ex;
-}
-div.exer-start, div.exer-start-live {
-	transform: translateY(24px);
-	margin-left: 24px;
-	margin-right: 24px;
-	padding: 24px;
-	border: 2px dashed #cfcfcf;
-	background: #fcfcfc;
-	border-bottom-style: none;
-}
-div.exer-mid {
-	margin-left: 24px;
-	margin-right: 24px;
-	padding: 24px;
-	margin-bottom: 0;
-	border: 2px dashed #cfcfcf;
-	background: #fcfcfc;
-	border-bottom-style: none;
-	border-top-style: none;
-}
-div.exer-end {
-	transform: translateY(-24px);
-	margin-left: 24px;
-	margin-right: 24px;
-	padding: 24px;
-	border: 2px dashed #cfcfcf;
-	background: #fcfcfc;
-	border-top-style: none;
-}
-div.exer-live {
-	background: #e2fee2;
-	border-color: teal;
-}
-
-code {
-	font-family: "Source Code Pro", "DejaVu Sans Mono", monospace;
-}
-
-.CodeMirror {
-	font-family: "Source Code Pro", "DejaVu Sans Mono", monospace;
-	padding: 10px;
-}
-div.cm-s-ipython, div.text_cell_render pre {
-	font-size: 1em;
-	line-height: 1.5em;
-	letter-spacing: 0.3px;
-	word-spacing: 1px;
-	background: #1B2630!important;
-	color: #F8F8F2!important;
-}
-.cm-s-ipython span.CodeMirror-lines {
-	padding: 8px 0;
-}
-.cm-s-ipython span.CodeMirror-gutters {
-	box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
-	background-color: #1B2630;
-	padding-right: 10px;
-	z-index: 3;
-	border: none;
-}
-.cm-s-ipython div.CodeMirror-cursor {
-	border-left: 3px solid #F8F8F2;
-}
-.cm-s-ipython span.CodeMirror-activeline-background {
-	background: #3D2E2E77;
-}
-.cm-s-ipython span.CodeMirror-selected {
-	background: #95A3A63D;
-}
-.cm-s-ipython span.cm-comment {
-	font-style: unset!important;
-	color: #6D6D6D;
-}
-.cm-s-ipython span.cm-string {
-	color: #8AD6F2;
-}
-.cm-s-ipython span.cm-number {
-	color: #FFB266;
-}
-.cm-s-ipython span.cm-atom {
-	color: #FFB266;
-}
-.cm-s-ipython span.cm-keyword {
-	color: #E47D80;
-}
-.cm-s-ipython span.cm-variable {
-	color: #F2AAEC;
-}
-.cm-s-ipython span.cm-def {
-/*	font-style: italic;*/
-	color: #FFD2A6;
-}
-.cm-s-ipython span.cm-variable-2, .cm-s-ipython span.cm-builtin {
-	color: #BAE682;
-}
-.cm-s-ipython span.cm-property {
-	color: #FFB266;
-}
-.cm-s-ipython span.cm-operator {
-	color: #E47D80;
-}
-.cm-s-ipython span.CodeMirror-linenumber {
-	color: #6D6D6D;
-}
-div.output_subarea {
-	background-color: #f1f1f1;
-	align-self: center;
-	max-width: 100%;
-}
-div.prompt_container, div.prompt {
-	display: none;
-}
-
-div.exer-start, div.exer-mid, div.exer-end {
-  position: relative;
-  z-index: -1;
-}
-
-div.info, div.warn, div.err, div.example {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-div.preface {
-  border: 2px dotted green;
-  border-left-width: 0;
-  border-right-width: 0;
-  margin-top: 1em;
-  padding: 12px 1em;
-  color: green;
-  line-height: 1.5;
-}
-
-  h1#logo {
-    padding: 0;
-    margin: 0;
-  }
-    #logo a {
-  display: block;
-  font-family: "Rubik Mono One", sans-serif;
-  font-size: 0.8em;
-  font-weight: 700;
-  width: fit-content;
-  transform: rotate(0deg);
-  padding: 0px 0.5em;
-  text-decoration: none;
-  background-color: #292929;
+  div.rendered_html {
+    font-family: "";
+    color: rgba(0, 0, 0, 0.8) !important;
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
+  h2 {
+    color: rgba(0, 0, 0, 1);
   }
 
-  body {
-    padding: 0;
-    margin: 0;
+  h3 {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: underline;
   }
-  .content {
-    padding: 0;
+
+  h4 {
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  div.test {
+    color: red;
+    border: 1px solid black;
+  }
+  div.info {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 12px;
+    background: aliceblue;
+    border-left: 3px solid skyblue;
+  }
+  div.warn {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 12px;
+    background: lightyellow;
+    border-left: 3px solid goldenrod;
+  }
+  div.err {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 12px;
+    background: lightpink;
+    border-left: 3px solid darkred;
+  }
+  div.example {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 12px;
+    background: #e2fee2;
+    border-left: 3px solid teal;
+  }
+  div.exer-start::before {
+    content: "EXERCICE";
+    font-weight: bold;
+    text-align: center;
+  }
+  div.exer-start-live::before {
+    content: "EXERCICE TOUS ENSEMBLE";
+    font-weight: bold;
+    text-align: center;
+  }
+  div.exer-hard::before {
+    content: "EXERCICE ⭐";
+  }
+  div.exer-champ::before {
+    content: "EXERCICE " 🏆;
+  }
+  div.text_cell_render {
+    overflow-y: visible;
+  }
+  div.rendered_html li {
+    padding-top: 1ex;
+    padding-bottom: 1ex;
+  }
+  div.exer-start,
+  div.exer-start-live {
+    transform: translateY(24px);
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 24px;
+    border: 2px dashed #cfcfcf;
+    background: #fcfcfc;
+    border-bottom-style: none;
+  }
+  div.exer-mid {
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 24px;
+    margin-bottom: 0;
+    border: 2px dashed #cfcfcf;
+    background: #fcfcfc;
+    border-bottom-style: none;
+    border-top-style: none;
+  }
+  div.exer-end {
+    transform: translateY(-24px);
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 24px;
+    border: 2px dashed #cfcfcf;
+    background: #fcfcfc;
+    border-top-style: none;
+  }
+  div.exer-live {
+    background: #e2fee2;
+    border-color: teal;
+  }
+
+  code {
+    font-family: "Source Code Pro", "DejaVu Sans Mono", monospace;
+  }
+
+  .CodeMirror {
+    font-family: "Source Code Pro", "DejaVu Sans Mono", monospace;
+    padding: 10px;
+  }
+  div.cm-s-ipython,
+  div.text_cell_render pre {
+    font-size: 1em;
+    line-height: 1.5em;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+    background: #1b2630 !important;
+    color: #f8f8f2 !important;
+  }
+  .cm-s-ipython span.CodeMirror-lines {
+    padding: 8px 0;
+  }
+  .cm-s-ipython span.CodeMirror-gutters {
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+    background-color: #1b2630;
+    padding-right: 10px;
+    z-index: 3;
+    border: none;
+  }
+  .cm-s-ipython div.CodeMirror-cursor {
+    border-left: 3px solid #f8f8f2;
+  }
+  .cm-s-ipython span.CodeMirror-activeline-background {
+    background: #3d2e2e77;
+  }
+  .cm-s-ipython span.CodeMirror-selected {
+    background: #95a3a63d;
+  }
+  .cm-s-ipython span.cm-comment {
+    font-style: unset !important;
+    color: #6d6d6d;
+  }
+  .cm-s-ipython span.cm-string {
+    color: #8ad6f2;
+  }
+  .cm-s-ipython span.cm-number {
+    color: #ffb266;
+  }
+  .cm-s-ipython span.cm-atom {
+    color: #ffb266;
+  }
+  .cm-s-ipython span.cm-keyword {
+    color: #e47d80;
+  }
+  .cm-s-ipython span.cm-variable {
+    color: #f2aaec;
+  }
+  .cm-s-ipython span.cm-def {
+    /*	font-style: italic;*/
+    color: #ffd2a6;
+  }
+  .cm-s-ipython span.cm-variable-2,
+  .cm-s-ipython span.cm-builtin {
+    color: #bae682;
+  }
+  .cm-s-ipython span.cm-property {
+    color: #ffb266;
+  }
+  .cm-s-ipython span.cm-operator {
+    color: #e47d80;
+  }
+  .cm-s-ipython span.CodeMirror-linenumber {
+    color: #6d6d6d;
+  }
+  div.output_subarea {
+    background-color: #f1f1f1;
+    align-self: center;
+    max-width: 100%;
+  }
+  div.prompt_container,
+  div.prompt {
+    display: none;
+  }
+
+  div.exer-start,
+  div.exer-mid,
+  div.exer-end {
+    position: relative;
+    z-index: -1;
+  }
+
+  div.info,
+  div.warn,
+  div.err,
+  div.example {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  div.preface {
+    border: 2px dotted green;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-top: 1em;
+    padding: 12px 1em;
+    color: green;
+    line-height: 1.5;
   }
 </style>
