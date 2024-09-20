@@ -1,0 +1,67 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface HierarchicalHeading extends Heading {
+  children: HierarchicalHeading[];
+}
+
+const { headings } = Astro.props as { headings: Heading[] };
+
+function buildHierarchy(headings: Heading[]): HierarchicalHeading[] {
+  const hierarchy: HierarchicalHeading[] = [];
+  const stack: HierarchicalHeading[] = [];
+
+  headings.forEach((heading) => {
+    const item: HierarchicalHeading = { ...heading, children: [] };
+
+    while (stack.length > 0 && stack[stack.length - 1].depth >= heading.depth) {
+      stack.pop();
+    }
+
+    if (stack.length === 0) {
+      hierarchy.push(item);
+    } else {
+      stack[stack.length - 1].children.push(item);
+    }
+
+    stack.push(item);
+  });
+
+  return hierarchy;
+}
+
+const hierarchicalHeadings = buildHierarchy(headings.filter((heading) => heading.depth <= 2));
+---
+
+<ul>
+  {hierarchicalHeadings.map((heading) => (
+    <li>
+      <a href={`#${heading.slug}`}>{heading.text}</a>
+      {heading.children.length > 0 && (
+        <ul>
+          {heading.children.map((child) => (
+            <li>
+              <a href={`#${child.slug}`}>{child.text}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  ))}
+</ul>
+
+<style>
+  ul {
+    text-align: left;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  ul ul {
+    padding-left: 1rem;
+  }
+</style>

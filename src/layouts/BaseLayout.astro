@@ -1,0 +1,87 @@
+---
+import "@fontsource-variable/source-code-pro";
+import '@fontsource/fira-sans/100.css';
+import '@fontsource/fira-sans/200.css';
+import '@fontsource/fira-sans/300.css';
+import '@fontsource/fira-sans/400.css';
+import '@fontsource/fira-sans/500.css';
+import '@fontsource/fira-sans/600.css';
+import '@fontsource/fira-sans/700.css';
+import '@fontsource/fira-sans/800.css';
+import '@fontsource/fira-sans/900.css';import "@fontsource/rubik-mono-one";
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { frontmatter } = Astro.props;
+---
+
+<html>
+  <head>
+    <title>{frontmatter.title} | Jared Asuncion</title>
+    <meta name="title" content={`${frontmatter.title} | Jared Asuncion`} />
+    <meta
+      name="description"
+      content={`${frontmatter.description} | Jared Asuncion`}
+    />
+    <meta charset="utf-8" />
+    <meta name="author" content="Jared Asuncion" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=`${import.meta.env.BASE_URL}/style.css`
+    />
+    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/blog/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/blog/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/blog/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/blog/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+  }
+
+  h1:not(#logo) {
+    font-weight: 800;
+    padding-top: 2ex;
+  }
+
+  .content {
+    padding-top: 3ex;
+  }
+
+  p code,
+  li code {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 800;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
+</style>
