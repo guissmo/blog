@@ -1,6 +1,6 @@
 ---
 title: "QBasic Poker"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Projects
 author: guissmo
 date: 2023-12-19T17:47:15+00:00

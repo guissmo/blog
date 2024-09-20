@@ -1,6 +1,6 @@
 ---
 title: "Trip to Legazpi and Sorsogon 2023"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Travel
 author: guissmo
 date: 2023-08-01T05:50:07+02:00

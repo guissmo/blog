@@ -1,6 +1,6 @@
 ---
 title: "DIY Digital eInk Photo Frame with Pimoroni Inky Impressions"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Mini Projects
 author: guissmo
 date: 2024-04-13T11:33:21+00:00

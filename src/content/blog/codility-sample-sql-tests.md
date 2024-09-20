@@ -1,6 +1,6 @@
 ---
 title: "Tried Out The Codility Sample SQL Tests"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2023-10-15T10:11:32.538Z

@@ -1,6 +1,6 @@
 ---
 title: "Songs About Math"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Math
 author: guissmo
 date: 2023-10-31T22:48:15Z

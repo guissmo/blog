@@ -1,6 +1,6 @@
 ---
 title: "Transitioning From Academia Math to Industry"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Life
 author: guissmo
 date: 2023-03-22T22:20:31+01:00

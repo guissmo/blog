@@ -1,6 +1,6 @@
 ---
 title: "DeGoogling 2024: Alternatives to Google That I'm using"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Recommendations
 author: guissmo
 date: 2024-06-09T09:18:14+00:00

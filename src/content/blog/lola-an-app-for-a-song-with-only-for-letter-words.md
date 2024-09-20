@@ -1,6 +1,6 @@
 ---
 title: "Lola: An App For a Song With Only Four Letter Words"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Projects
 author: guissmo
 date: 2023-11-05T22:57:37Z

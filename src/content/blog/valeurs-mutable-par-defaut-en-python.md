@@ -1,6 +1,6 @@
 ---
 title: "Valeurs mutables par défaut en Python"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2024-05-28T18:58:32+00:00

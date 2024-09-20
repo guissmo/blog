@@ -1,6 +1,6 @@
 ---
 title: "Asking CNIL for GDPR / RGPD help"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Mini Projects
 author: guissmo
 date: 2024-05-02T20:17:03+00:00

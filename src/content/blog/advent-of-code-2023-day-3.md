@@ -1,6 +1,6 @@
 ---
 title: "Advent of Code 2023: Day 3"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Advent of Code
 author: guissmo
 date: 2023-12-03T12:15:38+00:00

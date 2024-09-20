@@ -1,6 +1,6 @@
 ---
 title: "Bypassing Overflow Hidden Rule in CSS"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2023-05-30T01:00:54+02:00

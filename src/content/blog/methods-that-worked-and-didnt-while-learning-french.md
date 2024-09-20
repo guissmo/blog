@@ -1,6 +1,6 @@
 ---
 title: "Learning French - What Worked And What Didn't"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: French
 author: guissmo
 date: 2023-10-20T21:38:41Z

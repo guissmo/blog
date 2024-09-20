@@ -1,6 +1,6 @@
 ---
 title: "Bash and Docker Cheat Sheet for New Servers"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Code
 date: 2023-08-13T22:51:12+02:00
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Understanding FastAPI Annotated and Depends Pattern"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2024-05-26T11:57:08+00:00

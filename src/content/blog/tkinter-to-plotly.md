@@ -1,6 +1,6 @@
 ---
 title: "TKinter to Plotly"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Mini Projects
 author: guissmo
 date: 2024-01-04T21:55:09+00:00

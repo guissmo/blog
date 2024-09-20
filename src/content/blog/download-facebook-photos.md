@@ -1,6 +1,6 @@
 ---
 title: Download Facebook Photos
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2024-01-07T16:48:22+00:00

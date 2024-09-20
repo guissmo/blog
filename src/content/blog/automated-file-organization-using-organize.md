@@ -1,6 +1,6 @@
 ---
 title: "Automated File Organization Using Organize"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Mini Projects
 author: guissmo
 date: 2023-05-28T22:30:44+02:00

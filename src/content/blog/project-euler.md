@@ -1,6 +1,6 @@
 ---
 title: "Project Euler"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Recommendations
 author: guissmo
 date: 2023-10-17T21:12:29Z

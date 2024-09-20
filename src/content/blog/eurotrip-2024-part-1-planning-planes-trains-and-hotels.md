@@ -1,6 +1,6 @@
 ---
 title: "EuroTrip 2024: Planning Planes, Trains and Hotels"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Travel
 author: guissmo
 date: 2024-05-15T19:16:50+00:00

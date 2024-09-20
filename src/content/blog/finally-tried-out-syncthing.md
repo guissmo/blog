@@ -1,6 +1,6 @@
 ---
 title: "Syncthing"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Recommendations
 author: guissmo
 date: 2024-03-10T23:03:46+00:00

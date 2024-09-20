@@ -1,6 +1,6 @@
 ---
 title: "PrimeCert v2.0"
-layout: "../../layouts/PostLayout.astro"
+layout: "/src/layouts/PostLayout.astro"
 category: Projects
 author: guissmo
 date: 2024-07-20T19:02:25+00:00
