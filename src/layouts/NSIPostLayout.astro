@@ -11,82 +11,21 @@ import '@fontsource/fira-sans/800.css';
 import '@fontsource/fira-sans/900.css';import "@fontsource/rubik-mono-one";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PostLayout from "./PostLayout.astro";
+import type { Code } from "astro:components";
 // 1. The frontmatter prop gives access to frontmatter and other data
-const { frontmatter } = Astro.props;
+const { frontmatter, headings } = Astro.props;
 ---
 
-<html>
-  <head>
-    <title>{frontmatter.title} | Jared Asuncion</title>
-    <!-- Add other Head elements here, like styles and meta tags. -->
-    <meta charset="utf-8" />
-    <meta name="title" content={`${frontmatter.title} | Jared Asuncion`} />
-    <meta
-      name="description"
-      content={`${frontmatter.description} | Jared Asuncion`}
-    />
-    <meta name="author" content="Jared Asuncion" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href=`${import.meta.env.BASE_URL}/style.css`
-    />
-    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/blog/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/blog/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/blog/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/blog/favicon/site.webmanifest" />
-    <title>{frontmatter.title}</title>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <div class="breadcrumbs">
-        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
-        <span class="raquo">&raquo;</span>
-        <a href={`${import.meta.env.BASE_URL}/blog`}>Blog</a>
-        <span class="raquo">&raquo;</span>
-        <a href={`${import.meta.env.BASE_URL}/blog/category/${frontmatter.category.toLowerCase().replaceAll(" ","-")}`}>{frontmatter.category}</a>
-        <span class="raquo">&raquo;</span>
-        <a href="#">{frontmatter.title}</a>
-      </div>
-      <!-- Add other UI components here, like common headers and footers. -->
-      <h1>{frontmatter.title}</h1>
-      <!-- 2. Rendered HTML will be passed into the default slot. -->
-      <span class="content">
+<PostLayout {...Astro.props}>
         <div class="preface">
-          Il s'agit d'une collaboration entre moi, <b>Jared Asuncion</b>, et le prof de maths <b>Pierre Brun</b> pour réaliser ces notes de cours.
+          <p>Il s'agit d'une collaboration entre moi, <b>Jared Asuncion</b>, et le prof de maths <b>Pierre Brun</b> pour réaliser ces notes de cours.
           Ce sont les notes de cours pour son cours d'NSI en terminale pendant l'année académique 2024-2025.
-          Elles ont été initialement rédigées sous forme de notebooks Jupyter, mais nous les avons converties en HTML pour une meilleure lisibilité dans les browsers.
+          Elles ont été initialement rédigées sous forme de notebooks Jupyter, mais nous les avons converties en HTML pour une meilleure lisibilité dans les browsers.</p>
           <p>C'est un travail en cours. N'hésitez pas à nous contacter à <a href="mailto:nsi@guissmo.com">nsi@guissmo.com</a> pour vos commentaires, suggestions, encouragements ou offres de prépa (pour Pierre) !</p>
         </div>
         <slot />
-      </span>
-      <Footer />
-    </main>
-  </body>
-</html>
+    </PostLayout>
 
 <style is:global>
   body {
@@ -313,9 +252,38 @@ div.preface {
   border: 2px dotted green;
   border-left-width: 0;
   border-right-width: 0;
-  padding-top: 12px;
+  margin-top: 1em;
+  padding: 12px 1em;
   color: green;
   line-height: 1.5;
-  padding-left: 1em;
 }
+
+  h1#logo {
+    padding: 0;
+    margin: 0;
+  }
+    #logo a {
+  display: block;
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  width: fit-content;
+  transform: rotate(0deg);
+  padding: 0px 0.5em;
+  text-decoration: none;
+  background-color: #292929;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    padding: 0;
+  }
 </style>
