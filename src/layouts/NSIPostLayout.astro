@@ -1,0 +1,321 @@
+---
+import "@fontsource-variable/source-code-pro";
+import '@fontsource/fira-sans/100.css';
+import '@fontsource/fira-sans/200.css';
+import '@fontsource/fira-sans/300.css';
+import '@fontsource/fira-sans/400.css';
+import '@fontsource/fira-sans/500.css';
+import '@fontsource/fira-sans/600.css';
+import '@fontsource/fira-sans/700.css';
+import '@fontsource/fira-sans/800.css';
+import '@fontsource/fira-sans/900.css';import "@fontsource/rubik-mono-one";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { frontmatter } = Astro.props;
+---
+
+<html>
+  <head>
+    <title>{frontmatter.title} | Jared Asuncion</title>
+    <!-- Add other Head elements here, like styles and meta tags. -->
+    <meta charset="utf-8" />
+    <meta name="title" content={`${frontmatter.title} | Jared Asuncion`} />
+    <meta
+      name="description"
+      content={`${frontmatter.description} | Jared Asuncion`}
+    />
+    <meta name="author" content="Jared Asuncion" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=`${import.meta.env.BASE_URL}/style.css`
+    />
+    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/blog/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/blog/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/blog/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/blog/favicon/site.webmanifest" />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <main>
+      <Header />
+      <div class="breadcrumbs">
+        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
+        <span class="raquo">&raquo;</span>
+        <a href={`${import.meta.env.BASE_URL}/blog`}>Blog</a>
+        <span class="raquo">&raquo;</span>
+        <a href={`${import.meta.env.BASE_URL}/blog/category/${frontmatter.category.toLowerCase().replaceAll(" ","-")}`}>{frontmatter.category}</a>
+        <span class="raquo">&raquo;</span>
+        <a href="#">{frontmatter.title}</a>
+      </div>
+      <!-- Add other UI components here, like common headers and footers. -->
+      <h1>{frontmatter.title}</h1>
+      <!-- 2. Rendered HTML will be passed into the default slot. -->
+      <span class="content">
+        <div class="preface">
+          Il s'agit d'une collaboration entre moi, <b>Jared Asuncion</b>, et le prof de maths <b>Pierre Brun</b> pour réaliser ces notes de cours.
+          Ce sont les notes de cours pour son cours d'NSI en terminale pendant l'année académique 2024-2025.
+          Elles ont été initialement rédigées sous forme de notebooks Jupyter, mais nous les avons converties en HTML pour une meilleure lisibilité dans les browsers.
+          <p>C'est un travail en cours. N'hésitez pas à nous contacter à <a href="mailto:nsi@guissmo.com">nsi@guissmo.com</a> pour vos commentaires, suggestions, encouragements ou offres de prépa (pour Pierre) !</p>
+        </div>
+        <slot />
+      </span>
+      <Footer />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+  }
+
+  h1:not(#logo) {
+    font-weight: 800;
+    padding-top: 2ex;
+  }
+
+  .content {
+    padding-top: 3ex;
+  }
+
+  p code,
+  li code {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 800;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
+
+div.rendered_html {
+	font-family: "";
+	color: rgba(0, 0, 0, 0.8)!important;
+}
+
+h2 {
+	color: rgba(0, 0, 0, 1);
+}
+
+h3 {
+	color: rgba(0, 0, 0, 0.9);
+	text-decoration: underline;
+}
+
+h4 {
+	color: rgba(0, 0, 0, 0.85);
+}
+
+div.test {
+	color: red;
+	border: 1px solid black;
+}
+div.info {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 12px;
+	background: aliceblue;
+	border-left: 3px solid skyblue;
+}
+div.warn {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 12px;
+	background: lightyellow;
+	border-left: 3px solid goldenrod;
+}
+div.err {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 12px;
+	background: lightpink;
+	border-left: 3px solid darkred;
+}
+div.example {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 12px;
+	background: #e2fee2;
+	border-left: 3px solid teal;
+}
+div.exer-start::before {
+	content: 'EXERCICE';
+	font-weight: bold;
+	text-align: center;
+}
+div.exer-start-live::before {
+	content: 'EXERCICE TOUS ENSEMBLE';
+	font-weight: bold;
+	text-align: center;
+}
+div.exer-hard::before {
+	content: 'EXERCICE ⭐'
+}
+div.exer-champ::before {
+	content: 'EXERCICE '🏆
+}
+div.text_cell_render {
+	overflow-y: visible;
+}
+div.rendered_html li {
+	padding-top: 1ex;
+	padding-bottom: 1ex;
+}
+div.exer-start, div.exer-start-live {
+	transform: translateY(24px);
+	margin-left: 24px;
+	margin-right: 24px;
+	padding: 24px;
+	border: 2px dashed #cfcfcf;
+	background: #fcfcfc;
+	border-bottom-style: none;
+}
+div.exer-mid {
+	margin-left: 24px;
+	margin-right: 24px;
+	padding: 24px;
+	margin-bottom: 0;
+	border: 2px dashed #cfcfcf;
+	background: #fcfcfc;
+	border-bottom-style: none;
+	border-top-style: none;
+}
+div.exer-end {
+	transform: translateY(-24px);
+	margin-left: 24px;
+	margin-right: 24px;
+	padding: 24px;
+	border: 2px dashed #cfcfcf;
+	background: #fcfcfc;
+	border-top-style: none;
+}
+div.exer-live {
+	background: #e2fee2;
+	border-color: teal;
+}
+
+code {
+	font-family: "Source Code Pro", "DejaVu Sans Mono", monospace;
+}
+
+.CodeMirror {
+	font-family: "Source Code Pro", "DejaVu Sans Mono", monospace;
+	padding: 10px;
+}
+div.cm-s-ipython, div.text_cell_render pre {
+	font-size: 1em;
+	line-height: 1.5em;
+	letter-spacing: 0.3px;
+	word-spacing: 1px;
+	background: #1B2630!important;
+	color: #F8F8F2!important;
+}
+.cm-s-ipython span.CodeMirror-lines {
+	padding: 8px 0;
+}
+.cm-s-ipython span.CodeMirror-gutters {
+	box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+	background-color: #1B2630;
+	padding-right: 10px;
+	z-index: 3;
+	border: none;
+}
+.cm-s-ipython div.CodeMirror-cursor {
+	border-left: 3px solid #F8F8F2;
+}
+.cm-s-ipython span.CodeMirror-activeline-background {
+	background: #3D2E2E77;
+}
+.cm-s-ipython span.CodeMirror-selected {
+	background: #95A3A63D;
+}
+.cm-s-ipython span.cm-comment {
+	font-style: unset!important;
+	color: #6D6D6D;
+}
+.cm-s-ipython span.cm-string {
+	color: #8AD6F2;
+}
+.cm-s-ipython span.cm-number {
+	color: #FFB266;
+}
+.cm-s-ipython span.cm-atom {
+	color: #FFB266;
+}
+.cm-s-ipython span.cm-keyword {
+	color: #E47D80;
+}
+.cm-s-ipython span.cm-variable {
+	color: #F2AAEC;
+}
+.cm-s-ipython span.cm-def {
+/*	font-style: italic;*/
+	color: #FFD2A6;
+}
+.cm-s-ipython span.cm-variable-2, .cm-s-ipython span.cm-builtin {
+	color: #BAE682;
+}
+.cm-s-ipython span.cm-property {
+	color: #FFB266;
+}
+.cm-s-ipython span.cm-operator {
+	color: #E47D80;
+}
+.cm-s-ipython span.CodeMirror-linenumber {
+	color: #6D6D6D;
+}
+div.output_subarea {
+	background-color: #f1f1f1;
+	align-self: center;
+	max-width: 100%;
+}
+div.prompt_container, div.prompt {
+	display: none;
+}
+
+div.exer-start, div.exer-mid, div.exer-end {
+  position: relative;
+  z-index: -1;
+}
+
+div.info, div.warn, div.err, div.example {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+div.preface {
+  border: 2px dotted green;
+  border-left-width: 0;
+  border-right-width: 0;
+  padding-top: 12px;
+  color: green;
+  line-height: 1.5;
+  padding-left: 1em;
+}
+</style>

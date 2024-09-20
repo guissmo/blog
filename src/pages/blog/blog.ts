@@ -1,6 +1,9 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
-export const allBlogPostsUnsorted = await getCollection("blog");
+export const allBlogPostsUnsorted = (await getCollection("blog")).filter(
+  (post) => !post.data.draft
+);
+
 export const allBlogPostsSortedByDate = allBlogPostsUnsorted.sort(
   ({ data: data1 }, { data: data2 }) =>
     data2.date.getTime() - data1.date.getTime()
