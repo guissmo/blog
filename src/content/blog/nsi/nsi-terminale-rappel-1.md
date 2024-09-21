@@ -13,13 +13,13 @@ tags:
   - terminale
 ---
 
-## Pourquoi Python?
+# Pourquoi Python?
 
 - Python est **open-source**, ça veut dire que le code est librement accessible au publique.
 - Python est très utilisé dans le monde du travail.
 - Les gens qui travaillent en **data science**, **IA**, et **machine learning** utilisent Python.
 
-## Rappels (1ère Partie)
+# Rappels (1ère Partie)
 
 Dans ce cours, on nous allons revoir : comment écrire des commentaires, comment afficher des objets, et les différents types d'objet en Python.
 
@@ -39,7 +39,7 @@ Essayez d'exécuter le code ci-dessous.
 
     2
 
-### Commentaires
+## Commentaires
 
 <div class="info">
     
@@ -53,7 +53,7 @@ Les commentaires n'ont aucune conséquence sur le code.
 # Je suis un commentaire.
 ```
 
-### La fonction `print`
+## La fonction `print`
 
 ```python
 # Affiche la chaîne de caractères (ou string en anglais) "Est-ce que c'est bon pour vous ?"
@@ -84,7 +84,7 @@ Jupyter Notebook affiche automatiquement et **uniquement** le dernier résultat 
 
     'D. Hey'
 
-### Affectation
+## Affectation
 
 <div class="info">
 
@@ -174,7 +174,7 @@ print(r)
     -2
     60
 
-### Les différents types d'objets
+## Les différents types d'objets
 
 <div class="info">
 
@@ -215,7 +215,7 @@ type ( {
 
     dict
 
-#### Les entiers (int)
+### Les entiers (int)
 
 <div class="info">
     
@@ -279,7 +279,7 @@ print(2/1)
 
     25
 
-#### Les floats
+### Les floats
 
 <div class="info">
     
@@ -361,7 +361,7 @@ Si on efface `#` dans chaque cellule, qu'affichent les cellules suivantes ?
     
 </div>
 
-#### Les booléens (bool)
+### Les booléens (bool)
 
 <div class="info">
     
@@ -437,7 +437,7 @@ print(True or True)
     
 </div>
 
-##### Comparaisons
+#### Comparaisons
 
 <div class="info">
     
@@ -572,7 +572,7 @@ print(b <= -1 or b >= 0)
     
 </div>
 
-#### Les chaînes de caractères ou string (str)
+### Les chaînes de caractères ou string (str)
 
 <div class="info">
     
@@ -648,7 +648,7 @@ On peut additionner les chaînes de caractères?!</div>
 
     '12'
 
-##### Accès et découpage de chaînes de caractères
+#### Accès et découpage de chaînes de caractères
 
 On affecte la chaîne de caractères `education` à la variable `mot`.
 
@@ -790,7 +790,7 @@ mot[5:]
 
     'tion'
 
-### Le type `None`
+## Le type `None`
 
 <div class="info">
     
@@ -811,7 +811,7 @@ Dans Jupyter Notebook, si la dernière valeur est `None`, rien ne s'affiche.</di
 None
 ```
 
-### Exercices
+## Exercices
 
 <div class="exer-start">
     

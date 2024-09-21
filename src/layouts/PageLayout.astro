@@ -23,15 +23,11 @@ const { frontmatter, breadcrumbData } = Astro.props;
   <div class="sticky-toc">
     <Header />
     {
-      Astro.slots.has('sidebar')
-      ?
-      <slot name="sidebar" />
-      :
-      breadcrumbData 
-      ?
-      <Breadcrumbs data={breadcrumbData} />
-      :
-      null
+      Astro.slots.has("sidebar") ? (
+        <slot name="sidebar" />
+      ) : breadcrumbData ? (
+        <Breadcrumbs data={breadcrumbData} />
+      ) : null
     }
   </div>
   <div class="page-content">
@@ -56,14 +52,15 @@ const { frontmatter, breadcrumbData } = Astro.props;
 <style is:global>
   @media (min-width: 800px) {
     .page-content {
-      width: 80%;
+      max-width: 100%;
     }
     .sticky-toc {
       position: sticky;
       top: 0;
       padding: 1rem;
       max-height: calc(100vh - 2rem);
-      min-width: 20%;
+      min-width: 25%;
+      max-width: 25%;
       overflow-y: auto;
     }
   }
@@ -82,7 +79,7 @@ const { frontmatter, breadcrumbData } = Astro.props;
       max-width: 100vw;
       padding: 2rem;
       margin-left: auto;
-      margin-right auto;
+      margin-right: auto;
       overflow-y: auto;
       background: rgb(255, 255, 255, 0.9);
       z-index: 2000;

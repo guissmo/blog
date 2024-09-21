@@ -53,7 +53,7 @@ pre {
 .content {
   text-align: justify;
   text-align-last: left;
-  text-justify: inter-word;
+  text-justify: none;
 }
 
 .raquo {

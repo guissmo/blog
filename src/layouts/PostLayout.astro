@@ -38,6 +38,33 @@ const breadcrumbData = {
     <TableOfContents headings={headings} />
   </span>
   <div class="post-content">
+    {frontmatter.title && <h1 class="post-title">{frontmatter.title}</h1>}
     <slot />
   </div>
 </PageLayout>
+
+<style>
+  .post-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    font-variant-caps: small-caps;
+    border-bottom: 2px solid black;
+  }
+
+  .post-content {
+    width: 100%;
+  }
+
+  @media (min-width: 800px) {
+    .post-content {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 799px) {
+    .post-content {
+      width: 100%;
+    }
+  }
+</style>

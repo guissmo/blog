@@ -3,9 +3,14 @@
 <style>
   .contactInfo {
     display: grid;
-    grid-template-columns: max(10vw, 5em) 1fr;
+    grid-template-columns: 1fr;
     column-gap: clamp(10px, 5vw, 30px);
     row-gap: 1ex;
     padding: 0 10px;
+  }
+  @media screen and (min-width: 500px) {
+    .contactInfo {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>

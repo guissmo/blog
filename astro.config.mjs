@@ -7,6 +7,9 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://guissmo.com",
   base: ".",
+  experimental: {
+    contentCollectionCache: true,
+  },
   markdown: {
     remarkPlugins: ["remark-math"],
     rehypePlugins: [
