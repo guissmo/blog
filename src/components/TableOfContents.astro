@@ -1,13 +1,14 @@
 ---
+import BlogPostHeaderLink from "./BlogPostHeaderLink.astro";
 import SidebarHeader from "./SidebarHeader.astro";
 
-interface Heading {
+export interface Heading {
   depth: number;
   slug: string;
   text: string;
 }
 
-interface HierarchicalHeading extends Heading {
+export interface HierarchicalHeading extends Heading {
   children: HierarchicalHeading[];
 }
 
@@ -45,22 +46,7 @@ const hierarchicalHeadings = buildHierarchy(
   hierarchicalHeadings.length > 0 && (
     <span>
       <SidebarHeader>This post</SidebarHeader>
-      <ul>
-        {hierarchicalHeadings.map((heading) => (
-          <li>
-            <a href={`#${heading.slug}`}>{heading.text}</a>
-            {heading.children.length > 0 && (
-              <ul>
-                {heading.children.map((child) => (
-                  <li>
-                    <a href={`#${child.slug}`}>{child.text}</a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
+      <BlogPostHeaderLink headings={hierarchicalHeadings} />
     </span>
   )
 }

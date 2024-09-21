@@ -18,6 +18,8 @@ import PageLayout from "./PageLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import SidebarTags from "../components/SidebarTags.astro";
+import SidebarHeader from "../components/SidebarHeader.astro";
+import SidebarFooter from "../components/SidebarFooter.astro";
 const { frontmatter, headings } = Astro.props;
 const breadcrumbData = {
   title: "Blog",
@@ -38,6 +40,7 @@ const breadcrumbData = {
     <Breadcrumbs data={breadcrumbData} />
     <TableOfContents headings={headings} />
     <SidebarTags frontmatter={frontmatter} />
+    <SidebarFooter />
   </span>
   <div class="post-content">
     {frontmatter.title && <h1 class="post-title">{frontmatter.title}</h1>}
