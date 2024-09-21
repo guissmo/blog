@@ -30,7 +30,8 @@ import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout frontmatter={{ title: "Guissmo" }} breadcrumbData={{}}>
-  <Contacts>
+  <span slot="sidebar">
+    <!-- <Contacts> -->
     <ContactInfo title="blog" href="./blog" text="guissmo.com/blog" />
     <ContactInfo
       title="email"
@@ -49,11 +50,34 @@ import PageLayout from "../layouts/PageLayout.astro";
       target="_blank"
       text="linkedin.com/in/guissmo"
     />
-  </Contacts>
+    <!-- </Contacts> -->
+  </span>
+  <span class="mobile-only">
+    <Contacts>
+      <ContactInfo title="blog" href="./blog" text="guissmo.com/blog" />
+      <ContactInfo
+        title="email"
+        href="javascript:location='mailto:\u006a\u0061\u0072\u0065\u0064\u0040\u0067\u0075\u0069\u0073\u0073\u006d\u006f\u002e\u0063\u006f\u006d';void 0"
+        text="jared@guissmo.com"
+      />
+      <ContactInfo
+        title="github"
+        href="https://github.com/guissmo"
+        target="_blank"
+        text="github.com/guissmo"
+      />
+      <ContactInfo
+        title="linkedin"
+        href="https://linkedin.com/in/guissmo"
+        target="_blank"
+        text="linkedin.com/in/guissmo"
+      />
+    </Contacts>
+  </span>
   <div class="bio">
-    <span class={style.bold}>Hi, I'm Jared Asuncion.</span> I've been solving math
-    problems since 2001, publishing my webpages online since 2005, and coding solutions
-    to algorithmic problems since 2007.<br />
+    <span class={style.bold}>Hi, I'm Jared Guissmo Asuncion.</span> I've been solving
+    math problems since 2001, publishing my webpages online since 2005, and coding
+    solutions to algorithmic problems since 2007.<br />
     <div class="bio-footnote">
       For the curious: <span class={style.bold}>Guissmo</span> is my second name
       and is unique enough to be my username in most places.
@@ -194,6 +218,12 @@ import PageLayout from "../layouts/PageLayout.astro";
 
     .bio {
       padding-right: 0;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .mobile-only {
+      display: none;
     }
   }
 </style>

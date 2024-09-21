@@ -9,47 +9,31 @@ import Header from "../../components/Header.tsx";
 import Footer from "../../components/Footer.tsx";
 import Head from "../../components/Head.tsx";
 import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
 import CVSection from "../../components/CVSection.astro";
 import style from "../../styles/global.module.css";
+import PageLayout from "../../layouts/PageLayout.astro";
+const { frontmatter } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href=`${import.meta.env.BASE_URL}/style.css`
-    />
-    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <Head />
-    <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | Projects</title>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <div class="breadcrumbs">
-        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
-        <span class="raquo">&raquo;</span>
-        <a href="#">Personal Projects</a>
-      </div>
-      <!-personalProjectDataomponents here, like common headers and footers. -->
-      <h1>Personal Projects</h1>
-      <!-- 2. Rendered HTML will be passed into the default slot. -->
-      <div class={style.mainList}>
-        <CVSection data={personalProjectData} full />
-      </div>
-      <Footer />
-    </main>
-  </body>
-</html>
+<PageLayout
+  frontmatter={{ title: "Projects", ...frontmatter }}
+  breadcrumbData={{
+    title: "Projects",
+    href: `${import.meta.env.BASE_URL}/projects`,
+  }}
+>
+  <h1>Personal Projects</h1>
+  <div class={style.mainList}>
+    <CVSection data={personalProjectData} full />
+  </div>
+</PageLayout>

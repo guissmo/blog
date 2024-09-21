@@ -9,47 +9,33 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Head from "../../components/Head";
 import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
 import style from "../../styles/global.module.css";
 import CVSection from "../../components/CVSection.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+const { frontmatter } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href=`${import.meta.env.BASE_URL}/style.css`
-    />
-    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <Head />
-    <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | Work Experience</title>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <div class="breadcrumbs">
-        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
-        <span class="raquo">&raquo;</span>
-        <a href="#">Work Experience</a>
-      </div>
-      <!-- Add other UI components here, like common headers and footers. -->
-      <h1>Work Experience</h1>
-      <!-- 2. Rendered HTML will be passed into the default slot. -->
-      <div class={style.mainList}>
-        <CVSection data={workExperienceData} full />
-      </div>
-      <Footer />
-    </main>
-  </body>
-</html>
+<PageLayout
+  frontmatter={{ title: "Work Experience", ...frontmatter }}
+  breadcrumbData={{
+    title: "Work Experience",
+    href: `${import.meta.env.BASE_URL}/work-experience`,
+  }}
+>
+  <h1>Work Experience</h1>
+  <!-- 2. Rendered HTML will be passed into the default slot. -->
+  <div class={style.mainList}>
+    <CVSection data={workExperienceData} full />
+  </div>
+  <Footer />
+</PageLayout>

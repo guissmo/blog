@@ -5,16 +5,35 @@ import classNames from "classnames";
 const arr = text.split(/(guissmo)/g);
 ---
 
-<span class={classNames(style.monospace, style.alignRight, style.bold)}
-  >{title}</span
->
-<span class={style.inlineList}>
-  <a href={href} target={target ? target : '_self'}
-    >{
-      arr.map((s: string) => {
-        if (s == "guissmo") return <span class={classNames(style.bold, style.emphasizeByOpacity)}>guissmo</span>;
-        return <span class={classNames(style.bold, style.deemphasize)}>{s}</span>;
-      })
-    }</a
+<span class="space">
+  <span class={classNames(style.monospace, style.alignRight, style.bold)}
+    >{title}</span
   >
+  <span class={style.inlineList}>
+    <a href={href} target={target ? target : "_self"}
+      >{
+        arr.map((s: string) => {
+          if (s == "guissmo") return <span class="guissmo">guissmo</span>;
+          return (
+            <span class={classNames(style.bold, style.deemphasize)}>{s}</span>
+          );
+        })
+      }</a
+    >
+  </span>
 </span>
+
+<style>
+  @media screen and (min-width: 800px) {
+    .space {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .guissmo {
+    font-weight: 900;
+    margin: 0 !important;
+  }
+</style>

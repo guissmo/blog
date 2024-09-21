@@ -15,6 +15,8 @@ import "@fontsource/fira-sans/800.css";
 import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
 import PageLayout from "./PageLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 const { frontmatter, headings } = Astro.props;
 const breadcrumbData = {
   title: "Blog",
@@ -30,7 +32,11 @@ const breadcrumbData = {
 };
 ---
 
-<PageLayout frontmatter={frontmatter} breadcrumbData={breadcrumbData}>
+<PageLayout frontmatter={frontmatter}>
+  <span slot="sidebar">
+    <Breadcrumbs data={breadcrumbData} />
+    <TableOfContents headings={headings} />
+  </span>
   <div class="post-content">
     <slot />
   </div>

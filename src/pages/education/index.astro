@@ -9,192 +9,178 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Head from "../../components/Head";
 import "@fontsource-variable/source-code-pro";
-import '@fontsource/fira-sans/100.css';
-import '@fontsource/fira-sans/200.css';
-import '@fontsource/fira-sans/300.css';
-import '@fontsource/fira-sans/400.css';
-import '@fontsource/fira-sans/500.css';
-import '@fontsource/fira-sans/600.css';
-import '@fontsource/fira-sans/700.css';
-import '@fontsource/fira-sans/800.css';
-import '@fontsource/fira-sans/900.css';
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
 import CVSection from "../../components/CVSection.astro";
 import style from "../../styles/global.module.css";
+import PageLayout from "../../layouts/PageLayout.astro";
+const { frontmatter } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href=`${import.meta.env.BASE_URL}/style.css`
-    />
-    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
-    <Head />
-    <meta name="generator" content={Astro.generator} />
-    <title>Jared Asuncion | Education</title>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <div class="breadcrumbs">
-        <a href={`${import.meta.env.BASE_URL}/`}>Home</a>
-        <span class="raquo">&raquo;</span>
-        <a href="#">Education</a>
-      </div>
-      <!-- Add other UI components here, like common headers and footers. -->
-      <h1>Education</h1>
-      <!-- 2. Rendered HTML will be passed into the default slot. -->
-      <div class={style.mainList}>
-        <CVSection data={educationData} full />
-      </div>
-      <Footer />
-    </main>
-    <style>
-      h2 {
-        font-weight: 700;
-        padding-top: 3ex;
-        text-transform: capitalize;
-      }
+<PageLayout
+  frontmatter={{ title: "Education", ...frontmatter }}
+  breadcrumbData={{
+    title: "Education",
+    href: `${import.meta.env.BASE_URL}/education`,
+  }}
+>
+  <h1>Education</h1>
+  <div class={style.mainList}>
+    <CVSection data={educationData} full />
+  </div>
+  <Footer />
+</PageLayout>
 
-      .date {
-        width: fit-content;
-      }
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+    text-transform: capitalize;
+  }
 
-      .mainList {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        column-gap: clamp(10px, 5vw, 30px);
-      }
+  .date {
+    width: fit-content;
+  }
 
-      .contactInfo {
-        display: grid;
-        grid-template-columns: 10vw 1fr;
-        column-gap: clamp(10px, 5vw, 30px);
-        row-gap: 1ex;
-      }
+  .mainList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+  }
 
-      .bio {
-        /* padding-right: 10vw; */
-        padding: 0 10x;
-        padding-top: 5ex;
-        font-size: 20px;
-        text-align: justify;
-        text-align-last: left;
-      }
+  .contactInfo {
+    display: grid;
+    grid-template-columns: 10vw 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+    row-gap: 1ex;
+  }
 
-      .bio-footnote {
-        font-size: 1rem;
-        opacity: 0.8;
-      }
+  .bio {
+    /* padding-right: 10vw; */
+    padding: 0 10x;
+    padding-top: 5ex;
+    font-size: 20px;
+    text-align: justify;
+    text-align-last: left;
+  }
 
-      .monospace {
-        font-family: "Source Code Pro Variable", sans-serif;
-        font-weight: 300;
-        text-align: right;
-      }
+  .bio-footnote {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
 
-      .bold {
-        font-weight: 700;
-      }
+  .monospace {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 300;
+    text-align: right;
+  }
 
-      .inline-list {
-        width: 100%;
-        gap: 1em;
-        display: block;
-      }
+  .bold {
+    font-weight: 700;
+  }
 
-      .vertical-align-center {
-        align-self: center;
-      }
+  .inline-list {
+    width: 100%;
+    gap: 1em;
+    display: block;
+  }
 
-      .list-entry {
-        display: inline-block;
-      }
+  .vertical-align-center {
+    align-self: center;
+  }
 
-      .list-entry:not(:last-of-type):after {
-        content: ",";
-      }
+  .list-entry {
+    display: inline-block;
+  }
 
-      .list-entry:not(:last-of-type) {
-        margin-right: 0.5em;
-      }
+  .list-entry:not(:last-of-type):after {
+    content: ",";
+  }
 
-      .block {
-        display: block;
-      }
+  .list-entry:not(:last-of-type) {
+    margin-right: 0.5em;
+  }
 
-      .cv-entry-title {
-        font-weight: 600;
-        font-size: 1.2rem;
-      }
+  .block {
+    display: block;
+  }
 
-      .project-subtitle {
-        font-weight: 500;
-      }
+  .cv-entry-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
 
-      .links {
-        opacity: 0.8;
-      }
+  .project-subtitle {
+    font-weight: 500;
+  }
 
-      .links:hover {
-        opacity: 1;
-      }
+  .links {
+    opacity: 0.8;
+  }
 
-      .deemphasize {
-        opacity: 0.8;
-        font-weight: 500;
-      }
+  .links:hover {
+    opacity: 1;
+  }
 
-      .emphasize-by-opacity {
-        opacity: 1;
-      }
+  .deemphasize {
+    opacity: 0.8;
+    font-weight: 500;
+  }
 
-      .no-wrap {
-        white-space: no-wrap !important;
-      }
+  .emphasize-by-opacity {
+    opacity: 1;
+  }
 
-      @media screen and (max-width: 640px) {
-        .mainList {
-          display: grid;
-          grid-template-columns: 1fr;
-          padding: 0 10px;
-        }
+  .no-wrap {
+    white-space: no-wrap !important;
+  }
 
-        .contactInfo {
-          display: grid;
-          width: 95%;
-          margin-left: auto;
-          grid-template-columns: auto 1fr;
-          column-gap: clamp(10px, 5vw, 30px);
-        }
+  @media screen and (max-width: 640px) {
+    .mainList {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 0 10px;
+    }
 
-        .monospace {
-          text-align: unset;
-        }
+    .contactInfo {
+      display: grid;
+      width: 95%;
+      margin-left: auto;
+      grid-template-columns: auto 1fr;
+      column-gap: clamp(10px, 5vw, 30px);
+    }
 
-        .align-right {
-          text-align: right;
-        }
+    .monospace {
+      text-align: unset;
+    }
 
-        .inline-list {
-          padding-left: 1em;
-          width: unset;
-        }
+    .align-right {
+      text-align: right;
+    }
 
-        .skill-category {
-          padding-top: 1.5ex;
-        }
+    .inline-list {
+      padding-left: 1em;
+      width: unset;
+    }
 
-        .cv-entry-title {
-          font-size: 1.2rem;
-        }
+    .skill-category {
+      padding-top: 1.5ex;
+    }
 
-        .hide-on-mobile {
-          display: none !important;
-        }
-      }
-    </style>
-  </body>
-</html>
+    .cv-entry-title {
+      font-size: 1.2rem;
+    }
+
+    .hide-on-mobile {
+      display: none !important;
+    }
+  }
+</style>
