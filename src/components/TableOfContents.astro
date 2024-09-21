@@ -1,4 +1,6 @@
 ---
+import SidebarHeader from "./SidebarHeader.astro";
+
 interface Heading {
   depth: number;
   slug: string;
@@ -34,26 +36,34 @@ function buildHierarchy(headings: Heading[]): HierarchicalHeading[] {
   return hierarchy;
 }
 
-const hierarchicalHeadings = buildHierarchy(headings.filter((heading) => heading.depth <= 3));
+const hierarchicalHeadings = buildHierarchy(
+  headings.filter((heading) => heading.depth <= 3)
+);
 ---
 
-<div class="this-post">This post</div>
-<ul>
-  {hierarchicalHeadings.map((heading) => (
-    <li>
-      <a href={`#${heading.slug}`}>{heading.text}</a>
-      {heading.children.length > 0 && (
-        <ul>
-          {heading.children.map((child) => (
-            <li>
-              <a href={`#${child.slug}`}>{child.text}</a>
-            </li>
-          ))}
-        </ul>
-      )}
-    </li>
-  ))}
-</ul>
+{
+  hierarchicalHeadings.length > 0 && (
+    <span>
+      <SidebarHeader>This post</SidebarHeader>
+      <ul>
+        {hierarchicalHeadings.map((heading) => (
+          <li>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+            {heading.children.length > 0 && (
+              <ul>
+                {heading.children.map((child) => (
+                  <li>
+                    <a href={`#${child.slug}`}>{child.text}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </span>
+  )
+}
 
 <style>
   ul {

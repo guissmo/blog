@@ -9,7 +9,7 @@ const { data } = Astro.props;
         {data.child ? (
           <a href={data.href}>{data.title}</a>
         ) : (
-          <span>{data.title}</span>
+          <span class="no-select">{data.title}</span>
         )}
         {data.child && <Astro.self data={data.child} />}
       </li>
@@ -39,5 +39,9 @@ const { data } = Astro.props;
   span {
     font-weight: 500;
     color: #1c425e;
+  }
+
+  .no-select {
+    user-select: none;
   }
 </style>

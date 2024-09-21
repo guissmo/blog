@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../../layouts/PageLayout.astro";
+import { allBlogPostsByCategory, allBlogPostsByTag } from "../blog";
+
+export async function getStaticPaths() {
+  return Object.entries(allBlogPostsByTag).map((k, val) => {
+    return {
+      params: {
+        slug: k[0].toLowerCase().replaceAll(" ", "-"),
+      },
+      props: {
+        tags: {
+          render: () => `${k[0]}`,
+        },
+      },
+    };
+  });
+}
+
+const breadcrumbData = {
+  title: "Blog",
+  href: `${import.meta.env.BASE_URL}/blog`,
+  child: {
+    title: `#${Astro.props.tags.render()}`,
+  },
+};
+---
+
+<PageLayout frontmatter={{ title: "Tags" }} breadcrumbData={breadcrumbData}>
+  <div class="postList">
+    <>
+      <span>&nbsp;</span>
+      <h2>{Astro.props.tags.render()}</h2>
+    </>
+    {
+      allBlogPostsByTag[Astro.props.tags.render()].map(
+        ({ slug, data }, index) => {
+          const { date } = data;
+
+          function dateToString(date: Date) {
+            let year = date.getFullYear();
+            let month = pad(date.getMonth() + 1);
+            let day = pad(date.getDate());
+
+            return [year, month, day].join(".");
+          }
+
+          function pad(num: number) {
+            return num.toString().padStart(2, "0");
+          }
+
+          return (
+            <>
+              <span class="monospace date">{dateToString(date)}</span>
+              <a href={`${import.meta.env.BASE_URL}/blog/${slug}`}>
+                {data.title}
+              </a>
+              <span class="monospace date">&nbsp;</span>
+              <span class="desc-text">{data.description}</span>
+            </>
+          );
+        }
+      )
+    }
+  </div>
+</PageLayout>
+
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+  }
+
+  .date {
+    width: fit-content;
+  }
+
+  .postList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+  }
+
+  .monospace {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 300;
+  }
+
+  .full-category.render()-link {
+    /* margin-left: 10px; */
+    color: royalblue;
+  }
+
+  .desc-text {
+    margin-bottom: 2ex;
+  }
+</style>

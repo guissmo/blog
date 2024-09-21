@@ -17,6 +17,7 @@ import "@fontsource/rubik-mono-one";
 import PageLayout from "./PageLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import SidebarTags from "../components/SidebarTags.astro";
 const { frontmatter, headings } = Astro.props;
 const breadcrumbData = {
   title: "Blog",
@@ -36,6 +37,7 @@ const breadcrumbData = {
   <span slot="sidebar">
     <Breadcrumbs data={breadcrumbData} />
     <TableOfContents headings={headings} />
+    <SidebarTags frontmatter={frontmatter} />
   </span>
   <div class="post-content">
     {frontmatter.title && <h1 class="post-title">{frontmatter.title}</h1>}

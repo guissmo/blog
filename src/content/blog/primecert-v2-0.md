@@ -12,7 +12,8 @@ categories:
 description: So... I used my train rides and carshares to work on my latest personal project.
 slug: primecert-v2-0
 tags:
-  - travel
+  - primes
+  - PARI
 ---
 
 In this blog post, I talk about the journey of how I made my first FastAPI / Postgres / Svelte project incrementally as something to keep me busy in my numerous train, bus, and carshares these past few months. It felt like a dev's version of [JetLag: The Game](https://www.youtube.com/c/jetlagthegame) to be honest.
