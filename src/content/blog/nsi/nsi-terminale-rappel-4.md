@@ -4,13 +4,13 @@ layout: "/src/layouts/NSIPostLayout.astro"
 category: NSI
 author: guissmo
 date: 2024-09-21T20:44:41+00:00
-draft: false
-toc: true
 description: "Dans cette quatrième et dernière partie des rappels, on revoit comment utiliser les boucles `for` et `while`. On parle aussi des itérateurs, en particulier celui renvoyé par la fonction `range`."
 slug: nsi-terminale-rappel-4
 tags:
   - nsi
   - terminale
+  - python
+  - français
 ---
 
 # Rappel (4ème Partie)

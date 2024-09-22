@@ -8,7 +8,11 @@ categories:
   - Mini Projects
 description: I help a programming teacher out by transitioning code from TKinter to Plotly.
 slug: tkinter-to-plotly
-math: true
+tags:
+  - python
+  - tkinter
+  - plotly
+  - story
 ---
 
 A teacher I know wanted to give an exercise to the students that involves writing some code that uses a function to draw a tree. He was inspired by this other [French teacher](http://info.sytes.free.fr/) who uses `Tkinter` for his exercises.

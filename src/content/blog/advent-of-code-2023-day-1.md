@@ -4,11 +4,14 @@ layout: "/src/layouts/PostLayout.astro"
 category: Advent of Code
 author: guissmo
 date: 2023-12-01T23:26:19+00:00
-categories:
-  - Code
 description: My solution to the Day 1 Advent of Code 2023 Problems.
 slug: advent-of-code-2023-day-1
-math: true
+tags:
+  - code
+  - regex
+  - excel
+  - jupyter
+  - problem solving
 ---
 
 Here is my solution for the [first two problems](https://adventofcode.com/2023/day/1) (i.e. Day 1) of Advent of Code 2023.

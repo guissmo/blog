@@ -6,7 +6,10 @@ author: guissmo
 date: 2023-12-03T12:15:38+00:00
 description: My solution to the Day 3 Advent of Code 2023 Problems.
 slug: advent-of-code-2023-day-3
-math: true
+tags:
+  - code
+  - python
+  - problem solving
 ---
 
 Here are the [Day 3](https://adventofcode.com/2023/day/3) puzzles for [Advent of Code 2023](https://adventofcode.com).

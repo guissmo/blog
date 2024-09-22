@@ -11,6 +11,8 @@ slug: nsi-terminale-rappel-1
 tags:
   - nsi
   - terminale
+  - python
+  - français
 ---
 
 # Pourquoi Python?

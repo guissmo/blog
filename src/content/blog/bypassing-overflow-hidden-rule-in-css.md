@@ -4,15 +4,10 @@ layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2023-05-30T01:00:54+02:00
-draft: false
-toc: true
-markup: "mmark"
-categories:
-  - Frontend
-  - CSS
 slug: bypassing-overflow-hidden-rule-in-css
 tags:
   - css
+  - frontend
 ---
 
 I used to go to [stackexchange](https://stackexchange.com) for figuring out how to position things in CSS. In particular, how to use the `position` property. Until March this year, where I finally looked around and taught myself how each position arguments differ.

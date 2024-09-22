@@ -4,10 +4,12 @@ layout: "/src/layouts/PostLayout.astro"
 category: Recommendations
 author: guissmo
 date: 2023-10-17T21:12:29Z
-draft: false
-toc: true
 description: "ProjectEuler is a website which you can either describe as math problems designed as programming problems, or programming problems designed as math problems."
 slug: project-euler
+tags:
+  - math
+  - python
+  - recommendation
 ---
 
 Quick post because I started talking to a friend about this.

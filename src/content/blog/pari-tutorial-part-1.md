@@ -12,8 +12,9 @@ categories:
 description: An overview of basic PARI/GP functions
 slug: pari-tutorial-part-1-the-basics
 tags:
-  - basics
   - PARI
+  - tutorial
+  - math
 ---
 
 ---

@@ -4,13 +4,15 @@ layout: "/src/layouts/PostLayout.astro"
 category: Travel
 author: guissmo
 date: 2023-08-01T05:50:07+02:00
-draft: false
-categories:
-  - Travel
 description: This page describes my Bicol trip in 2023. I write places we went to, places we ate at, how we went there, and accompanied them with the prices that other travellers might find useful.
 slug: trip-to-legazpi-sorsogon-2023
 tags:
+  - philippines
   - travel
+  - bicol
+  - recommendation
+  - story
+  - experience
 ---
 
 This is as of July 2023. I'm using 60 pesos to 1 euro as an approximate conversion rate.

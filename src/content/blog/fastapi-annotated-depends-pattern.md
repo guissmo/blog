@@ -7,8 +7,11 @@ date: 2024-05-26T11:57:08+00:00
 description: I talk about how and why Annotated[ClassName, Depends()] in FastAPI.
 slug: fastapi-annotated-depends-pattern
 tags:
-  - Python
-math: true
+  - python
+  - fastapi
+  - annotated
+  - depends
+  - tutorial
 ---
 
 Today, I investigated step-by-step how and why the code `Annotated[ClassName, Depends()]` works and why it could be useful if you want type hints.
@@ -23,7 +26,7 @@ I started with `Annotated` in the [typing](https://docs.python.org/3/library/typ
 
 > typing.Annotated
 >
->    Special typing form to add context-specific metadata to an annotation.
+> Special typing form to add context-specific metadata to an annotation.
 
 After some experimentation, we find that:
 
@@ -78,8 +81,9 @@ async def read_items(commons: Annotated[dict, Depends(common_parameters)]):
 ```
 
 The documentation did not adequately explain for me why this works. Upon further investigation, if the `/items/` endpoint is called:
-* with the expected `commons` parameters, then those given parameters are used
-* without the expected `commons` parameters, then the function inside `Depends` gets called and its return value is assigned to `commons` as the function `read_items` runs.
+
+- with the expected `commons` parameters, then those given parameters are used
+- without the expected `commons` parameters, then the function inside `Depends` gets called and its return value is assigned to `commons` as the function `read_items` runs.
 
 This only seems to work if the first function, in this case `read_items`, has been decorated by something from FastAPI, in this case `@app.get("/items/")`.
 
@@ -118,7 +122,7 @@ And this is why this pattern works.
 
 To summarize:
 
-* `Annotated` by itself does not do anything, other than give a type hint plus any potential metadata one would find useful.
-* In the context of FastAPI:
-  * `Depends` can be used as a metadata argument for `Annotated` to inject dependencies. I think this works as long as the first function called is decorated by something from FastAPI.
-  * If `Depends` is used in `Annotated` with no arguments, then `Depends` calls the class which was given as the first argument in `Annotated`.
+- `Annotated` by itself does not do anything, other than give a type hint plus any potential metadata one would find useful.
+- In the context of FastAPI:
+  - `Depends` can be used as a metadata argument for `Annotated` to inject dependencies. I think this works as long as the first function called is decorated by something from FastAPI.
+  - If `Depends` is used in `Annotated` with no arguments, then `Depends` calls the class which was given as the first argument in `Annotated`.

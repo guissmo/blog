@@ -7,6 +7,11 @@ date: 2023-12-23T16:51:43+00:00
 description: My solution to the Day 17 Advent of Code 2023 Problems.
 slug: advent-of-code-2023-day-17
 math: true
+tags:
+  - code
+  - python
+  - dijkstra
+  - problem solving
 ---
 
 I've paused looking at the Advent of Code problems but I thought I should write about [Day 17](https://adventofcode.com/2023/day/17) since this was the problem that had made me use more than "three Jupyter notebooks" because I didn't bother using Git for versioning.

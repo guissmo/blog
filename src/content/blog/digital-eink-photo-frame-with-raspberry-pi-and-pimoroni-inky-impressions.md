@@ -8,16 +8,22 @@ categories:
   - Mini Projects
 description: I setup my own digital photo eInk photo frame.
 slug: digital-eink-photo-frame-with-raspberry-pi-and-pimoroni-inky-impressions
-math: true
+tags:
+  - raspberry pi
+  - inky impressions
+  - python
+  - project
+  - experience
+  - story
 ---
 
 I have a lot of my digital photos in one folder, which is backed up in several other places thanks to [Syncthing](./syncthing/).
 
-I want to have a *physical* copy for display purposes. Should I just print all of them? Well, this folder contains 7300+ photos -- roughly as many Philippines islands there are -- and I can't afford to have all of that printed. Not to mention the whole effort of collecting all the *good* photos, putting everything in a USB, walking to a physical photoshop, giving the files, and then come back and get the photos in a few days.
+I want to have a _physical_ copy for display purposes. Should I just print all of them? Well, this folder contains 7300+ photos -- roughly as many Philippines islands there are -- and I can't afford to have all of that printed. Not to mention the whole effort of collecting all the _good_ photos, putting everything in a USB, walking to a physical photoshop, giving the files, and then come back and get the photos in a few days.
 
-So I opted for a digital photo frame instead. Buying a digital photo frame seems to be wasteful and they are [expensive](https://auraframes.fr/digital-frames/color/pebble?country_set=FR) AF. Plus you're tied to some random mobile app. Maybe that's great for the average consumer who wouldn't want to take the time to set it up themselves. As someone who likes to tinker with this type of stuff, I like to avoid third-party apps if I can help it. And in this *war* against third-party apps this specific *battle* is one I choose to fight.
+So I opted for a digital photo frame instead. Buying a digital photo frame seems to be wasteful and they are [expensive](https://auraframes.fr/digital-frames/color/pebble?country_set=FR) AF. Plus you're tied to some random mobile app. Maybe that's great for the average consumer who wouldn't want to take the time to set it up themselves. As someone who likes to tinker with this type of stuff, I like to avoid third-party apps if I can help it. And in this _war_ against third-party apps this specific _battle_ is one I choose to fight.
 
-In the end I chose to make it a "DIY" project and use an eInk screen. Unlike digital photo frames but similar to eReaders, you don't need to power it all day to have it display something. You only need power when you want to *change* the display.
+In the end I chose to make it a "DIY" project and use an eInk screen. Unlike digital photo frames but similar to eReaders, you don't need to power it all day to have it display something. You only need power when you want to _change_ the display.
 
 My initial plan was to have it display a different photo every day, changing and refreshing at midnight. But that turned out too ambitious for the free time and bandwidth I had. So for now, I opted on just manually choosing and making it display a photo.
 
@@ -43,7 +49,7 @@ Any power source which could connect to the Pi via a micro-USB would be ideal. I
 
 ### A 32 GB SD Card
 
-My FlyingBlue miles were used to get this. I wasn't going to accumulate enough miles to get upgrades or free flights so I would take a *free* SD card. They had a VERY LONG shipping time. Like one month for an SD card. It eventually arrived one day after I decided to buy one from the supermarket. And now I have a surplus of SD cards.
+My FlyingBlue miles were used to get this. I wasn't going to accumulate enough miles to get upgrades or free flights so I would take a _free_ SD card. They had a VERY LONG shipping time. Like one month for an SD card. It eventually arrived one day after I decided to buy one from the supermarket. And now I have a surplus of SD cards.
 
 ## The Software Part
 
@@ -53,8 +59,8 @@ Doing this was simple. Just go to the official [Raspberry Pi website](https://ww
 
 Once downloaded, pop in the SD card and:
 
-* fill in your wifi details, and
-* enable SSH
+- fill in your wifi details, and
+- enable SSH
 
 This way, you can SSH into the Pi Zero, removing the need for any display.
 
@@ -84,7 +90,7 @@ Note that this is generally dangerous if you don't read what you're executing. B
 
 Once it's installed, I followed some of the examples on that page.
 
-The documentation is on another model with a smaller screen and so I had to do a bit of digging to figure out how to adapt their Python code to *my* specific model.
+The documentation is on another model with a smaller screen and so I had to do a bit of digging to figure out how to adapt their Python code to _my_ specific model.
 
 ```python
 from inky import Inky_Impressions_7

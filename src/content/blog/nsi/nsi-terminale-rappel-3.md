@@ -11,6 +11,8 @@ slug: nsi-terminale-rappel-3
 tags:
   - nsi
   - terminale
+  - python
+  - français
 ---
 
 # Rappel (3ème Partie)

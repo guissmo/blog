@@ -4,15 +4,13 @@ layout: "/src/layouts/PostLayout.astro"
 category: Math
 author: guissmo
 date: 2023-03-16T23:44:55+01:00
-categories:
-  - Math
-  - PARI
 description: An overview of basic PARI/GP functions
 slug: a-quick-pari-script-enumerating-class-groups
 tags:
-  - basics
   - PARI
-math: true
+  - math
+  - script
+  - class groups
 ---
 
 Back in the Manila CIMPA 2023, I thought it would have made a great PARI/GP exercise to

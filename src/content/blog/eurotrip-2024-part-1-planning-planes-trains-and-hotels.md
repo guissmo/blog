@@ -10,7 +10,12 @@ categories:
 description: Here are some tips I've gathered from planning the planes, trains, and hotels for a tightly scheduled Eurotrip.
 slug: eurotrip-2024-part-1-planning-planes-trains-and-hotels
 tags:
+  - europe
   - travel
+  - train
+  - plane
+  - hotel
+  - story
 ---
 
 # Introduction
@@ -32,6 +37,7 @@ My family, who spent a good amount of money for the flights and a good amount of
 We finally negotiated and arrived at $10$ cities within three weeks. With $1$ to $2$ full days per city.
 
 The cities to visit are:
+
 1. Paris
 2. Rome
 3. Florence
@@ -53,7 +59,7 @@ The plane ticket had to be booked before the visa application. That in itself is
 
 ## The Hotels
 
-Hotels had to be *booked* during the visa application. But with a website like Booking.com, most hotels let you cancel up to a day before. So one strategy was to take many random hotels without spending too much time but making sure that they are **all refundable**. That way, once you get your visa, you can look at the fine print more closely and book better value hotels.
+Hotels had to be _booked_ during the visa application. But with a website like Booking.com, most hotels let you cancel up to a day before. So one strategy was to take many random hotels without spending too much time but making sure that they are **all refundable**. That way, once you get your visa, you can look at the fine print more closely and book better value hotels.
 
 ## The Trains
 
@@ -75,10 +81,10 @@ But hey, at least you get to immerse yourself into the culture!
 
 For what it's worth, here are the websites of the train service providers in each country.
 
-* [SNCF](https://oui.sncf) for trains to and from France.
-* [Trenitalia](https://www.trenitalia.com) for trains to and from Italy.
-* [Deutsche Bahn](https://www.bahn.de/) for trains to and from Germany.
-* [NS.nl](https://ns.nl/) for trains to and from the Netherlands.
+- [SNCF](https://oui.sncf) for trains to and from France.
+- [Trenitalia](https://www.trenitalia.com) for trains to and from Italy.
+- [Deutsche Bahn](https://www.bahn.de/) for trains to and from Germany.
+- [NS.nl](https://ns.nl/) for trains to and from the Netherlands.
 
 I also booked some [Eurostar](https://www.eurostar.com) trains for some trains through the Netherlands, Belgium,and France.
 
@@ -87,13 +93,14 @@ I also booked some [Eurostar](https://www.eurostar.com) trains for some trains t
 Night trains were also considered. However, my family did not want to risk not having a good night's sleep in case we got unlucky with a bumpy ride.
 
 I can't confirm or deny this concern because we did not try it. But if you want to give it a shot, here are some websites to get you started:
-* [back-on-track.eu](https://back-on-track.eu/night-train-map/)
-* [night-trains.com](http://www.night-trains.com/europe/)
+
+- [back-on-track.eu](https://back-on-track.eu/night-train-map/)
+- [night-trains.com](http://www.night-trains.com/europe/)
 
 Night trains end up more expensive than chaining several morning trains. However, if you consider the fact that:
 
 1. you don't need to take a hotel for that night, and
-2. you don't lose *daylight* stuck in a train,
+2. you don't lose _daylight_ stuck in a train,
 
 then it might be an option for you!
 
@@ -101,10 +108,6 @@ then it might be an option for you!
 
 At this point, we haven't even planned what we would do in each city yet. This is just planning the bare minimum. For the next few posts in this series, I would write about how we figured out which places to go to and some more travel tips in each of the $10$ cities.
 
-<!-- 
+<!--
 For them, it was the romantic filled with the Eiffel Tower. For me, $9$ years after I went there as a tourist, it is now the city of running around inside the metro hoping to God that there were no transport strikes so that I can make my train connections without losing so much time.
 -->
-
-
-
-

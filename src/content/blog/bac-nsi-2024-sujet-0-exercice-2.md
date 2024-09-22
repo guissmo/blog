@@ -8,7 +8,12 @@ categories:
   - French
 description: Nous avons essayé l'exercice 2 de la version 2024 du Sujet 0 du BAC NSI.
 slug: bac-nsi-2024-sujet-0-exercice-2
-math: true
+tags:
+  - nsi
+  - terminale
+  - python
+  - français
+  - bac
 ---
 
 Vu qu'on n'a pas encore trouvé de correction pour cet examen, j'ai travaillé avec Pierre Brun, professeur de mathématiques et de NSI au lycée Jean-Jaurès à Argenteuil (cette année) pour en faire une. Cette correction n'est pas du tout officielle, et c'est juste une proposition. En plus, je ne maîtrise pas encore complètement la langue française (je suis plûtot concentré sur Python) alors il y aura forcément beaucoup d'erreurs de grammaire et d'ortographe.

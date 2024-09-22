@@ -8,7 +8,12 @@ categories:
   - Mini Projects
 description: I tell the story of how I filed a GDPR complaint
 slug: asking-cnil-for-gdpr-rgpd-help
-math: true
+tags:
+  - cnil
+  - tutorial
+  - privacy
+  - story
+  - script
 ---
 
 Back in February 2023, I registered to this website for career consultants, related to the context of my work. Once their job as consultants were done, I wanted to delete my account as I believed there was no reason for them to keep my data.
@@ -18,11 +23,11 @@ So while tidying my online accounts back in December 2023: I looked for the "del
 ## My Initial Email: Delete My Personal Data
 
 > Sujet: Demande de suppression de compte conformément au RGPD
-> 
+>
 > Bonjour,
-> 
+>
 > J'espère que vous allez bien. Je me permets de vous contacter afin de demander la suppression de mon compte sur votre plateforme. Malheureusement, je n'ai pas trouvé de moyen évident de le faire via la page de profil.
-> 
+>
 > Je tiens à souligner que, conformément au Règlement général sur la protection des données (RGPD), je souhaite exercer mon droit à l'effacement de mes données personnelles. Je vous prie donc de bien vouloir supprimer l'intégralité de mes informations de votre base de données.
 >
 > Voici les détails de mon compte : XXX
@@ -37,15 +42,15 @@ I could have written _toutes mes salutations distinguées_ but as this story pro
 
 ## Their Reply: Send Us More Personal Data
 
->  Nous faisons suite à votre demande relative à la suppression des données à caractère personnel vous concernant, mise en œuvre dans le cadre de l’exercice du droit à l’effacement tel qu’il est défini à l’article 17 du règlement européen (UE) 2016/679 relatif à la protection des personnes physiques à l’égard du traitement des données à caractère personnel.
+> Nous faisons suite à votre demande relative à la suppression des données à caractère personnel vous concernant, mise en œuvre dans le cadre de l’exercice du droit à l’effacement tel qu’il est défini à l’article 17 du règlement européen (UE) 2016/679 relatif à la protection des personnes physiques à l’égard du traitement des données à caractère personnel.
 
 Their reply was basically "sure we will do it" but then you have to prove to us that you're really the owner of the account you're trying to delete. That's fair for them to do. Like, you shouldn't be able to delete someone else's account, especially if that website is vital for their online presence.
 
 According to them, to PROVE that I am actually who I say I am, I must either send them a copy of my ID (i.e. my passport) by SNAIL MAIL or by uploading it to another website.
 
 > Afin de nous permettre de traiter votre demande, nous vous invitons à nous fournir au plus tôt une copie de pièce d’identité :
->    Soit par voie postale : XXX
->    Soit par l’intermédiaire du lien ci-joint : XXX
+> Soit par voie postale : XXX
+> Soit par l’intermédiaire du lien ci-joint : XXX
 
 So I have to give more data to delete my data?
 
@@ -96,11 +101,11 @@ Instead, I looked for the commission which helps citizens enforce their privacy.
 
 > The CNIL (Commission Nationale de l'Informatique et des Libertés) is the French data protection authority that has the following key responsibilities:
 
->    Protecting the rights and freedoms of individuals with respect to the processing of their personal data. The CNIL ensures that citizens can effectively access their data contained in any processing operation.
+> Protecting the rights and freedoms of individuals with respect to the processing of their personal data. The CNIL ensures that citizens can effectively access their data contained in any processing operation.
 
->    Accompanying professionals in their compliance efforts and helping individuals to control their personal data and exercise their rights. The CNIL provides guidance and support to organizations on data protection regulations.
+> Accompanying professionals in their compliance efforts and helping individuals to control their personal data and exercise their rights. The CNIL provides guidance and support to organizations on data protection regulations.
 
->    Carrying out communication and education activities towards the general public and professionals to raise awareness about data protection issues. The CNIL responds to requests from individuals and professionals, and provides educational tools.
+> Carrying out communication and education activities towards the general public and professionals to raise awareness about data protection issues. The CNIL responds to requests from individuals and professionals, and provides educational tools.
 
 So this seemed like the organization I need!
 
@@ -124,7 +129,7 @@ A few days later, someone from CNIL actually responded!
 
 On the same day that I received the reply, I made the complaint.
 
-> Aujourd'hui, le 2 février 2024, j'ai reçu un e-mail de Mme X m'informant que je pouvais adresser une plainte afin que la CNIL intervienne à l'appui de ma demande. 
+> Aujourd'hui, le 2 février 2024, j'ai reçu un e-mail de Mme X m'informant que je pouvais adresser une plainte afin que la CNIL intervienne à l'appui de ma demande.
 
 To prevent infinite loops, I made sure to say that Mme X told me I have a case.
 
@@ -157,7 +162,7 @@ One week later:
 At this point, I know it was the waiting game. And indeed I was right. Two months after, the CNIL gave me an update:
 
 > Vous avez saisi la Commission Nationale de l’Informatique et des Libertés (CNIL) d’une plainte à l’encontre de l'organisme XXX.
-> Les services de la CNIL sont intervenus à l’appui de votre plainte en rappelant la réglementation relative à la protection des données à 
+> Les services de la CNIL sont intervenus à l’appui de votre plainte en rappelant la réglementation relative à la protection des données à
 > Il est donc procédé à la clôture de votre dossier.
 
 The wording is a bit strange but it seems like I won. Or rather, privacy won?

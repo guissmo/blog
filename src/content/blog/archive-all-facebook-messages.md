@@ -4,15 +4,14 @@ layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2022-12-28T23:36:13+01:00
-draft: false
-categories:
-  - Javascript
-  - Productivity
 description: Step-by-step guide on how to automatically archive all Facebook messages.
 slug: archive-all-facebook-messages
 tags:
   - facebook
-  - javascript
+  - tutorial
+  - privacy
+  - productivity
+  - script
 ---
 
 ## Why Archive Messenger Conversations

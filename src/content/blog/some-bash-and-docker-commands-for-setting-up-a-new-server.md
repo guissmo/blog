@@ -8,7 +8,9 @@ toc: true
 slug: bash-and-docker-commands-for-setting-up-a-new-server
 tags:
   - bash
-  - commands
+  - script
+  - docker
+  - devops
 ---
 
 ## Bash

@@ -4,15 +4,11 @@ layout: "/src/layouts/PostLayout.astro"
 category: Code
 author: guissmo
 date: 2024-02-14T21:12:04+00:00
-draft: false
-toc: true
-markup: "mmark"
-categories:
-  - Frontend
-  - CSS
 slug: animated-gradient-border-using-css
 tags:
   - css
+  - javascript
+  - frontend
 ---
 
 Recently, I had the need to make a button that:
@@ -84,11 +80,12 @@ But of course, we are not here for solid borders. We want gradients. After a qui
 .gradient {
   --angle: 1turn;
   border-radius: 15px;
-  background: black conic-gradient(
-    rgb(255, 255, 255, 0) 0rad,
-    rgb(255, 255, 255, 0.6) 1rad,
-    rgb(255, 255, 255, 0) 3rad
-  );
+  background: black
+    conic-gradient(
+      rgb(255, 255, 255, 0) 0rad,
+      rgb(255, 255, 255, 0.6) 1rad,
+      rgb(255, 255, 255, 0) 3rad
+    );
 }
 ```
 
@@ -111,7 +108,7 @@ To animate it, however, we use `keyframes` and `properties` as shown in [this pa
 }
 
 @property --angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0turn;
   inherits: false;
 }
@@ -124,11 +121,12 @@ and of course we adapt our gradient class accordingly
   --angle: 1turn;
   animation: 2s rotate linear infinite;
   border-radius: 15px;
-  background: black conic-gradient(
-    rgb(255, 255, 255, 0) calc(0rad + var(--angle)),
-    rgb(255, 255, 255, 0.6) calc(1rad + var(--angle)),
-    rgb(255, 255, 255, 0) calc(3rad + var(--angle))
-  );
+  background: black
+    conic-gradient(
+      rgb(255, 255, 255, 0) calc(0rad + var(--angle)),
+      rgb(255, 255, 255, 0.6) calc(1rad + var(--angle)),
+      rgb(255, 255, 255, 0) calc(3rad + var(--angle))
+    );
 }
 ```
 
@@ -151,14 +149,15 @@ I fixed this by simulating a "second" conic gradient behind the first one, which
   --angle: 1turn;
   animation: 2s rotate linear infinite;
   border-radius: 15px;
-  background: black conic-gradient(
-    rgb(255, 255, 255, 0) calc(-1turn + 0rad + var(--angle)),
-    rgb(255, 255, 255, 0.6) calc(-1turn + 1rad + var(--angle)),
-    rgb(255, 255, 255, 0) calc(-1turn + 3rad + var(--angle)),
-    rgb(255, 255, 255, 0) calc(0rad + var(--angle)),
-    rgb(255, 255, 255, 0.6) calc(1rad + var(--angle)),
-    rgb(255, 255, 255, 0) calc(3rad + var(--angle))
-  );
+  background: black
+    conic-gradient(
+      rgb(255, 255, 255, 0) calc(-1turn + 0rad + var(--angle)),
+      rgb(255, 255, 255, 0.6) calc(-1turn + 1rad + var(--angle)),
+      rgb(255, 255, 255, 0) calc(-1turn + 3rad + var(--angle)),
+      rgb(255, 255, 255, 0) calc(0rad + var(--angle)),
+      rgb(255, 255, 255, 0.6) calc(1rad + var(--angle)),
+      rgb(255, 255, 255, 0) calc(3rad + var(--angle))
+    );
 }
 ```
 
@@ -186,12 +185,14 @@ To work around that we add a `setInterval` script.
 ```javascript
 const startTime = Date.now();
 setInterval(() => {
-        const DURATION = 2000;
-        const NEW_VALUE = `${((Date.now() - startTime) % DURATION) / DURATION}turn`;
-        const COMPONENT = Array.from(document.getElementsByClassName("gradient-border")).forEach( (component) => {
-        component.style.setProperty('--angle', NEW_VALUE);
-      })
-    }, 20)
+  const DURATION = 2000;
+  const NEW_VALUE = `${((Date.now() - startTime) % DURATION) / DURATION}turn`;
+  const COMPONENT = Array.from(
+    document.getElementsByClassName("gradient-border")
+  ).forEach((component) => {
+    component.style.setProperty("--angle", NEW_VALUE);
+  });
+}, 20);
 ```
 
 Every $20$ milliseconds, it changes the value of `--angle` depending on the difference between the `startTime` (i.e. when the script was loaded) and `Date.now()` which gives the current "date" (the number of milliseconds after 1 January 1970). Taking this modulo the intended duration ($2000$ ms in this case) and dividing by the same number gives a number from $0$ to $1$ -- which represents the progress of the animation at any given time.

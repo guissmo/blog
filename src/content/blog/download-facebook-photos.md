@@ -12,6 +12,10 @@ description: Step-by-step guide on how to automatically download Facebook photos
 slug: download-all-facebook-photos-from-messenger-conversation
 tags:
   - facebook
+  - tutorial
+  - privacy
+  - productivity
+  - script
   - javascript
 ---
 

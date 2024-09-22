@@ -8,6 +8,11 @@ draft: false
 toc: true
 description: Finally tried out Syncthing after procastinating. Here are my thoughts and instructions on how to set it up.
 slug: syncthing
+tags:
+  - open-source
+  - experience
+  - story
+  - recommendation
 ---
 
 I have been looking at Syncthing for quite some time because I keep hearing about it. In this post, I will talk about [what I think about it](#thoughts-about-syncthing) and if you're interested, [how I set it up](#setting-up).
@@ -16,9 +21,9 @@ I have been looking at Syncthing for quite some time because I keep hearing abou
 
 ### A Rant About Non Open-Source Alternatives
 
-As more and more people are offering *cloud-based* file syncing services, we are getting more and more dependent on our stuff being online. I have a Dropbox account I use as a *backup* in case I suddenly need to show up with an important document at airport customs, or wherever.
+As more and more people are offering _cloud-based_ file syncing services, we are getting more and more dependent on our stuff being online. I have a Dropbox account I use as a _backup_ in case I suddenly need to show up with an important document at airport customs, or wherever.
 
-For the most part, I'd like to avoid putting my data into the hands of a company which may one day just ask me to start paying *or lose it*. I used to think I was paranoid about this but this has been happening with a LOT of websites recently.
+For the most part, I'd like to avoid putting my data into the hands of a company which may one day just ask me to start paying _or lose it_. I used to think I was paranoid about this but this has been happening with a LOT of websites recently.
 
 For example, Couchsurfing famously locked everyone out of their profiles during the COVID lockdown unless they pay. And Facebook has also recently given EU users an ultimatum: let us track you to serve you with ads or pay 10 euros per month and we won't track you. They'd still probably track your friends who don't pay though, and all the coincidental info they write about you.
 
@@ -28,7 +33,7 @@ Just like there's no reason to trust companies like Dropbox to be forever free (
 
 So why the hassle of setting up this open-source software, then?
 
-First, your files stay **on your machines**. So, if one day your favorite online service gets *hacked* (or illegally taken to train AI data), you're quite sure that your sensitive files are not part of whatever leaks happen. 
+First, your files stay **on your machines**. So, if one day your favorite online service gets _hacked_ (or illegally taken to train AI data), you're quite sure that your sensitive files are not part of whatever leaks happen.
 
 Moreover, if for some reason you one day want to stop using Syncthing (or any other software for that matter) for whatever reason then your files are already on your machine. You don't have to GDPR a company to give you your data (or hope they would do it if you're not in the EU).
 
@@ -36,7 +41,7 @@ Moreover, if for some reason you one day want to stop using Syncthing (or any ot
 
 It's been a long time that I've been considering Syncthing but I always had excuses because it had a lot of small steps that made it seem daunting: I didn't have a solid enough use-case for it, I didn't have anything valuable enough to sync, I'd have to spend a lot of time deciding which folders I want, and spend a lot of time setting it up.
 
-Luckily, [Seba](https://sebastiano.tronto.net/) told me that he uses Syncthing and it works for him and that motivated me a little bit. And so this weekend, I finally had the time and mental energy to *at least* try to get the instances up and running. Then I'd think of which folders to sync and where to sync them later
+Luckily, [Seba](https://sebastiano.tronto.net/) told me that he uses Syncthing and it works for him and that motivated me a little bit. And so this weekend, I finally had the time and mental energy to _at least_ try to get the instances up and running. Then I'd think of which folders to sync and where to sync them later
 
 ### Caveats
 
@@ -58,11 +63,11 @@ Anyway, the way that iOS keeps files is strange and they try to force you to buy
 
 ## Setting Up
 
-I am presenting the setup steps linearly, but not how I did it chronologically. I did some "small" test cases like installing on two machines first, putting in dummy folders, then going back and installing to a third device because if at any point I thought... this isn't worth it... then I can say I've *lost* the least amount of time!
+I am presenting the setup steps linearly, but not how I did it chronologically. I did some "small" test cases like installing on two machines first, putting in dummy folders, then going back and installing to a third device because if at any point I thought... this isn't worth it... then I can say I've _lost_ the least amount of time!
 
 ### Installation
 
-I went to install Syncthing on each of my *devices*. I say *devices* but the VPS is not technically *mine*, but whatever let's roll with it. Since they were all Linux-based, I simply had to:
+I went to install Syncthing on each of my _devices_. I say _devices_ but the VPS is not technically _mine_, but whatever let's roll with it. Since they were all Linux-based, I simply had to:
 
 ```bash
 sudo apt update
@@ -120,7 +125,7 @@ On the other device, you accept the connection and then decide which folder you 
 
 ### Add Folders to Sync One-Way
 
-One-way syncing is easy as well. For trying this out, I was more ambitious and used a folder full of photos and videos to *back them up* into my VPS. I used to do this manually with `rsync` but this seems like it's about time to automate it. That way, I can concentrate on organizing my photos into folders.
+One-way syncing is easy as well. For trying this out, I was more ambitious and used a folder full of photos and videos to _back them up_ into my VPS. I used to do this manually with `rsync` but this seems like it's about time to automate it. That way, I can concentrate on organizing my photos into folders.
 
 The only different steps you have to do to make a one-way sync is to go to the Advanced tab on the Add Folder modal and choose "Send Only" and "Receive Only".
 

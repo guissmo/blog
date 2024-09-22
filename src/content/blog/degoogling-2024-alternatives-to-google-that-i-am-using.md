@@ -7,17 +7,25 @@ date: 2024-06-09T09:18:14+00:00
 description: I list down good not-so-expensive paid services that I use to make my life less dependent on Google.
 slug: degoogling-2024-alternatives-to-google-that-i-am-using
 math: true
+tags:
+  - google
+  - degoogle
+  - productivity
+  - privacy
+  - use
+  - experience
+  - story
 ---
 
 Moving away from Google services has been a long-term goal of mine and it has been a slow and steady process doing so.
 
-Having most of my online services with one and only one company who has since decided that *Don't be evil* shouldn't be their motto anymore seemed like a bad idea. However, the problem is that I have had emails, photos, and even maps data that has accumulated throughout the years which makes switching out completely nontrivial.
+Having most of my online services with one and only one company who has since decided that _Don't be evil_ shouldn't be their motto anymore seemed like a bad idea. However, the problem is that I have had emails, photos, and even maps data that has accumulated throughout the years which makes switching out completely nontrivial.
 
 I have been slowly moving from one service to another to replace most of the Google services I depend on. I have done extensive research and I chose based on:
 
-* cost, given that most of these services will be subscription-based,
-* ease of transitioning in and ease of transitioning out, in case that the company tries to change their terms of service, and
-* overall feel of the company or organization offering the service.
+- cost, given that most of these services will be subscription-based,
+- ease of transitioning in and ease of transitioning out, in case that the company tries to change their terms of service, and
+- overall feel of the company or organization offering the service.
 
 ## Photos (Immich)
 
@@ -43,9 +51,9 @@ I am effectively adding $10$ euros per month to host Immich on a paid VPS. It mi
 
 Here are some features that convinced me to go for Immich.
 
-* **Face recognition!** I already talked about face recognition. There's not much more to be said other than it does work well!
+- **Face recognition!** I already talked about face recognition. There's not much more to be said other than it does work well!
 
-* **Keep your files where they are!** While I understand why some photo management software rename and modify your files, I hate it. And so, one big selling point for me was that Immich had this feature (called *External Library*) where it just scans your file system to import the photos *without the need of reorganizing the folders*.
+- **Keep your files where they are!** While I understand why some photo management software rename and modify your files, I hate it. And so, one big selling point for me was that Immich had this feature (called _External Library_) where it just scans your file system to import the photos _without the need of reorganizing the folders_.
 
 The second one is especially huge for me since I have my organized my photos by folders, by date and event chronologically before starting Immich. This way, if for some reason I would have to stop using Immich, I at least still have my photos organized and searchable, albeit in an arguably less efficient way.
 
@@ -53,9 +61,9 @@ The second one is especially huge for me since I have my organized my photos by 
 
 While the above features were the biggest selling points for me, there were also some great ones that I discovered after installing it.
 
-* **Contextual Search!** I can search for "dog" or "pub" and it does return me photos of what look like dogs or pubs. It's not perfect but it's a great way to filter photos!
+- **Contextual Search!** I can search for "dog" or "pub" and it does return me photos of what look like dogs or pubs. It's not perfect but it's a great way to filter photos!
 
-* **Map!** If your photos have metadata on them (which most photos direct from your camera would have, but most photos from WhatsApp or Messenger would not), then they get pinned onto this lovely world map!
+- **Map!** If your photos have metadata on them (which most photos direct from your camera would have, but most photos from WhatsApp or Messenger would not), then they get pinned onto this lovely world map!
 
 ## Search (Kagi)
 
@@ -75,9 +83,9 @@ For **10 euros** per month (before taxes) for unlimited search, it is personally
 
 The value proposition of personalized search was enough to get me in but there have been some features I discovered as a subscriber that made me stay.
 
-* **Quick Answers!** On top of search, they have some sort of ChatGPT-like assistant that summarizes the search results for you. As with all LLMs, it might hallucinate every now and then so you should still take a look at the websites it claims to have gotten the information from but this is also a huge timesaver for non-critical stuff like "when is The Boys season 4 release date". A lot of trashy websites would claim to have a release date and then end up saying we don't know. Well, I don't have to sift through them anymore!
+- **Quick Answers!** On top of search, they have some sort of ChatGPT-like assistant that summarizes the search results for you. As with all LLMs, it might hallucinate every now and then so you should still take a look at the websites it claims to have gotten the information from but this is also a huge timesaver for non-critical stuff like "when is The Boys season 4 release date". A lot of trashy websites would claim to have a release date and then end up saying we don't know. Well, I don't have to sift through them anymore!
 
-* **Universal Summarizer!** I started using the universal summarizer when I feel like I have a website that has the info I need but a lot more other info for my attention span at the time of encountering it. Not only does it summarize text pages, it also summarizes YouTube videos and terms and conditions. Again, using AI. Which is not 100% accurate. But like the flag of Switzerland, it's still a huge plus.
+- **Universal Summarizer!** I started using the universal summarizer when I feel like I have a website that has the info I need but a lot more other info for my attention span at the time of encountering it. Not only does it summarize text pages, it also summarizes YouTube videos and terms and conditions. Again, using AI. Which is not 100% accurate. But like the flag of Switzerland, it's still a huge plus.
 
 Based on how much time it saves me every day, paying for what amounts to a couple of cents a day for no-frills search is a worthy investment.
 
@@ -85,7 +93,7 @@ Based on how much time it saves me every day, paying for what amounts to a coupl
 
 As far as my high school self remembers, Gmail was supposed to be increasing their storage space indefinitely. However, these days, I think it's already capped at 15 GB.
 
-I have been receiving emails to *upgrade* my plan to get more storage, which was the last push I needed to move to a different mail provider suggested by [Seba](https://sebastiano.tronto.net/) which was **[Mailbox.org](https://mailbox.org)**.
+I have been receiving emails to _upgrade_ my plan to get more storage, which was the last push I needed to move to a different mail provider suggested by [Seba](https://sebastiano.tronto.net/) which was **[Mailbox.org](https://mailbox.org)**.
 
 ### Cost
 
@@ -93,13 +101,13 @@ Before locking myself in to Mailbox.org, I saw reviews online where people were 
 
 ### Surprise Bonus Features
 
-No problems so far, and it even had features that were not *must-haves* for me but definitely helped me feel better about paying the $3$ euros per month:
+No problems so far, and it even had features that were not _must-haves_ for me but definitely helped me feel better about paying the $3$ euros per month:
 
-* **Disposable emails!** While [temp mail](https://temp-mail.org/fr/) does offer this for free, a lot of sites have since blocked their domains. Having an alternative like mailbox.org is a great option!
+- **Disposable emails!** While [temp mail](https://temp-mail.org/fr/) does offer this for free, a lot of sites have since blocked their domains. Having an alternative like mailbox.org is a great option!
 
-* **Support for multiple domains!** I have been window shopping for the longest time for a secondary domain after guissmo.com and it is super cool that they have this feature. I have yet to try it and I will report back if I have problems.
+- **Support for multiple domains!** I have been window shopping for the longest time for a secondary domain after guissmo.com and it is super cool that they have this feature. I have yet to try it and I will report back if I have problems.
 
-* **Cloud storage!** While I don't necessarily need it, it has helped send huge files every now and then.
+- **Cloud storage!** While I don't necessarily need it, it has helped send huge files every now and then.
 
 Plus the fact that they are in Europe means that their pricing is not dependent on exchange rates!
 

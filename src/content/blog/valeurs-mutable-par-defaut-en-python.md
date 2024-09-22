@@ -7,8 +7,10 @@ date: 2024-05-28T18:58:32+00:00
 description: Je parle a propos d'un exercice du BAC de NSI 2024.
 slug: valeurs-mutable-par-defaut-en-python
 tags:
-  - Python
-math: true
+  - python
+  - bac
+  - nsi
+  - français
 ---
 
 Dans le bac de l'Amérique Nord - Sujet 1
@@ -24,7 +26,7 @@ def parcours_en_profondeur(d, s, visites = []):
     for v in d[s]:
         ###
             parcours_en_profondeur(d, v)
-    ### 
+    ###
 ```
 
 # Correction

@@ -4,16 +4,12 @@ layout: "/src/layouts/PostLayout.astro"
 category: Mini Projects
 author: guissmo
 date: 2023-04-30T15:34:52+02:00
-draft: false
-toc: true
-categories:
-  - Kobo
-description: How to unlock Kobo Dropbox integration.
+description: In this post, I detail how to hack the Kobo into supporting Dropbox integration based on resources I found online.
 slug: 2023-kobo-guide-dropbox-integration
 tags:
   - kobo
   - dropbox
-  - tips
+  - hacks
 ---
 
 I bought a Kobo Clara 2E and it is the sweet spot for price and features if you’re willing to be a hackermans.

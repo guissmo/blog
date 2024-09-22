@@ -15,6 +15,8 @@ tags:
   - yaml
   - regex
   - organize
+  - productivity
+  - tutorial
 ---
 
 My important documents folder has been accumulating documents since I moved to Europe -- so that's around 2014. And I had a "system" for organizing the files, but I never bothered renaming them because it was so tedious. The default filenames of some PDFs I've downloaded have not been very useful for searching, and so dumping them all in a folder was not really efficient.

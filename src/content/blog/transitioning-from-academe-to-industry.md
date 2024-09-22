@@ -4,16 +4,12 @@ layout: "/src/layouts/PostLayout.astro"
 category: Life
 author: guissmo
 date: 2023-03-22T22:20:31+01:00
-draft: false
-toc: true
-categories:
-  - Work
 description: My experiences as a recent PhD graduate looking for a job in the industry.
 slug: transitioning-from-academe-to-industry
 tags:
-  - industry
-  - academe
-  - tips
+  - story
+  - recommendation
+  - math
 ---
 
 I have had a couple of friends and acquaintances who are thinking to move from a research position to a tech industry job. I ironically had to do **a lot of research** while doing this transition, so I guess the four years of doing research helped!

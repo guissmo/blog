@@ -9,6 +9,10 @@ description: This blog post talks about a high school project wherein I used QBa
 slug: qbasic-poker
 tags:
   - qbasic
+  - experience
+  - story
+  - game
+  - poker
 ---
 
 At some point in time closer to when I was born than the present, I submitted a school project to my high school computer teacher. It was a poker game written in the ancient language [QBasic](https://en.wikipedia.org/wiki/QBasic).

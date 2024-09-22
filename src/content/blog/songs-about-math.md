@@ -8,6 +8,9 @@ draft: false
 toc: true
 description: Sharing a subset of my slowly growing playlist of math songs.
 slug: songs-about-math
+tags:
+  - math
+  - fun
 ---
 
 It's Halloween 2023 and I couldn't think of any spooky stories like [Sebastiano's experience with shell expansions](https://sebastiano.tronto.net/blog/2023-10-31-spooky-shell-expansions/) so I figured I'd write about something most people find scary: **math**.

@@ -8,8 +8,10 @@ draft: false
 description: This blog post talks about some interesting bits I learned while writing an app that presented the lyrics of a Brett Domino song made exclusively of four letter words.
 slug: lola-an-app-for-a-song-with-only-for-letter-words
 tags:
-  - front end
-  - apps
+  - frontend
+  - javascript
+  - project
+  - experience
 ---
 
 I was supposed to be the playing [the Guardians of the Galaxy game](https://store.steampowered.com/app/1088850/Marvels_Guardians_of_the_Galaxy/) I bought from leboncoin this weekend but my GPU was apparently too weak so that game has to wait and I had nothing to do. So why not make a [single page app](https://guissmo.com/lola) with a YouTube embed and really test out Astro.

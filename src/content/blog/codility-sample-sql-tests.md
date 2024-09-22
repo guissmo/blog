@@ -6,6 +6,10 @@ author: guissmo
 date: 2023-10-15T10:11:32.538Z
 description: Tried out the codility sample SQL tests.
 slug: codility-sample-sql-tests
+tags:
+  - python
+  - problem solving
+  - codility
 ---
 
 I tried out some of Codility's [publicly-available sample SQL tests](https://app.codility.com/programmers/trainings/6/) despite knowing only the theoretical concepts behind SQL databases (what `JOIN` means, a `GROUP BY` operation exists, etc). With some Google-Fu and some help from Chat GPT, I managed to find make a 100% solution to two of their sample tests.

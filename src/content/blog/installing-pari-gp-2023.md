@@ -6,14 +6,11 @@ author: guissmo
 date: 2023-01-05T23:05:49Z
 draft: false
 toc: true
-categories:
-  - Math
-  - PARI
 description: Step-by-step guide on how to install PARI/GP on Windows, Mac, and Linux.
 slug: installing-pari-gp-2023
 tags:
-  - installing
   - PARI
+  - math
 ---
 
 I am writing this for participants of the CIMPA Summer School 2023 in Manila but this post may be useful for you if you need step-by-step instructions for installing PARI/GP.

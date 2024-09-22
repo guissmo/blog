@@ -11,6 +11,8 @@ slug: nsi-terminale-rappel-2
 tags:
   - nsi
   - terminale
+  - python
+  - français
 ---
 
 # Auparavant
