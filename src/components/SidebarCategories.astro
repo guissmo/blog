@@ -1,12 +1,9 @@
 ---
-import {
-  getPopularTagsFromPosts,
-  allBlogPostsUnsorted,
-  getPopularCategoriesFromPosts,
-} from "../pages/blog/blog";
+import { getCollection } from "astro:content";
+import { getCategoryCounts } from "../pages/blog/blog";
 import SidebarHeader from "./SidebarHeader.astro";
-import shuffle from "lodash";
-const popularCategories = getPopularCategoriesFromPosts(allBlogPostsUnsorted);
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const popularCategories = getCategoryCounts(posts);
 ---
 
 <SidebarHeader>Categories</SidebarHeader>

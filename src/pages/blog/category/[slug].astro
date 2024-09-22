@@ -1,27 +1,29 @@
 ---
 import { getCollection } from "astro:content";
-import { allBlogPostsByCategory } from "../blog";
-import Head from "../../../components/Head";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
-import PageLayout from "../../../layouts/PageLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SidebarTopTags from "../../../components/SidebarTopTags.astro";
+import PageLayout from "../../../layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
-  return Object.entries(allBlogPostsByCategory).map((k, val) => {
+  const posts = await getCollection("blog");
+  const categories = new Set(posts.map((post) => post.data.category));
+  return Array.from(categories).map((category) => {
     return {
       params: {
-        slug: k[0].toLowerCase().replaceAll(" ", "-"),
+        slug: category.toLowerCase().replaceAll(" ", "-"),
       },
       props: {
         category: {
-          render: () => k[0],
+          render: () => category,
         },
       },
     };
   });
 }
+
+const posts = await getCollection("blog", ({ data }) => {
+  return data.category === Astro.props.category.render();
+});
 
 const breadcrumbData = {
   title: "Blog",
@@ -30,8 +32,6 @@ const breadcrumbData = {
     title: Astro.props.category.render(),
   },
 };
-
-const posts = allBlogPostsByCategory[Astro.props.category.render()];
 ---
 
 <PageLayout frontmatter={{ title: "Blog" }}>

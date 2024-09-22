@@ -1,22 +1,27 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
-import { allBlogPostsByCategory, allBlogPostsByTag } from "../blog";
 
 export async function getStaticPaths() {
-  return Object.entries(allBlogPostsByTag).map((k, val) => {
+  const posts = await getCollection("blog");
+  const tags = new Set(posts.flatMap((post) => post.data.tags || []));
+  return Array.from(tags).map((tag) => {
     return {
       params: {
-        slug: k[0].toLowerCase().replaceAll(" ", "-"),
+        slug: tag.toLowerCase().replaceAll(" ", "-"),
       },
       props: {
         tags: {
-          render: () => `${k[0]}`,
+          render: () => tag,
         },
       },
     };
   });
 }
+
+const filteredPosts = await getCollection("blog", ({ data }) => {
+  return data.tags?.includes(Astro.props.tags.render());
+});
 
 const breadcrumbData = {
   title: "Blog",
@@ -34,34 +39,32 @@ const breadcrumbData = {
       <h2>#{Astro.props.tags.render()}</h2>
     </>
     {
-      allBlogPostsByTag[Astro.props.tags.render()].map(
-        ({ slug, data }, index) => {
-          const { date } = data;
+      filteredPosts.map(({ slug, data }, index) => {
+        const { date } = data;
 
-          function dateToString(date: Date) {
-            let year = date.getFullYear();
-            let month = pad(date.getMonth() + 1);
-            let day = pad(date.getDate());
+        function dateToString(date: Date) {
+          let year = date.getFullYear();
+          let month = pad(date.getMonth() + 1);
+          let day = pad(date.getDate());
 
-            return [year, month, day].join(".");
-          }
-
-          function pad(num: number) {
-            return num.toString().padStart(2, "0");
-          }
-
-          return (
-            <>
-              <span class="monospace date">{dateToString(date)}</span>
-              <a href={`${import.meta.env.BASE_URL}/blog/${slug}`}>
-                {data.title}
-              </a>
-              <span class="monospace date">&nbsp;</span>
-              <span class="desc-text">{data.description}</span>
-            </>
-          );
+          return [year, month, day].join(".");
         }
-      )
+
+        function pad(num: number) {
+          return num.toString().padStart(2, "0");
+        }
+
+        return (
+          <>
+            <span class="monospace date">{dateToString(date)}</span>
+            <a href={`${import.meta.env.BASE_URL}/blog/${slug}`}>
+              {data.title}
+            </a>
+            <span class="monospace date">&nbsp;</span>
+            <span class="desc-text">{data.description}</span>
+          </>
+        );
+      })
     }
   </div>
 </PageLayout>

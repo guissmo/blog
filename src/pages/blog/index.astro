@@ -10,13 +10,18 @@ import "@fontsource/fira-sans/700.css";
 import "@fontsource/fira-sans/800.css";
 import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
+import { getCollection } from "astro:content";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import SidebarCategories from "../../components/SidebarCategories.astro";
 import TopTags from "../../components/SidebarTopTags.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
-import { allBlogPostsSortedByDate, allBlogPostsUnsorted } from "./blog.ts";
-const posts = allBlogPostsSortedByDate;
+import { allBlogPostsUnsorted } from "./blog.ts";
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => {
+    return b.data.date.getTime() - a.data.date.getTime();
+  }
+);
 const POST_PREVIEW_LIMIT = 3;
 const breadcrumbData = {
   title: "Blog",
@@ -28,7 +33,7 @@ const breadcrumbData = {
   <span slot="sidebar">
     <Breadcrumbs data={breadcrumbData} />
     <SidebarCategories />
-    <TopTags posts={allBlogPostsUnsorted} top={5} />
+    <TopTags posts={posts} top={5} />
   </span>
   <div class="postList">
     <span class="monospace date">&nbsp;</span>

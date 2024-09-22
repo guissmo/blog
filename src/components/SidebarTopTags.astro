@@ -1,12 +1,9 @@
 ---
-import {
-  getPopularTagsFromPosts,
-  allBlogPostsUnsorted,
-} from "../pages/blog/blog";
+import { getTagCounts } from "../pages/blog/blog";
 import SidebarHeader from "./SidebarHeader.astro";
 import shuffle from "lodash";
 const { posts, top } = Astro.props;
-const popularTags = getPopularTagsFromPosts(posts);
+const popularTags = getTagCounts(posts);
 ---
 
 <SidebarHeader>Popular Tags</SidebarHeader>
