@@ -12,6 +12,7 @@ tags:
   - nsi
   - terminale
   - python
+  - jupyter notebook
   - français
 ---
 
