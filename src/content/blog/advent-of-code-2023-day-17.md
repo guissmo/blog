@@ -1,7 +1,7 @@
 ---
 title: "Advent of Code 2023: Day 17"
 layout: "/src/layouts/PostLayout.astro"
-category: Advent of Code
+category: Code
 author: guissmo
 date: 2023-12-23T16:51:43+00:00
 description: My solution to the Day 17 Advent of Code 2023 Problems.
@@ -12,6 +12,7 @@ tags:
   - python
   - dijkstra
   - problem solving
+  - advent of code
 ---
 
 I've paused looking at the Advent of Code problems but I thought I should write about [Day 17](https://adventofcode.com/2023/day/17) since this was the problem that had made me use more than "three Jupyter notebooks" because I didn't bother using Git for versioning.

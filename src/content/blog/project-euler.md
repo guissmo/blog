@@ -1,7 +1,7 @@
 ---
 title: "Project Euler"
 layout: "/src/layouts/PostLayout.astro"
-category: Recommendations
+category: Stuff I Use
 author: guissmo
 date: 2023-10-17T21:12:29Z
 description: "ProjectEuler is a website which you can either describe as math problems designed as programming problems, or programming problems designed as math problems."

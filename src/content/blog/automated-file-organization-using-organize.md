@@ -1,7 +1,7 @@
 ---
 title: "Automated File Organization Using Organize"
 layout: "/src/layouts/PostLayout.astro"
-category: Mini Projects
+category: Stuff I Use
 author: guissmo
 date: 2023-05-28T22:30:44+02:00
 draft: false
@@ -17,6 +17,7 @@ tags:
   - organize
   - productivity
   - tutorial
+  - open-source
 ---
 
 My important documents folder has been accumulating documents since I moved to Europe -- so that's around 2014. And I had a "system" for organizing the files, but I never bothered renaming them because it was so tedious. The default filenames of some PDFs I've downloaded have not been very useful for searching, and so dumping them all in a folder was not really efficient.

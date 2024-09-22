@@ -1,7 +1,7 @@
 ---
 title: "Syncthing"
 layout: "/src/layouts/PostLayout.astro"
-category: Recommendations
+category: Stuff I Use
 author: guissmo
 date: 2024-03-10T23:03:46+00:00
 draft: false

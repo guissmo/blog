@@ -1,7 +1,7 @@
 ---
 title: "Advent of Code 2023: Day 5"
 layout: "/src/layouts/PostLayout.astro"
-category: Advent of Code
+category: Code
 author: guissmo
 date: 2023-12-05T18:13:33+00:00
 description: My solution to the Day 5 Advent of Code 2023 Problems.
@@ -11,6 +11,7 @@ tags:
   - python
   - optimization
   - problem solving
+  - advent of code
 ---
 
 This year, the first problem that I think is not brute-forceable (if you're impatient) is [Day 5](https://adventofcode.com/2023/day/5). I've asked a colleague when the difficulty ramps up and I guess I should be more careful what I wish for.

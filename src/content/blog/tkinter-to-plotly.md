@@ -1,11 +1,9 @@
 ---
 title: "TKinter to Plotly"
 layout: "/src/layouts/PostLayout.astro"
-category: Mini Projects
+category: Story
 author: guissmo
 date: 2024-01-04T21:55:09+00:00
-categories:
-  - Mini Projects
 description: I help a programming teacher out by transitioning code from TKinter to Plotly.
 slug: tkinter-to-plotly
 tags:

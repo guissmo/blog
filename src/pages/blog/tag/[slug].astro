@@ -31,7 +31,7 @@ const breadcrumbData = {
   <div class="postList">
     <>
       <span>&nbsp;</span>
-      <h2>{Astro.props.tags.render()}</h2>
+      <h2>#{Astro.props.tags.render()}</h2>
     </>
     {
       allBlogPostsByTag[Astro.props.tags.render()].map(

@@ -1,7 +1,7 @@
 ---
 title: "Advent of Code 2023: Day 1"
 layout: "/src/layouts/PostLayout.astro"
-category: Advent of Code
+category: Code
 author: guissmo
 date: 2023-12-01T23:26:19+00:00
 description: My solution to the Day 1 Advent of Code 2023 Problems.
@@ -12,6 +12,7 @@ tags:
   - excel
   - jupyter
   - problem solving
+  - advent of code
 ---
 
 Here is my solution for the [first two problems](https://adventofcode.com/2023/day/1) (i.e. Day 1) of Advent of Code 2023.

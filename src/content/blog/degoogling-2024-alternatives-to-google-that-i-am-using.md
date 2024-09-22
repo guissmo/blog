@@ -1,10 +1,10 @@
 ---
 title: "DeGoogling 2024: Alternatives to Google That I'm using"
 layout: "/src/layouts/PostLayout.astro"
-category: Recommendations
+category: Stuff I Use
 author: guissmo
 date: 2024-06-09T09:18:14+00:00
-description: I list down good not-so-expensive paid services that I use to make my life less dependent on Google.
+description: I list down good not-so-expensive paid services such as Kagi, Immich, and Mailbox.org, that I use to make my life less dependent on Google.
 slug: degoogling-2024-alternatives-to-google-that-i-am-using
 math: true
 tags:
@@ -15,6 +15,10 @@ tags:
   - use
   - experience
   - story
+  - immich
+  - mailbox.org
+  - kagi
+  - open-source
 ---
 
 Moving away from Google services has been a long-term goal of mine and it has been a slow and steady process doing so.

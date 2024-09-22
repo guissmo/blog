@@ -1,11 +1,9 @@
 ---
 title: "DIY Digital eInk Photo Frame with Pimoroni Inky Impressions"
 layout: "/src/layouts/PostLayout.astro"
-category: Mini Projects
+category: Projects
 author: guissmo
 date: 2024-04-13T11:33:21+00:00
-categories:
-  - Mini Projects
 description: I setup my own digital photo eInk photo frame.
 slug: digital-eink-photo-frame-with-raspberry-pi-and-pimoroni-inky-impressions
 tags:

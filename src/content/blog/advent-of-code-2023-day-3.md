@@ -1,7 +1,7 @@
 ---
 title: "Advent of Code 2023: Day 3"
 layout: "/src/layouts/PostLayout.astro"
-category: Advent of Code
+category: Code
 author: guissmo
 date: 2023-12-03T12:15:38+00:00
 description: My solution to the Day 3 Advent of Code 2023 Problems.
@@ -10,6 +10,7 @@ tags:
   - code
   - python
   - problem solving
+  - advent of code
 ---
 
 Here are the [Day 3](https://adventofcode.com/2023/day/3) puzzles for [Advent of Code 2023](https://adventofcode.com).

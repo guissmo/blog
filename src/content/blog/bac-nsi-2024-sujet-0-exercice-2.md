@@ -1,7 +1,7 @@
 ---
 title: "Correction (non officielle) d'Exercice 2 du Sujet 0 de BAC NSI 2024"
 layout: "/src/layouts/PostLayout.astro"
-category: French
+category: NSI
 author: guissmo
 date: 2024-01-14T17:38:06+00:00
 categories:

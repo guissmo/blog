@@ -1,7 +1,7 @@
 ---
 title: "Learning French - What Worked And What Didn't"
 layout: "/src/layouts/PostLayout.astro"
-category: French
+category: Life
 author: guissmo
 date: 2023-10-20T21:38:41Z
 draft: false

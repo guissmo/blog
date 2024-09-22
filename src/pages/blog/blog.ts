@@ -38,6 +38,53 @@ export const blogPostsByTag = function blogPostsByTag(
   return dic;
 };
 
+export function getPopularCategoriesFromPosts(
+  posts: CollectionEntry<"blog">[]
+) {
+  const categoryCount: { [key: string]: number } = {};
+
+  posts.forEach((post) => {
+    const category = post.data.category;
+    if (categoryCount[category]) {
+      categoryCount[category]++;
+    } else {
+      categoryCount[category] = 1;
+    }
+  });
+
+  return Object.keys(categoryCount)
+    .map((category) => ({
+      category,
+      count: categoryCount[category],
+    }))
+    .sort((a, b) => b.count - a.count);
+}
+
+export const getPopularTagsFromPosts = function popularTags(
+  posts: CollectionEntry<"blog">[]
+) {
+  const tagCount = {} as { [key: string]: number };
+
+  posts.forEach((post) => {
+    const tags = post.data.tags || ["Untagged"];
+    tags.forEach((tag) => {
+      if (!tagCount[tag]) {
+        tagCount[tag] = 0;
+      }
+      tagCount[tag]++;
+    });
+  });
+
+  const sortedTags = Object.keys(tagCount)
+    .map((tag) => ({
+      tag,
+      count: tagCount[tag],
+    }))
+    .sort((a, b) => b.count - a.count);
+
+  return sortedTags;
+};
+
 export const allBlogPostsByCategory = blogPostsByCategory(
   allBlogPostsSortedByDate
 );

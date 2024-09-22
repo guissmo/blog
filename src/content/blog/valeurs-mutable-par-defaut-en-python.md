@@ -1,7 +1,7 @@
 ---
 title: "Valeurs mutables par défaut en Python"
 layout: "/src/layouts/PostLayout.astro"
-category: Code
+category: NSI
 author: guissmo
 date: 2024-05-28T18:58:32+00:00
 description: Je parle a propos d'un exercice du BAC de NSI 2024.

@@ -1,11 +1,9 @@
 ---
 title: "Asking CNIL for GDPR / RGPD help"
 layout: "/src/layouts/PostLayout.astro"
-category: Mini Projects
+category: Story
 author: guissmo
 date: 2024-05-02T20:17:03+00:00
-categories:
-  - Mini Projects
 description: I tell the story of how I filed a GDPR complaint
 slug: asking-cnil-for-gdpr-rgpd-help
 tags:

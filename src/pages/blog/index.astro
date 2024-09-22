@@ -1,5 +1,4 @@
 ---
-import { allBlogPostsByCategory } from "./blog.ts";
 import "@fontsource-variable/source-code-pro";
 import "@fontsource/fira-sans/100.css";
 import "@fontsource/fira-sans/200.css";
@@ -11,7 +10,11 @@ import "@fontsource/fira-sans/700.css";
 import "@fontsource/fira-sans/800.css";
 import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import TopTags from "../../components/SidebarTopTags.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
+import { allBlogPostsByCategory, allBlogPostsUnsorted } from "./blog.ts";
+import SidebarCategories from "../../components/SidebarCategories.astro";
 const POST_PREVIEW_LIMIT = 3;
 const breadcrumbData = {
   title: "Blog",
@@ -19,7 +22,12 @@ const breadcrumbData = {
 };
 ---
 
-<PageLayout frontmatter={{ title: "Blog" }} breadcrumbData={breadcrumbData}>
+<PageLayout frontmatter={{ title: "Blog" }}>
+  <span slot="sidebar">
+    <Breadcrumbs data={breadcrumbData} />
+    <SidebarCategories />
+    <TopTags posts={allBlogPostsUnsorted} top={5} />
+  </span>
   <div class="postList">
     {
       Object.keys(allBlogPostsByCategory).map((category) => {
