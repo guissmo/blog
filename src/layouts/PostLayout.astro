@@ -14,12 +14,12 @@ import "@fontsource/fira-sans/700.css";
 import "@fontsource/fira-sans/800.css";
 import "@fontsource/fira-sans/900.css";
 import "@fontsource/rubik-mono-one";
-import PageLayout from "./PageLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import TableOfContents from "../components/TableOfContents.astro";
-import SidebarTags from "../components/SidebarTags.astro";
-import SidebarHeader from "../components/SidebarHeader.astro";
+import PageHeader from "../components/PageHeader.astro";
 import SidebarFooter from "../components/SidebarFooter.astro";
+import SidebarTags from "../components/SidebarTags.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+import PageLayout from "./PageLayout.astro";
 const { frontmatter, headings } = Astro.props;
 const breadcrumbData = {
   title: "Blog",
@@ -43,7 +43,7 @@ const breadcrumbData = {
     <SidebarFooter />
   </span>
   <div class="post-content">
-    {frontmatter.title && <h1 class="post-title">{frontmatter.title}</h1>}
+    <PageHeader text={frontmatter.title} />
     <slot />
   </div>
 </PageLayout>
