@@ -1,0 +1,112 @@
+---
+import classNames from "classnames";
+import style from "../styles/global.module.css";
+import DateComponent from "./DateComponent.astro";
+const { data, max, href, noun, full } = Astro.props;
+---
+
+{
+    data.map((cvEntry: any) => {
+      return (
+        <>
+          {
+            full != true &&
+            <>
+              <span class={style.hideOnMobile}>&nbsp;</span>
+              <h2 class={style.section}>{cvEntry.id}</h2>
+            </>
+          }
+          {Object.keys(cvEntry.data)
+            .filter((_, index) => max && full != true ? index < max : true)
+            .map((category) => {
+              const entryData = cvEntry.data[category];
+              if (entryData.show == false) return;
+              return (
+                <>
+                  <span class={classNames(style.monospace, style.verticalAlignCenter)}>
+                    <DateComponent entryData={entryData} />
+                  </span>
+                  <span class={classNames(style.inlineList)}>
+                    <span class="cv-entry-title">
+                      {entryData.name ? entryData.name : entryData.position ? entryData.position : entryData.degree}
+                    </span>
+                  </span>
+                  <span class={classNames(style.monospace, style.hideOnMobile)}>&nbsp;</span>
+                  <span class={classNames(style.inlineList)}>
+                    { entryData.company || entryData.university && 
+                      <span class={classNames(style.block, style.subtitle)}>
+                            {entryData.company ? entryData.company : entryData.university}
+                      </span>
+                    }
+                    <span class={classNames(style.block, "links")}>
+                      links:
+                      {Object.keys(entryData.url).map(
+                        (urlCategory, index, arrayItself) => {
+                          const url = entryData.url[urlCategory];
+                          return (
+                            <>
+                              <a href={url} target="_blank">
+                                {urlCategory}
+                              </a>
+                              {index != arrayItself.length - 1 && " | "}
+                            </>
+                          );
+                        }
+                      )}
+                    </span>
+                    <span class="block">
+                      <ul>
+                        {entryData.details && entryData.details.map((detail: string) => {
+                          return <li>{detail}</li>;
+                        })}
+                      </ul>
+                    </span>
+                  </span>
+                </>
+              );
+            })}
+        </>
+      );
+    })
+  }
+  {
+    Object.keys(data[0].data).length > max && (
+      <>
+      <span class={classNames(style.monospace, style.verticalAlignCenter, style.hideOnMobile)}>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+        <span class={classNames(style.inlineList)}>
+          <a href={href}>
+            View all{" "}
+            {Object.keys(data[0].data).length}{" "}{noun}
+          </a>
+        </span>
+        </span>
+      </>
+    )
+  }
+
+  <style>
+    .cv-entry-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .links {
+        opacity: 0.8;
+      }
+
+      .links:hover {
+        opacity: 1;
+      }
+
+      .block{
+        display: block;
+      }
+
+      @media screen and (max-width: 640px) {
+
+        .cv-entry-title {
+          font-size: 1.2rem;
+        }
+
+      }
+  </style>

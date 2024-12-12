@@ -1,0 +1,137 @@
+---
+import SidebarHeader from "./SidebarHeader.astro";
+
+const { nearbyPosts, category } = Astro.props;
+---
+
+{ 
+nearbyPosts != undefined &&
+<SidebarHeader><span class="centered">Posts on {category}</span></SidebarHeader>
+<div class="grid">
+  {
+    nearbyPosts.withinCategory.previous.slug ? (
+      <a
+        href={`/blog/${nearbyPosts.withinCategory.previous.slug}`}
+        class="prev"
+      >
+        <span>«</span>
+        <span>{nearbyPosts.withinCategory.previous.title}</span>
+      </a>
+    ) : (
+      <a
+        href={`/blog/category/${category.toLowerCase().replaceAll(" ", "-")}`}
+        class="prev"
+      >
+        <span>|</span>
+        <span>All posts on {category}</span>
+      </a>
+    )
+  }
+  {
+    nearbyPosts.withinCategory.next.slug ? (
+      <a href={`/blog/${nearbyPosts.withinCategory.next.slug}`} class="next">
+        <span>{nearbyPosts.withinCategory.next.title}</span>
+        <span>»</span>
+      </a>
+    ) : (
+      <a
+        href={`/blog/category/${category.toLowerCase().replaceAll(" ", "-")}`}
+        class="next"
+      >
+        <span>All posts on {category}</span>
+        <span>|</span>
+      </a>
+    )
+  }
+</div>
+<SidebarHeader><span class="centered">Posts on this blog</span></SidebarHeader>
+<div class="grid">
+  {
+    nearbyPosts.previous.slug ? (
+      <a href={`/blog/${nearbyPosts.previous.slug}`} class="prev">
+        <span>«</span>
+        <span>{nearbyPosts.previous.title}</span>
+      </a>
+    ) : (
+      <a href={`/blog`} class="prev">
+        <span>|</span>
+        <span>All posts</span>
+      </a>
+    )
+  }
+  {
+    nearbyPosts.next.slug ? (
+      <a href={`/blog/${nearbyPosts.next.slug}`} class="next">
+        <span>{nearbyPosts.next.title}</span>
+        <span>»</span>
+      </a>
+    ) : (
+      <a href={`/blog`} class="next">
+        <span>All posts</span>
+        <span>|</span>
+      </a>
+    )
+  }
+</div>
+}
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    gap: min(6%, 1em);
+    margin-top: 2em;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .grid a {
+    width: calc(100% - 4em);
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    text-decoration: none;
+    margin: 1em;
+    border-radius: 1em;
+    padding: 0 1em;
+    text-align: left;
+    height: 100%;
+  }
+
+  .next {
+    justify-self: end;
+    justify-content: flex-end;
+  }
+
+  .prev {
+    justify-self: start;
+    justify-content: flex-start;
+  }
+
+  .grid .prev span {
+    text-align: left;
+    text-align-last: left;
+    text-wrap: balance;
+  }
+  .grid .next span {
+    text-align: right;
+    text-align-last: right;
+    text-wrap: balance;
+  }
+
+  .centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .grid {
+      grid-template-columns: 100%;
+    }
+  }
+</style>
+
+<style></style>

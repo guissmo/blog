@@ -1,0 +1,114 @@
+---
+import "@fontsource-variable/source-code-pro";
+import "@fontsource/fira-sans/100.css";
+import "@fontsource/fira-sans/200.css";
+import "@fontsource/fira-sans/300.css";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/500.css";
+import "@fontsource/fira-sans/600.css";
+import "@fontsource/fira-sans/700.css";
+import "@fontsource/fira-sans/800.css";
+import "@fontsource/fira-sans/900.css";
+import "@fontsource/rubik-mono-one";
+import ContactInfo from "../components/ContactInfo.astro";
+import Contacts from "../components/Contacts.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import style from "../styles/global.module.css";
+import Content from "../content/pages/index.md";
+---
+
+<Content />
+
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+    text-transform: capitalize;
+  }
+
+  .date {
+    width: fit-content;
+  }
+
+  .mainList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+  }
+
+  .bio {
+    padding-top: 5ex;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    text-align: justify;
+    text-align-last: left;
+  }
+
+  .bio-footnote {
+    font-size: 1rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+  }
+
+  .list-entry {
+    display: inline-block;
+  }
+
+  .list-entry:not(:last-of-type):after {
+    content: ",";
+  }
+
+  .list-entry:not(:last-of-type) {
+    margin-right: 0.5em;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .cv-entry-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .project-subtitle {
+    font-weight: 500;
+  }
+
+  .no-wrap {
+    white-space: no-wrap !important;
+  }
+
+  @media screen and (max-width: 640px) {
+    .mainList {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 0 10px;
+    }
+
+    .monospace {
+      text-align: unset;
+    }
+
+    .skill-category {
+      padding-top: 1.5ex;
+    }
+
+    .cv-entry-title {
+      font-size: 1.2rem;
+    }
+
+    .bio {
+      padding-right: 0;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .mobile-only {
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>

@@ -1,0 +1,108 @@
+---
+import { getCollection } from "astro:content";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SidebarTopTags from "../../../components/SidebarTopTags.astro";
+import PageLayout from "../../../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const categories = new Set(posts.map((post) => post.data.category));
+  return Array.from(categories).map((category) => {
+    return {
+      params: {
+        slug: category.toLowerCase().replaceAll(" ", "-"),
+      },
+      props: {
+        category: {
+          render: () => category,
+        },
+      },
+    };
+  });
+}
+
+const posts = await getCollection("blog", ({ data }) => {
+  return data.category === Astro.props.category.render() && !data.draft;
+});
+
+const breadcrumbData = {
+  title: "Blog",
+  href: `${import.meta.env.BASE_URL}/blog`,
+  child: {
+    title: Astro.props.category.render(),
+  },
+};
+---
+
+<PageLayout frontmatter={{ title: "Blog" }}>
+  <span slot="sidebar">
+    <Breadcrumbs data={breadcrumbData} />
+    <SidebarTopTags posts={posts} top={5} />
+  </span>
+  <div class="postList">
+    <>
+      <span>&nbsp;</span>
+      <h2>{Astro.props.category.render()}</h2>
+    </>
+    {
+      posts
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+        .map(({ slug, data }, index) => {
+          const { date } = data;
+
+          function dateToString(date: Date) {
+            let year = date.getFullYear();
+            let month = pad(date.getMonth() + 1);
+            let day = pad(date.getDate());
+
+            return [year, month, day].join(".");
+          }
+
+          function pad(num: number) {
+            return num.toString().padStart(2, "0");
+          }
+
+          return (
+            <>
+              <span class="monospace date">{dateToString(date)}</span>
+              <a href={`${import.meta.env.BASE_URL}/blog/${slug}`}>
+                {data.title}
+              </a>
+              <span class="monospace date">&nbsp;</span>
+              <span class="desc-text">{data.description}</span>
+            </>
+          );
+        })
+    }
+  </div>
+</PageLayout>
+<style>
+  h2 {
+    font-weight: 700;
+    padding-top: 3ex;
+  }
+
+  .date {
+    width: fit-content;
+  }
+
+  .postList {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(10px, 5vw, 30px);
+  }
+
+  .monospace {
+    font-family: "Source Code Pro Variable", sans-serif;
+    font-weight: 300;
+  }
+
+  .full-category-link {
+    /* margin-left: 10px; */
+    color: royalblue;
+  }
+
+  .desc-text {
+    margin-bottom: 2ex;
+  }
+</style>

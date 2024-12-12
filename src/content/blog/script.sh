@@ -1,0 +1,1 @@
+find . -type f -name "*.md" -exec sh -c 'for file; do date=$(grep -m1 "^date:" "$file" | sed -E "s/^date: *([^T]+).*/\1/" | tr -d "-"); base=$(basename "$file"); if ! echo "$base" | grep -qE "^[0-9]{8}"; then mv "$file" "$(dirname "$file")/${date}-${base}"; fi; done' sh {} +

@@ -1,0 +1,38 @@
+{
+  "name": "astro-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@fontsource-variable/fredoka": "^5.0.8",
+    "@fontsource-variable/quicksand": "^5.0.13",
+    "@fontsource-variable/source-code-pro": "^5.0.14",
+    "@fontsource/fira-sans": "^5.0.18",
+    "@fontsource/rubik-mono-one": "^5.0.15",
+    "@samdev-7/rehype-url-inspector": "^2.0.2",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "astro": "^4.15.8",
+    "astro-relative-links": "^0.3.4",
+    "classnames": "^2.5.0",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

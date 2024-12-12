@@ -1,0 +1,84 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog")).filter((a) => !a.data.draft);
+
+  const sorted = posts.sort((a, b) => {
+    return a.data.date.getTime() - b.data.date.getTime();
+  });
+
+  // Create an object that groups posts by category and stores their index for faster lookup
+  const categoryMap = sorted.reduce(
+    (acc, post, index) => {
+      const category = post.data.category.toLowerCase().replaceAll(" ", "-");
+      if (!acc[category]) {
+        acc[category] = { posts: [], indexMap: {} };
+      }
+      acc[category].posts.push(post);
+      acc[category].indexMap[post.slug] = acc[category].posts.length - 1; // Store the index of the post in this category
+      return acc;
+    },
+    {} as Record<string, { posts: any[]; indexMap: Record<string, number> }>
+  );
+
+  const headings = await Promise.all(
+    posts.map(async (post) => {
+      const data = await post.render();
+      return data.headings;
+    })
+  );
+
+  return posts.map((entry, index) => {
+    const category = entry.data.category.toLowerCase().replaceAll(" ", "-");
+    const { posts: postsInCategory, indexMap } = categoryMap[category];
+    const categoryIndex = indexMap[entry.slug]; // Directly get the index of the current post in its category
+
+    // Find previous and next post within the same category
+    const prevPostInCategory =
+      categoryIndex > 0 ? postsInCategory[categoryIndex - 1] : null;
+    const nextPostInCategory =
+      categoryIndex < postsInCategory.length - 1
+        ? postsInCategory[categoryIndex + 1]
+        : null;
+    const prevPost = index > 0 ? sorted[index - 1] : undefined;
+    const nextPost = index < sorted.length - 1 ? sorted[index + 1] : undefined;
+
+    entry.data.nearbyPosts = {};
+    entry.data.nearbyPosts.previous = {
+      title: prevPost?.data.title,
+      slug: prevPost?.slug,
+    };
+    entry.data.nearbyPosts.next = {
+      title: nextPost?.data.title,
+      slug: nextPost?.slug,
+    };
+    entry.data.nearbyPosts.withinCategory = {
+      next: {
+        title: nextPostInCategory?.data.title,
+        slug: nextPostInCategory?.slug,
+      },
+      previous: {
+        title: prevPostInCategory?.data.title,
+        slug: prevPostInCategory?.slug,
+      },
+    };
+
+    return {
+      params: { slug: entry.slug },
+      props: {
+        entry,
+        headings: headings[index],
+      },
+    };
+  });
+}
+// 2. For your template, you can get the entry directly from the prop
+const { entry, headings } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<PostLayout frontmatter={entry.data} headings={headings}>
+  <Content />
+</PostLayout>

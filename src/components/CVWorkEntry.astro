@@ -1,0 +1,37 @@
+---
+import classNames from "classnames";
+import DateComponent from "./DateComponent.astro";
+import style from "../styles/global.module.css";
+const { entry } = Astro.props;
+---
+
+<>
+  <span class={classNames(style.monospace, style.verticalAlignCenter)}>
+    <DateComponent entryData={entry.data} />
+  </span>
+  <span class={classNames(style.inlineList)}>
+    <span class="cv-entry-title">{entry.data.position}</span>
+  </span>
+  <span class={classNames(style.monospace, style.hideOnMobile)}>&nbsp;</span>
+  <span class={classNames(style.inlineList)}>
+    <span class={classNames(style.block, style.subtitle)}>
+      {
+        entry.data.url ? (
+          <a href={entry.data.url}>{entry.data.company}</a>
+        ) : (
+          entry.data.company
+        )
+      }
+    </span>
+    <span class="block">
+      <entry.content />
+    </span>
+  </span>
+</>
+
+<style>
+  .cv-entry-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+</style>

@@ -1,0 +1,81 @@
+body {
+  padding: 32px;
+}
+
+.monospace {
+  font-family: "Source Code Pro Variable", sans-serif;
+  font-weight: 300;
+  text-align: right;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.inlineList {
+  width: 100%;
+  gap: 1em;
+  display: block;
+}
+
+.deemphasize {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.emphasizeByOpacity {
+  opacity: 1;
+}
+
+.verticalAlignCenter {
+  align-self: center;
+}
+
+h2.section {
+  font-weight: 700;
+  padding-top: 3ex;
+  text-transform: capitalize;
+}
+
+.block {
+  display: block;
+}
+
+.subtitle {
+  font-weight: 500;
+}
+
+.mainList {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: clamp(10px, 5vw, 30px);
+}
+
+@media screen and (max-width: 640px) {
+  .mainList {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .monospace {
+    text-align: unset;
+  }
+
+  .alignRight {
+    text-align: right;
+  }
+
+  .inlineList {
+    padding-left: 1em;
+    width: unset;
+  }
+
+  .hideOnMobile {
+    display: none !important;
+  }
+}
